@@ -1,0 +1,50 @@
+/* LEGACY */
+.grid-container.collection-image-96.object-1-home .grid-item {
+    display: flex;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-7744c35.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    display: none;
+}
+
+
+.grid-container.collection-image-96.color-5432 div .grid-item {
+    display: flex;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+.grid-container.collection-image-96.all-product-collection-9 {
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.grid-container.collection-image-96.all-product-collection-9 div {
+    background-color: #f2f2f2 !important;
+}
+
+.grid-container.collection-image-96.all-product-collection-9 div .grid-item {
+    display: flex;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+.grid-container.collection-image-96.collection-89454-manufacture {
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.grid-container.collection-image-96.collection-89454-manufacture div {
+    background-color: #f2f2f2 !important;
+}
+
+.grid-container.collection-image-96.collection-89454-manufacture div .grid-item {
+    display: flex;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+/* End LEGACY */
+
