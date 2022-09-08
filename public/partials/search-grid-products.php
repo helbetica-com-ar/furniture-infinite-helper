@@ -70,7 +70,7 @@
     <h2 style="text-align: center;">Search Results For:  <strong><?= (isset($_GET['search']))? $_GET['search'] : ''; ?></strong>
     </h2>
 
-    <div class="grid-container collection-image-96 object-1-home">
+    <div class="grid-container php-search-grid-products collection-image-96 object-1-home">
         <?php
         $records_available = false;
 

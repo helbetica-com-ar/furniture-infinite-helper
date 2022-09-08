@@ -54,7 +54,7 @@
         width: 346px !important;
     }
 </style>
-<div class="grid-container collection-image-96 object-1-home">
+<div class="grid-container php-chariho-home-categories collection-image-96 object-1-home">
 
     <?php
         $upload_dir = wp_upload_dir();

@@ -1,15 +1,7 @@
 <?php
-/**
-* Plugin Name: Furnitue API
-* Plugin URI: https://www.yourwebsiteurl.com/
-* Description: This is the very first plugin I ever created.
-* Version: 1.0
-* Author: Cleancoded
-* Author URI: http://yourwebsiteurl.com/
-**/
 
-add_shortcode( 'home_collections', 'home_wpdocs_baztag_func' );
-function home_wpdocs_baztag_func() {
+add_shortcode( 'home_collections', 'chariho_shortcode_home_collections' );
+function chariho_shortcode_home_collections() {
 	$url = "https://furnitureinfinite.com/api/auth/wp-login";
 	$user = 'tort.juanpablo+wpstoreadmin02@gmail.com';		// Chariho Furniture
 	$pass = '3G28cRVCEPV9Jc';								// Chariho Furniture 
@@ -76,7 +68,7 @@ function home_wpdocs_baztag_func() {
 			padding: 0 !important;
 		}
 	</style>
-	<div class="grid-container collection-image-96 object-1-home">
+	<div class="grid-container chariho_shortcode_home_collections collection-image-96 object-1-home">
 		<?php 
 		$manufacturers = $response['furnitureData'][0]['Manufacturers'];
 		$cat_ids = array();
@@ -116,8 +108,8 @@ function home_wpdocs_baztag_func() {
 }
 
 
-add_shortcode( 'collections', 'wpdocs_baztag_func' );
-function wpdocs_baztag_func() {
+add_shortcode( 'collections', 'chariho_shortcode_collections' );
+function chariho_shortcode_collections() {
 	$url = "https://furnitureinfinite.com/api/auth/wp-login";
 	$user = 'tort.juanpablo+wpstoreadmin02@gmail.com';		// Chariho Furniture
 	$pass = '3G28cRVCEPV9Jc';								// Chariho Furniture
@@ -192,7 +184,7 @@ function wpdocs_baztag_func() {
 			<h1>COLLECTIONS</h1>
 		</div>
 	</section>
-	<div class="grid-container collection-image-96 collection-984564">
+	<div class="grid-container chariho_shortcode_collections collection-image-96 collection-984564">
 		<?php 
 
 		$manufacturers = $response['furnitureData'][0]['Manufacturers'];
@@ -229,8 +221,8 @@ function wpdocs_baztag_func() {
 }
 
 
-add_shortcode( 'all-products', 'wpdocs_function' );
-function wpdocs_function() {
+add_shortcode( 'all-products', 'chariho_shortcode_all_products' );
+function chariho_shortcode_all_products() {
 	$url = "https://furnitureinfinite.com/api/auth/wp-login";
 	$user = 'tort.juanpablo+wpstoreadmin02@gmail.com';		// Chariho Furniture
 	$pass = '3G28cRVCEPV9Jc';								// Chariho Furniture
@@ -349,7 +341,7 @@ function wpdocs_function() {
 		?>
 		</div>
 	</section>
-	<div class="grid-container collection-image-96 all-product-collection-9">
+	<div class="grid-container chariho_shortcode_all_products collection-image-96 all-product-collection-9">
 		<?php 
 		$cat_id = $_GET['cat-id'];
 		//$man_id = $_GET['man-id'];
@@ -423,8 +415,8 @@ function wpdocs_function() {
 }
 
 
-add_shortcode('sub-categories', 'wpdocs_baztag_function');
-function wpdocs_baztag_function(){
+add_shortcode('sub-categories', 'chariho_shortcode_sub_categories');
+function chariho_shortcode_sub_categories(){
 	$url = "https://furnitureinfinite.com/api/auth/wp-login";
 	$user = 'tort.juanpablo+wpstoreadmin02@gmail.com';		// Chariho Furniture
 	$pass = '3G28cRVCEPV9Jc';								// Chariho Furniture
@@ -528,7 +520,7 @@ function wpdocs_baztag_function(){
 			?>		
 		</div>
 	</section>
-	<div class="grid-container collection-image-96 collection-page-854564">
+	<div class="grid-container chariho_shortcode_sub_categories collection-image-96 collection-page-854564">
 		<?php
 		$sub_cat_id = $_GET['cat-id'];
 		foreach ($response['categories'] as $col_key => $col_value) {
@@ -552,8 +544,8 @@ function wpdocs_baztag_function(){
 }
 
 
-add_shortcode('pdp', 'wpdocs_function_pdp');
-function wpdocs_function_pdp(){
+add_shortcode('pdp', 'chariho_shortcode_pdp');
+function chariho_shortcode_pdp(){
 	$url = "https://furnitureinfinite.com/api/auth/wp-login";
 	$user = 'tort.juanpablo+wpstoreadmin02@gmail.com';		// Chariho Furniture
 	$pass = '3G28cRVCEPV9Jc';								// Chariho Furniture
@@ -629,7 +621,7 @@ function wpdocs_function_pdp(){
 						<h1>PRODUCT</h1>
 					</div>
 				</section>
-				<main class="container detail-product-85">
+				<main class="container chariho_shortcode_pdp detail-product-85">
 					<div class="left-column">
 						<img data-image="black" class="active" src="<?php echo $img_url; ?>" alt="">
 					</div>

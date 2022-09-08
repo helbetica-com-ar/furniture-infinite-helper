@@ -85,7 +85,7 @@
         </strong>
     </h2>
 
-    <div class="grid-container collection-image-96 object-1-home debugger-sub-category">
+    <div class="grid-container php-grid-proucts collection-image-96 object-1-home">
         <?php
         $records_available = false;
 

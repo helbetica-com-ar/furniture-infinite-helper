@@ -89,7 +89,7 @@
 <section class="all-products-section">
     
     <h2 style="text-align: center;">Category: <strong><?php echo $main_category_name; ?></strong></h2>
-    <div class="grid-container collection-image-96 object-1-home">
+    <div class="grid-container php-sub-category-grid collection-image-96 object-1-home">
         <?php 
         $subCategories = [];
         foreach ($categories as $category){ 

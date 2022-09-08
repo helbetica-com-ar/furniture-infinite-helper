@@ -117,6 +117,8 @@ class Chariho_Helper
 
         require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-chariho-shortcodes.php';
 
+        require_once plugin_dir_path(dirname(__FILE__)) . 'furnitue-api.php';
+
         $this->loader = new Chariho_Helper_Loader();
 
     }

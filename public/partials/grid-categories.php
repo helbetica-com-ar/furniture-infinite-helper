@@ -88,7 +88,7 @@
 
 <section class="all-products-section">
     <h2 style="text-align: center;">Broswe Products By Categories</h2>
-    <div class="grid-container collection-image-96 object-1-home">
+    <div class="grid-container php-grid-cateogries collection-image-96 object-1-home">
         <?php
         $upload_dir = wp_upload_dir();
         $upload_dir = $upload_dir['baseurl'];

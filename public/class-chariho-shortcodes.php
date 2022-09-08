@@ -1,5 +1,5 @@
 <?php
-
+ 
 class Chariho_Shortcodes
 {
 
@@ -11,9 +11,10 @@ class Chariho_Shortcodes
     private $auth_token;
 
     private $main_categories = array(
+        "Bar",
+        "Bathroom",
         "Bedroom",
         "Dining Room",
-        "Entertainment",
         "Kitchen",
         "Living Room",
         "Office",
