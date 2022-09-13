@@ -428,12 +428,11 @@ class Chariho_Shortcodes
         }
     }
 
-    private function chariho_set_api_response_transient()
-    {
+    private function chariho_set_api_response_transient(){
 
-        $url = "https://furnitureinfinite.com/api/auth/wp-login";
-        $user = 'tort.juanpablo+wpstoreadmin02@gmail.com';      // Chariho Furniture
-        $pass = '3G28cRVCEPV9Jc';                               // Chariho Furniture 
+        $url = FURNITURE_WP_PATH;
+        $user = FURNITURE_WP_USER;      // Chariho Furniture
+        $pass = FURNITURE_WP_PASS;      // Chariho Furniture 
         $auth = base64_encode($user . ':' . $pass);
 
         $curl = curl_init($url);

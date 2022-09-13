@@ -36,7 +36,8 @@ class Chariho_Settings
     function chariho_options_page(){ ?>
         <div>
             <?php //screen_icon(); ?>
-            <h2>Furniture API Bearer Token</h2>
+            <h2>Furniture API</h2>
+            <p><?php echo FURNITURE_WP_USER; ?></p>
             <form method="post" action="options.php">
                 <?php settings_fields( 'furniture_api_options_group' ); ?>
                 <table>
@@ -50,5 +51,4 @@ class Chariho_Settings
         </div>
     <?php
     }
-
 }
