@@ -27,7 +27,7 @@
                         $img_url = str_replace("-original", "-300x300", $img_url);
                     ?>
                                       
-                    <div class="chariho-grid-items">
+                    <div class="furniture-infinite-grid-items">
                         <a href="/product-details/?pid=<?= $product['id'] ?>">
                             
                             <img src="<?= $img_url ?>">

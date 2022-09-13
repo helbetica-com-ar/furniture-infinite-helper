@@ -1,6 +1,6 @@
 <?php
 
-class Chariho_Settings
+class Furniture_Infinite_Settings
 {
     private $plugin_name;
     private $version;
@@ -23,17 +23,17 @@ class Chariho_Settings
         $this->version = $version;
     }
 
-    public function chariho_register_settings() {
+    public function furniture_infinite_register_settings() {
         
         add_option( 'furniture_api_bearer_token', 'This is my option value.');
         register_setting( 'furniture_api_options_group', 'furniture_api_bearer_token', 'furniture_api_plugin_callback' );
     }
 
-    public function chariho_register_options_page() {
-        add_options_page('Furniture API', 'Furniture API', 'manage_options', 'furniture_api_plugin', array($this, 'chariho_options_page') );
+    public function furniture_infinite_register_options_page() {
+        add_options_page('Furniture API', 'Furniture API', 'manage_options', 'furniture_api_plugin', array($this, 'furniture_infinite_options_page') );
     }
     
-    function chariho_options_page(){ ?>
+    function furniture_infinite_options_page(){ ?>
         <div>
             <?php //screen_icon(); ?>
             <h2>Furniture API</h2>

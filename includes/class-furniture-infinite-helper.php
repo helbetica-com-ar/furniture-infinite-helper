@@ -9,8 +9,8 @@
  * @link       #
  * @since      1.0.0
  *
- * @package    Chariho_Helper
- * @subpackage chariho-helper/includes
+ * @package    Furniture_Infinite_Helper
+ * @subpackage furniture-infinite-helper/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Chariho_Helper
- * @subpackage chariho-helper/includes
+ * @package    Furniture_Infinite_Helper
+ * @subpackage furniture-infinite-helper/includes
  * @author     StartEngine <#>
  */
-class Chariho_Helper
+class Furniture_Infinite_Helper
 {
 
     /**
@@ -36,7 +36,7 @@ class Chariho_Helper
      *
      * @since    1.0.0
      * @access   protected
-     * @var      Chariho_Helper_Loader $loader Maintains and registers all hooks for the plugin.
+     * @var      Furniture_Infinite_Helper_Loader $loader Maintains and registers all hooks for the plugin.
      */
     protected $loader;
 
@@ -74,7 +74,7 @@ class Chariho_Helper
         } else {
             $this->version = '1.0.0';
         }
-        $this->plugin_name = 'chariho-helper';
+        $this->plugin_name = 'furniture-infinite-helper';
 
         $this->load_dependencies();
         $this->define_public_hooks();
@@ -100,26 +100,26 @@ class Chariho_Helper
          * The class responsible for orchestrating the actions and filters of the
          * core plugin.
          */
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-chariho-helper-loader.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-furniture-infinite-helper-loader.php';
 
 
         /**
          * The class responsible for defining all actions that occur in the admin area.
          */
-        require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-chariho-settings.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-furniture-infinite-settings.php';
 
 
         /**
          * The class responsible for defining all actions that occur in the public-facing
          * side of the site.
          */
-        require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-chariho-helper-public.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-furniture-infinite-helper-public.php';
 
-        require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-chariho-shortcodes.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-furniture-infinite-shortcodes.php';
 
         require_once plugin_dir_path(dirname(__FILE__)) . 'furnitue-api.php';
 
-        $this->loader = new Chariho_Helper_Loader();
+        $this->loader = new Furniture_Infinite_Helper_Loader();
 
     }
 
@@ -133,32 +133,32 @@ class Chariho_Helper
     private function define_public_hooks()
     {
 
-        $plugin_public = new Chariho_Helper_Public($this->get_plugin_name(), $this->get_version());
+        $plugin_public = new Furniture_Infinite_Helper_Public($this->get_plugin_name(), $this->get_version());
 
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles', 999);
         // $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
 
 
 
-        $Chariho_Shortcodes = new Chariho_Shortcodes($this->get_plugin_name(), $this->get_version());
+        $Furniture_Infinite_Shortcodes = new Furniture_Infinite_Shortcodes($this->get_plugin_name(), $this->get_version());
 
-        add_shortcode('all-products', array($Chariho_Shortcodes,'chariho_all_products'));
-        add_shortcode('home-categories', array($Chariho_Shortcodes,'chariho_home_categories'));
-        add_shortcode('collections', array($Chariho_Shortcodes,'chariho_collections'));
-        add_shortcode('pdp', array($Chariho_Shortcodes,'chariho_pdp'));
-        add_shortcode('all-collections', array($Chariho_Shortcodes,'chariho_all_collections'));
+        add_shortcode('all-products', array($Furniture_Infinite_Shortcodes,'furniture_infinite_all_products'));
+        add_shortcode('home-categories', array($Furniture_Infinite_Shortcodes,'furniture_infinite_home_categories'));
+        add_shortcode('collections', array($Furniture_Infinite_Shortcodes,'furniture_infinite_collections'));
+        add_shortcode('pdp', array($Furniture_Infinite_Shortcodes,'furniture_infinite_pdp'));
+        add_shortcode('all-collections', array($Furniture_Infinite_Shortcodes,'furniture_infinite_all_collections'));
         
         // add meta tags
-        $this->loader->add_action('wp_head', $Chariho_Shortcodes, 'chariho_set_single_product_page_meta', 1);        
+        $this->loader->add_action('wp_head', $Furniture_Infinite_Shortcodes, 'furniture_infinite_set_single_product_page_meta', 1);        
 
     }
 
     private function create_master_settings()
     {
         // Adding settings
-        $plugin_settings = new Chariho_Settings($this->get_plugin_name(), $this->get_version());
-        $this->loader->add_action('admin_init', $plugin_settings, 'chariho_register_settings');
-        $this->loader->add_action('admin_menu', $plugin_settings, 'chariho_register_options_page');
+        $plugin_settings = new Furniture_Infinite_Settings($this->get_plugin_name(), $this->get_version());
+        $this->loader->add_action('admin_init', $plugin_settings, 'furniture_infinite_register_settings');
+        $this->loader->add_action('admin_menu', $plugin_settings, 'furniture_infinite_register_options_page');
     }
 
 
@@ -187,7 +187,7 @@ class Chariho_Helper
     /**
      * The reference to the class that orchestrates the hooks with the plugin.
      *
-     * @return    Chariho_Helper_Loader    Orchestrates the hooks of the plugin.
+     * @return    Furniture_Infinite_Helper_Loader    Orchestrates the hooks of the plugin.
      * @since     1.0.0
      */
     public function get_loader()

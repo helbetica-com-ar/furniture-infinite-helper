@@ -5,8 +5,8 @@
         <?php 
         $subCategories = [];
         foreach ($categories as $category){ 
-            if( $this->chariho_check_product_available_in_category("SubCategoryId", $category['id']) ){ 
-                $count = $this->chariho_count_products('SubCategoryId', $category['id']);
+            if( $this->furniture_infinite_check_product_available_in_category("SubCategoryId", $category['id']) ){ 
+                $count = $this->furniture_infinite_count_products('SubCategoryId', $category['id']);
                 $subCategories[] = array(
                     'name'      => ucwords( strtolower( $category["name"] ) ),
                     'id'        => $category['id'],
@@ -17,7 +17,7 @@
             } 
         } 
         foreach ($subCategories as $subCategory){  ?>
-        <div class="chariho-grid-items">
+        <div class="furniture-infinite-grid-items">
             <a href="<?= site_url() ?>/all-products?sub-cat-id=<?php echo $subCategory["id"]; ?>">
                 <?php 
                 $manufacturers = $response['furnitureData'][0]['Manufacturers'];

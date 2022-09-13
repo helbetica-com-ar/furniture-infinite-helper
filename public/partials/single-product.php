@@ -55,7 +55,7 @@
     </div>
 </main>
 
-<div class="chariho-quote-form">
+<div class="furniture-infinite-quote-form">
     <span class="form-close-icon">X</span>
     <div class="inner-wrap-323">
         <div class="text-wrap-8767">
@@ -70,10 +70,10 @@
 <script type="text/javascript">
     jQuery(document).ready(function(e){
         jQuery(".get-quote-form-btn").click(function(e){
-            jQuery(".chariho-quote-form").show();
+            jQuery(".furniture-infinite-quote-form").show();
         });
         jQuery(".form-close-icon").click(function(e){
-            jQuery(".chariho-quote-form").hide();
+            jQuery(".furniture-infinite-quote-form").hide();
         });
 
     });

@@ -20,7 +20,7 @@
  * @subpackage Startengine_Helper/includes
  * @author     StartEngine <#>
  */
-class Chariho_Helper_Deactivator {
+class Furniture_Infinite_Helper_Deactivator {
 
 	/**
 	 * Short Description. (use period)

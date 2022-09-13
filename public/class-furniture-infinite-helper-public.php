@@ -1,6 +1,6 @@
 <?php
 
-class Chariho_Helper_Public
+class Furniture_Infinite_Helper_Public
 {
 
     private $plugin_name;

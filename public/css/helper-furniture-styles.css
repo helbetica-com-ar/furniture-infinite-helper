@@ -67,7 +67,7 @@
     height: auto;
 }
 
-.collection-image .chariho-grid-items p {
+.collection-image .furniture-infinite-grid-items p {
     text-align: center;
     font-family: inherit;
     font-size: 18px;
@@ -75,7 +75,7 @@
     text-transform: capitalize;
 }
 
-.chariho-grid-items p .prodCount {
+.furniture-infinite-grid-items p .prodCount {
     margin-left: 10px;
     opacity: 0.6;    
 }
@@ -122,7 +122,7 @@
 .at4-visible{
     opacity: 1 !important;
 }
-.chariho-quote-form{
+.furniture-infinite-quote-form{
     display: none;
     position: fixed;
     width: 100%;
@@ -141,7 +141,7 @@
 .gform_confirmation_message_1{
     text-align: center;
 }
-.chariho-quote-form input[type=submit]{
+.furniture-infinite-quote-form input[type=submit]{
     background-color: #87b840 !important;
     color: #fff;
     border: 0px;
@@ -213,7 +213,7 @@
     height: auto;
 }
 
-.collection-image .chariho-grid-items p {
+.collection-image .furniture-infinite-grid-items p {
     text-align: center;
     font-family: inherit;
     font-size: 18px;
@@ -282,7 +282,7 @@
     }   
 }
 @media only screen and (max-width: 750px){
-    .chariho-quote-form{
+    .furniture-infinite-quote-form{
         overflow-y: scroll;
     }
 }

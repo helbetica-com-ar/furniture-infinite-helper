@@ -21,7 +21,7 @@
  * @subpackage Startengine_Helper/includes
  * @author     StartEngine <#>
  */
-class Chariho_Helper_Loader {
+class Furniture_Infinite_Helper_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

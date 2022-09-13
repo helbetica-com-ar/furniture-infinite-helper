@@ -6,8 +6,8 @@
  * @link       #
  * @since      1.0.0
  *
- * @package    Chariho_Helper
- * @subpackage chariho-helper/includes
+ * @package    Furniture_Infinite_Helper
+ * @subpackage furniture-infinite-helper/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Chariho_Helper
- * @subpackage chariho-helper/includes
+ * @package    Furniture_Infinite_Helper
+ * @subpackage furniture-infinite-helper/includes
  * @author     StartEngine <#>
  */
-class Chariho_Helper_Activator {
+class Furniture_Infinite_Helper_Activator {
 
 	/**
 	 * Short Description. (use period)

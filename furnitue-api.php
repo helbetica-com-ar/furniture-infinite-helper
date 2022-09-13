@@ -1,11 +1,11 @@
 <?php
 
-add_shortcode('home_collections', 'chariho_shortcode_home_collections');
-function chariho_shortcode_home_collections()
+add_shortcode('home_collections', 'furniture_infinite_shortcode_home_collections');
+function furniture_infinite_shortcode_home_collections()
 {
 	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;		// Chariho Furniture
-	$pass = FURNITURE_WP_PASS;		// Chariho Furniture 
+	$user = FURNITURE_WP_USER;
+	$pass = FURNITURE_WP_PASS; 
 	$auth = base64_encode($user . ':' . $pass);
 
 	$curl = curl_init($url);
@@ -33,7 +33,7 @@ function chariho_shortcode_home_collections()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('chariho_option_name');
+	# $bearer = get_option('furniture_infinite_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 	$context = stream_context_create($options);
@@ -44,7 +44,7 @@ function chariho_shortcode_home_collections()
 	//echo "<pre>"; print_r($response); echo "</pre>";exit;
 ?>
 	<style type="text/css"></style>
-	<div class="grid-container chariho_shortcode_home_collections collection-image object-home">
+	<div class="grid-container furniture_infinite_shortcode_home_collections collection-image object-home">
 		<?php
 		$manufacturers = $response['furnitureData'][0]['Manufacturers'];
 		$cat_ids = array();
@@ -86,12 +86,12 @@ function chariho_shortcode_home_collections()
 }
 
 
-add_shortcode('collections', 'chariho_shortcode_collections');
-function chariho_shortcode_collections()
+add_shortcode('collections', 'furniture_infinite_shortcode_collections');
+function furniture_infinite_shortcode_collections()
 {
 	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;		// Chariho Furniture
-	$pass = FURNITURE_WP_PASS;		// Chariho Furniture
+	$user = FURNITURE_WP_USER;
+	$pass = FURNITURE_WP_PASS;
 	$auth = base64_encode($user . ':' . $pass);
 
 	$curl = curl_init($url);
@@ -119,7 +119,7 @@ function chariho_shortcode_collections()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('chariho_option_name');
+	# $bearer = get_option('furniture_infinite_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
@@ -138,7 +138,7 @@ function chariho_shortcode_collections()
 			<h1>COLLECTIONS</h1>
 		</div>
 	</section>
-	<div class="grid-container chariho_shortcode_collections collection-image collection-984564">
+	<div class="grid-container furniture_infinite_shortcode_collections collection-image collection-984564">
 		<?php
 
 		$manufacturers = $response['furnitureData'][0]['Manufacturers'];
@@ -177,12 +177,12 @@ function chariho_shortcode_collections()
 }
 
 
-add_shortcode('all-products', 'chariho_shortcode_all_products');
-function chariho_shortcode_all_products()
+add_shortcode('all-products', 'furniture_infinite_shortcode_all_products');
+function furniture_infinite_shortcode_all_products()
 {
 	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;		// Chariho Furniture
-	$pass = FURNITURE_WP_PASS;		// Chariho Furniture
+	$user = FURNITURE_WP_USER;
+	$pass = FURNITURE_WP_PASS;
 	$auth = base64_encode($user . ':' . $pass);
 
 	$curl = curl_init($url);
@@ -210,7 +210,7 @@ function chariho_shortcode_all_products()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('chariho_option_name');
+	# $bearer = get_option('furniture_infinite_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
@@ -244,7 +244,7 @@ function chariho_shortcode_all_products()
 																	?>
 		</div>
 	</section>
-	<div class="grid-container chariho_shortcode_all_products collection-image all-product-collection">
+	<div class="grid-container furniture_infinite_shortcode_all_products collection-image all-product-collection">
 		<?php
 		$cat_id = $_GET['cat-id'];
 		//$man_id = $_GET['man-id'];
@@ -311,12 +311,12 @@ function chariho_shortcode_all_products()
 }
 
 
-add_shortcode('sub-categories', 'chariho_shortcode_sub_categories');
-function chariho_shortcode_sub_categories()
+add_shortcode('sub-categories', 'furniture_infinite_shortcode_sub_categories');
+function furniture_infinite_shortcode_sub_categories()
 {
 	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;		// Chariho Furniture
-	$pass = FURNITURE_WP_PASS;		// Chariho Furniture
+	$user = FURNITURE_WP_USER;
+	$pass = FURNITURE_WP_PASS;
 	$auth = base64_encode($user . ':' . $pass);
 
 	$curl = curl_init($url);
@@ -344,7 +344,7 @@ function chariho_shortcode_sub_categories()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('chariho_option_name');
+	# $bearer = get_option('furniture_infinite_option_name');
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
 	$context = stream_context_create($options);
@@ -368,7 +368,7 @@ function chariho_shortcode_sub_categories()
 														?>
 		</div>
 	</section>
-	<div class="grid-container chariho_shortcode_sub_categories collection-image collection-page-854564">
+	<div class="grid-container furniture_infinite_shortcode_sub_categories collection-image collection-page-854564">
 		<?php
 		$sub_cat_id = $_GET['cat-id'];
 		foreach ($response['categories'] as $col_key => $col_value) {
@@ -392,12 +392,12 @@ function chariho_shortcode_sub_categories()
 }
 
 
-add_shortcode('pdp', 'chariho_shortcode_pdp');
-function chariho_shortcode_pdp()
+add_shortcode('pdp', 'furniture_infinite_shortcode_pdp');
+function furniture_infinite_shortcode_pdp()
 {
 	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;		// Chariho Furniture
-	$pass = FURNITURE_WP_PASS;		// Chariho Furniture
+	$user = FURNITURE_WP_USER;
+	$pass = FURNITURE_WP_PASS;
 	$auth = base64_encode($user . ':' . $pass);
 
 	$curl = curl_init($url);
@@ -425,7 +425,7 @@ function chariho_shortcode_pdp()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('chariho_option_name');
+	# $bearer = get_option('furniture_infinite_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
@@ -470,7 +470,7 @@ function chariho_shortcode_pdp()
 						<h1>PRODUCT</h1>
 					</div>
 				</section>
-				<main class="container chariho_shortcode_pdp detail-product-85">
+				<main class="container furniture_infinite_shortcode_pdp detail-product-85">
 					<div class="left-column">
 						<img data-image="black" class="active" src="<?php echo $img_url; ?>" alt="">
 					</div>

@@ -9,7 +9,7 @@
         $columns = array_column($categories, 'name');
         array_multisort($columns, SORT_ASC, $categories);
         foreach ($categories as $category) {  ?>
-            <div class="chariho-grid-items debugger">
+            <div class="furniture-infinite-grid-items debugger">
                 <?php if( isset($category['sub-cat-id']) ){ ?>
                     <a href="?sub-cat-id=<?= $category['sub-cat-id'] ?>">
                         <img width="244" height="166" src="<?= $upload_dir . '/product-images/cat-'. $category['sub-cat-id'] .'.jpg' ?>">
