@@ -1,70 +1,4 @@
-<style>
-    @media only screen and (min-width: 1024px){
-        .grid-container.collection-image-96.object-1-home {
-            margin-bottom: 50px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-    }
-    @media only screen and (min-width: 800px) and (max-width: 1024px){
-        .grid-container.collection-image-96.object-1-home {
-            margin-bottom: 50px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-    }
-    @media only screen and (min-width: 500px) and (max-width: 800px){
-        .grid-container.collection-image-96.object-1-home {
-            margin-bottom: 50px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-    }
-    @media only screen and (max-width: 500px){
-        .grid-container.collection-image-96.object-1-home {
-            margin-bottom: 50px;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 25px;
-        }
-    }
-
-    .collection-image-96 div {
-        padding: 15px;
-    }
-
-    .collection-image-96 div img {
-        width: 100%;
-        height: auto;
-    }
-
-    .collection-image-96 .chariho-grid-items p {
-        text-align: center;
-        font-family: inherit;
-        font-size: 18px;
-        font-weight: 400;
-        text-transform: capitalize;
-    }
-    .object-1-home img{ 
-        height: 234px !important;
-    }
-    .pagination {
-      display: inline-block;
-    }
-
-    .pagination a {
-      color: black;
-      float: left;
-      padding: 8px 16px;
-      text-decoration: none;
-    }
-    .pro-name{
-        text-transform: capitalize !important;
-    }
-</style>
+<style type="text/css"></style>
 
 <section class="all-products-section">
     
@@ -85,7 +19,7 @@
         </strong>
     </h2>
 
-    <div class="grid-container php-grid-proucts collection-image-96 object-1-home">
+    <div class="grid-container php-grid-proucts collection-image object-home">
         <?php
         $records_available = false;
 

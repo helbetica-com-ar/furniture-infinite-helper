@@ -1,32 +1,4 @@
-<style>
-    .all-products-section .row::after{
-        content: "";
-        clear: both;
-        display: table;
-    }
-    .all-products-section .row .col-md-2{
-        float: left;
-        width: 22.4%;
-        text-align: center;
-        padding: 20px 10px;
-        background-color: #f8f8f8;
-        margin: 15px;
-    }
-    .all-products-section .row .col-md-2:nth-child(4n+1){
-        clear:left;
-    }
-    .pagination {
-      display: inline-block;
-    }
-
-    .pagination a {
-      color: black;
-      float: left;
-      padding: 8px 16px;
-      text-decoration: none;
-    }
-
-</style>
+<style type="text/css"></style>
 
 <section class="all-products-section">
     <div class="row">

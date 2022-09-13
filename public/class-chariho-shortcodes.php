@@ -1,5 +1,5 @@
 <?php
- 
+
 class Chariho_Shortcodes
 {
 
@@ -24,7 +24,7 @@ class Chariho_Shortcodes
     );
 
     private $image_prefix = 'https://infinite-digital-production.s3.us-east-2.amazonaws.com/';
-    
+
 
     public function __construct($plugin_name, $version)
     {
@@ -32,34 +32,31 @@ class Chariho_Shortcodes
         $this->version = $version;
     }
 
-    public function chariho_all_products(){
-        
+    public function chariho_all_products()
+    {
+
         $main_categories_ids = $this->get_main_categories_ids();
-        
+
         if (isset($_GET['search']) && !empty($_GET['search'])) {
 
             $this->chariho_search();
+        } elseif (isset($_GET['cat-id']) && !isset($_GET['sub-cat-id']) && in_array($_GET['cat-id'], $main_categories_ids)) {
 
-        }elseif(isset($_GET['cat-id']) && !isset($_GET['sub-cat-id']) && in_array($_GET['cat-id'], $main_categories_ids )){
-            
             $this->chariho_sub_categories($_GET['cat-id']);
-
-        } elseif(isset($_GET['sub-cat-id'])){
+        } elseif (isset($_GET['sub-cat-id'])) {
 
             $this->chariho_products_by_category();
+        } elseif (isset($_GET['manufacturer-id'])) {
 
-        } elseif(isset($_GET['manufacturer-id'])) {
-            
             $this->chariho_products_by_collection();
-
         } else {
 
             $this->chariho_all_main_categories();
         }
-
     }
 
-    public function chariho_all_main_categories() {
+    public function chariho_all_main_categories()
+    {
 
         $response = $this->chariho_get_api_response();
 
@@ -69,32 +66,31 @@ class Chariho_Shortcodes
 
         foreach ($response['categories'] as $parent_category) {
 
-            if(in_array($parent_category['name'], $display_cat) ){
+            if (in_array($parent_category['name'], $display_cat)) {
 
                 $categories[] = array(
                     'cat-id'    => $parent_category['id'],
                     'name'  => $parent_category['name']
                 );
             }
-
         }
-        
+
         $no_of_records_per_page = 12;
         $total_rows = count($categories);
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-        if( isset($_GET['offset']) && is_numeric($_GET['offset']) ){
+        if (isset($_GET['offset']) && is_numeric($_GET['offset'])) {
 
             $categories = array_splice($categories, $_GET['offset'], $no_of_records_per_page);
-        
-        } else{
-            $categories = array_splice($categories, 0, $no_of_records_per_page);    
+        } else {
+            $categories = array_splice($categories, 0, $no_of_records_per_page);
         }
 
         include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-categories.php';
     }
 
-    public function chariho_sub_categories($id) {
+    public function chariho_sub_categories($id)
+    {
 
         $response = $this->chariho_get_api_response();
 
@@ -112,39 +108,39 @@ class Chariho_Shortcodes
         //         'p_count'   => $this->chariho_count_products('SubCategoryId', $sub_category['id']),
         //     );
         // }
-        
+
         $no_of_records_per_page = 10000;
         $total_rows = count($sub_categories);
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-        if( isset($_GET['offset']) && is_numeric($_GET['offset']) ){
+        if (isset($_GET['offset']) && is_numeric($_GET['offset'])) {
 
             $categories = array_splice($sub_categories, $_GET['offset'], $no_of_records_per_page);
-        
-        } else{
-            $categories = array_splice($sub_categories, 0, $no_of_records_per_page);    
+        } else {
+            $categories = array_splice($sub_categories, 0, $no_of_records_per_page);
         }
 
         include CHARIHO_HELPER_FILEPATH . 'public/partials/sub-category-grid.php';
     }
 
-    public function chariho_products_by_category(){
+    public function chariho_products_by_category()
+    {
 
         $response = $this->chariho_get_api_response();
-        
+
         $categories = array();
 
         foreach ($response['categories'] as $parent_category) {
-            
+
             $categories[] = array(
                 'cat-id'    => $parent_category['id'],
                 'name'  => $parent_category['name']
             );
-            
-            if( isset($parent_category['SubCategories']) && !empty($parent_category['SubCategories']) ){
-                
-                foreach ($parent_category['SubCategories'] as $sub_category){
-                    
+
+            if (isset($parent_category['SubCategories']) && !empty($parent_category['SubCategories'])) {
+
+                foreach ($parent_category['SubCategories'] as $sub_category) {
+
                     $categories[] = array(
                         'sub-cat-id'    => $sub_category['id'],
                         'name'  => $sub_category['name']
@@ -154,50 +150,51 @@ class Chariho_Shortcodes
         }
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
-        
+
         include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-products.php';
     }
 
-    public function chariho_products_by_collection(){
-        
-        if(!isset($_GET['manufacturer-id']) || !is_numeric($_GET['manufacturer-id'])){
-            wp_redirect( '/all-products' );
-        
+    public function chariho_products_by_collection()
+    {
+
+        if (!isset($_GET['manufacturer-id']) || !is_numeric($_GET['manufacturer-id'])) {
+            wp_redirect('/all-products');
         }
         $response = $this->chariho_get_api_response();
-        
+
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
-        
+
         include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
-
     }
 
-    public function get_main_categories() {
-        return $this->main_categories;  
+    public function get_main_categories()
+    {
+        return $this->main_categories;
     }
 
-    public function get_main_categories_ids() {
+    public function get_main_categories_ids()
+    {
 
         $main_categories = $this->get_main_categories();
         $response = $this->chariho_get_api_response();
         $main_categories_ids = [];
 
         foreach ($response['categories'] as $parent_category) {
-            if(in_array($parent_category['name'], $main_categories) ){
+            if (in_array($parent_category['name'], $main_categories)) {
                 array_push($main_categories_ids, $parent_category['id']);
             }
         }
 
         return $main_categories_ids;
-
     }
 
-    public function get_main_category_name_by_id($id) {
+    public function get_main_category_name_by_id($id)
+    {
         $main_categories = $this->get_main_categories();
         $response = $this->chariho_get_api_response();
 
         foreach ($response['categories'] as $parent_category) {
-            if($parent_category['id'] == $id){
+            if ($parent_category['id'] == $id) {
                 return $parent_category['name'];
             }
         }
@@ -205,7 +202,8 @@ class Chariho_Shortcodes
         return '';
     }
 
-    public function chariho_home_categories() {
+    public function chariho_home_categories()
+    {
 
         $response = $this->chariho_get_api_response();
         $categories = $response['categories'];
@@ -214,111 +212,89 @@ class Chariho_Shortcodes
         include CHARIHO_HELPER_FILEPATH . 'public/partials/chariho-home-categories.php';
     }
 
-    public function chariho_collections() {
-        
+    public function chariho_collections()
+    {
+
         $response = $this->chariho_get_api_response();
 
-        ?>
-        <style>
-            .grid-container {     margin-bottom: 50px; display: grid; grid-template-columns:repeat(3, 1fr); gap: 50px}
-
-            .collection-image-96 div {
-                background-color: #f2f2f2;
-                padding: 15px;
-            }
-
-            .collection-image-96 div img {
-                width: 100%;
-                height: auto;
-            }
-
-            .collection-image-96 div .grid-item {
-                text-align: center;
-                font-family: "Open Sans", Sans-serif;
-                font-size: 23px;
-                font-weight: 400;
-                text-transform: uppercase;
-                color: var( --e-global-color-primary );
-            }
-
-            .elementor-widget-container ul {
-                padding: 0 !important;
-            }
-        </style>
+?>
+        <style type="text/css"></style>
         <section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
             <div class="img-heading-su-874">
                 <h1>COLLECTIONS</h1>
             </div>
         </section>
-        <div class="grid-container collection-image-96 collection-984564">
-            <?php 
+        <div class="grid-container collection-image collection-984564">
+            <?php
 
             $manufacturers = $response['furnitureData'][0]['Manufacturers'];
             //echo "<pre>"; print_r($response); echo "</pre>";exit;
             $cat_ids = array();
-            foreach ($manufacturers as $key => $manufacturer) {     
+            foreach ($manufacturers as $key => $manufacturer) {
                 $products = $manufacturer['Furniture'];
                 foreach ($products as $key => $product) {
-                    if (in_array($product['CategoryId'], $cat_ids)){            
-                    }else{
+                    if (in_array($product['CategoryId'], $cat_ids)) {
+                    } else {
                         $cat_ids[] = $product['CategoryId'];
-                    }       
+                    }
                 }
             }
 
             $count_sub_cat = 0;
 
             foreach ($response['categories'] as $col_value) {
-            
+
                 $count_sub_cat = count($col_value['SubCategories']);
-            
-                if($count_sub_cat > 0){
-            
-                    $url = site_url().'/all-products/?sub-cat-id='.$col_value['id'];
-            
-                }else{
-            
-                    $url = site_url().'/all-products/?cat-id='.$col_value['id'];
+
+                if ($count_sub_cat > 0) {
+
+                    $url = site_url() . '/all-products/?sub-cat-id=' . $col_value['id'];
+                } else {
+
+                    $url = site_url() . '/all-products/?cat-id=' . $col_value['id'];
                 }
-            
-                if (in_array($col_value['id'], $cat_ids)){
-            
-                    echo '<div><a href="'.$url.'">';
+
+                if (in_array($col_value['id'], $cat_ids)) {
+
+                    echo '<div><a href="' . $url . '">';
                     echo '<img src="/wp-content/uploads/2022/03/bedroom-bg-300x300.jpg">';
-                    echo '<div class="grid-item">'; print_r($col_value['name']); echo "</div>";
+                    echo '<div class="grid-item">';
+                    print_r($col_value['name']);
+                    echo "</div>";
                     echo '</a></div>';
                 }
             }
             ?>
         </div>
-        <?php
+    <?php
     }
 
-    public function chariho_all_collections(){
+    public function chariho_all_collections()
+    {
 
         $response = $this->chariho_get_api_response();
-        
+
         $collections = $response['collections'];
 
         $no_of_records_per_page = 12;
         $total_rows = count($collections);
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-        if( isset($_GET['offset']) && is_numeric($_GET['offset']) ){
+        if (isset($_GET['offset']) && is_numeric($_GET['offset'])) {
 
             $collections = array_splice($collections, $_GET['offset'], $no_of_records_per_page);
-        
-        } else{
-            $collections = array_splice($collections, 0, $no_of_records_per_page);    
+        } else {
+            $collections = array_splice($collections, 0, $no_of_records_per_page);
         }
 
         include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-collections.php';
     }
 
-    public function chariho_pdp(){
-        
-        if(!isset($_GET['pid']) || !is_numeric($_GET['pid']) && !is_admin() ){
-            wp_redirect( '/all-products' );
+    public function chariho_pdp()
+    {
+
+        if (!isset($_GET['pid']) || !is_numeric($_GET['pid']) && !is_admin()) {
+            wp_redirect('/all-products');
         }
 
         $pid = $_GET['pid'];
@@ -328,23 +304,23 @@ class Chariho_Shortcodes
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $cat_ids = array();
 
-        foreach ($manufacturers as $key => $manufacturer) {     
-        
+        foreach ($manufacturers as $key => $manufacturer) {
+
             $products = $manufacturer['Furniture'];
 
             foreach ($products as $key => $product) {
                 $pro_Id = $product['id'];
                 $image = $product['Images'][0];
                 $img_type = $image['type'];
-        
+
                 if (empty($img_type)) {
                     $img_type = "jpeg";
                 }
-        
+
                 $img_url =  $this->image_prefix . $image['path'];
                 $CategoryId = $product['CategoryId'];
                 $cat_name = "";
-                
+
                 foreach ($response['categories'] as $col_key => $col_value) {
                     if ($col_value['id'] == $CategoryId) {
                         $cat_name = $col_value['name'];
@@ -357,29 +333,28 @@ class Chariho_Shortcodes
                     $sub_cat_id = "";
 
                     foreach ($all_categories as $category) {
-                        
-                        if($category['id'] == $product['CategoryId']){
+
+                        if ($category['id'] == $product['CategoryId']) {
                             $p_cat_id = $category['id'];
                             $p_cat_name = $category['name'];
                         }
-                        
+
                         foreach ($category['SubCategories'] as $sub_category) {
-                            
-                            if($sub_category['id'] == $product['SubCategoryId']){
+
+                            if ($sub_category['id'] == $product['SubCategoryId']) {
                                 $sub_cat_id = $sub_category['id'];
                                 $sub_cat_name = $sub_category['name'];
                             }
                         }
-
                     }
 
-                    foreach ($product['FurnitureVariantOptions'] as $FurnitureVariantOption){
+                    foreach ($product['FurnitureVariantOptions'] as $FurnitureVariantOption) {
                         $furniture_variant_options[] = $FurnitureVariantOption['name'];
                     }
-                    foreach ($product['Options'] as $option){
+                    foreach ($product['Options'] as $option) {
                         $p_options[] = $option['name'];
                     }
-                    foreach ($product['FurnitureVariantOptionValues'] as $FurnitureVariantOptionValue){
+                    foreach ($product['FurnitureVariantOptionValues'] as $FurnitureVariantOptionValue) {
                         $furniture_variant_option_values[] = $FurnitureVariantOptionValues['value'];
                     }
 
@@ -388,7 +363,6 @@ class Chariho_Shortcodes
             }
         } ?>
         <script>
-
             // unkown script
 
             // jQuery(document).ready(function() {
@@ -403,16 +377,17 @@ class Chariho_Shortcodes
         <?php
     }
 
-    public function chariho_set_single_product_page_meta(){
+    public function chariho_set_single_product_page_meta()
+    {
 
-        if(isset($_GET['pid']) && is_numeric($_GET['pid']) ){
+        if (isset($_GET['pid']) && is_numeric($_GET['pid'])) {
 
             $pid = $_GET['pid'];
             $response = $this->chariho_get_api_response();
             $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
-            foreach ($manufacturers as $key => $manufacturer) {     
-        
+            foreach ($manufacturers as $key => $manufacturer) {
+
                 $products = $manufacturer['Furniture'];
 
                 foreach ($products as $product) {
@@ -420,39 +395,41 @@ class Chariho_Shortcodes
                     $pro_Id = $product['id'];
                     $image = $product['Images'][0];
                     $img_type = $image['type'];
-            
+
                     if (empty($img_type)) {
                         $img_type = "jpeg";
                     }
-                    
-                    if($pro_Id == $pid){ 
+
+                    if ($pro_Id == $pid) {
 
                         $img_url =  $this->image_prefix . $image['path'];
 
-                        ?>
+        ?>
 
-                        <meta property="og:title" content="<?= $product['name'] ?>"/>
-                        <meta property="og:image" content="<?= $img_url ?>"/>
-                        <meta property="og:description" content="<?= $product['description'] ?>"/>
+                        <meta property="og:title" content="<?= $product['name'] ?>" />
+                        <meta property="og:image" content="<?= $img_url ?>" />
+                        <meta property="og:description" content="<?= $product['description'] ?>" />
 
-                    <?php
+<?php
                     }
                 }
-            } 
+            }
         }
     }
 
-    public function chariho_get_api_response (){
+    public function chariho_get_api_response()
+    {
 
-        if ( false === ( get_transient( 'furniture_api_data' ) ) ) {
+        if (false === (get_transient('furniture_api_data'))) {
             $this->chariho_set_api_response_transient();
-            return get_transient( 'furniture_api_data' );
+            return get_transient('furniture_api_data');
         } else {
-            return get_transient( 'furniture_api_data' );
+            return get_transient('furniture_api_data');
         }
     }
 
-    private function chariho_set_api_response_transient(){
+    private function chariho_set_api_response_transient()
+    {
 
         $url = "https://furnitureinfinite.com/api/auth/wp-login";
         $user = 'tort.juanpablo+wpstoreadmin02@gmail.com';      // Chariho Furniture
@@ -482,7 +459,7 @@ class Chariho_Shortcodes
 
         $post_response = curl_exec($curl);
         curl_close($curl);
-        $post_response = json_decode($post_response,true);
+        $post_response = json_decode($post_response, true);
         $bearer = $post_response["token"];
         # $bearer = get_option('furniture_api_bearer_token');
         $options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
@@ -496,11 +473,11 @@ class Chariho_Shortcodes
 
 
         // Expire time 6 hours
-        return set_transient( 'furniture_api_data', $response, 60*60*6 );
-
+        return set_transient('furniture_api_data', $response, 60 * 60 * 6);
     }
 
-    public function chariho_check_product_available_in_category($key, $id){
+    public function chariho_check_product_available_in_category($key, $id)
+    {
 
         $response = $this->chariho_get_api_response();
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
@@ -508,8 +485,8 @@ class Chariho_Shortcodes
 
         foreach ($manufacturers as $manufacturer) {
             foreach ($manufacturer['Furniture'] as $product) {
-                
-                if($product[$key] == $id){
+
+                if ($product[$key] == $id) {
                     $availability = true;
                 }
             }
@@ -518,28 +495,29 @@ class Chariho_Shortcodes
         return $availability;
     }
 
-    public function filter_array_by_id($items, $id){
-        
+    public function filter_array_by_id($items, $id)
+    {
+
         foreach ($items as $item) {
-            if($item['id'] == $id) {
+            if ($item['id'] == $id) {
                 return $item;
             }
         }
-    
     }
 
-    public function chariho_search(){
+    public function chariho_search()
+    {
 
         $response = $this->chariho_get_api_response();
-        
-        $manufacturers = $response['furnitureData'][0]['Manufacturers'];
-        
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/search-grid-products.php';
 
+        $manufacturers = $response['furnitureData'][0]['Manufacturers'];
+
+        include CHARIHO_HELPER_FILEPATH . 'public/partials/search-grid-products.php';
     }
 
-    public function chariho_count_products($key, $cat_id){
-    
+    public function chariho_count_products($key, $cat_id)
+    {
+
         $response = $this->chariho_get_api_response();
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $pids = array();
@@ -547,22 +525,21 @@ class Chariho_Shortcodes
         foreach ($manufacturers as $manufacturer) {
             foreach ($manufacturer['Furniture'] as $product) {
 
-                if($cat_id == $product[$key]){
-                
+                if ($cat_id == $product[$key]) {
+
                     $pids[] = $product['id'];
                 }
             }
         }
 
         return count($pids);
-
     }
 
-    public function pre($arg){
-        
+    public function pre($arg)
+    {
+
         echo "<pre>";
         print_r($arg);
         echo "</pre>";
     }
-
 }
