@@ -69,8 +69,8 @@ class Furniture_Infinite_Helper
      */
     public function __construct()
     {
-        if (defined('CHARIHO_HELPER_VERSION')) {
-            $this->version = CHARIHO_HELPER_VERSION;
+        if (defined('FURNITURE_INFINITE_HELPER_VERSION')) {
+            $this->version = FURNITURE_INFINITE_HELPER_VERSION;
         } else {
             $this->version = '1.0.0';
         }

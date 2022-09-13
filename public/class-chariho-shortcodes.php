@@ -86,7 +86,7 @@ class Furniture_Infinite_Shortcodes
             $categories = array_splice($categories, 0, $no_of_records_per_page);
         }
 
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-categories.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-categories.php';
     }
 
     public function furniture_infinite_sub_categories($id)
@@ -120,7 +120,7 @@ class Furniture_Infinite_Shortcodes
             $categories = array_splice($sub_categories, 0, $no_of_records_per_page);
         }
 
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/sub-category-grid.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/sub-category-grid.php';
     }
 
     public function furniture_infinite_products_by_category()
@@ -151,7 +151,7 @@ class Furniture_Infinite_Shortcodes
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-products.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products.php';
     }
 
     public function furniture_infinite_products_by_collection()
@@ -164,7 +164,7 @@ class Furniture_Infinite_Shortcodes
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
     }
 
     public function get_main_categories()
@@ -209,7 +209,7 @@ class Furniture_Infinite_Shortcodes
         $categories = $response['categories'];
         $display_cat = $this->get_main_categories();
 
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/furniture-infinite-home-categories.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/furniture-infinite-home-categories.php';
     }
 
     public function furniture_infinite_collections()
@@ -287,7 +287,7 @@ class Furniture_Infinite_Shortcodes
             $collections = array_splice($collections, 0, $no_of_records_per_page);
         }
 
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/grid-collections.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-collections.php';
     }
 
     public function furniture_infinite_pdp()
@@ -358,7 +358,7 @@ class Furniture_Infinite_Shortcodes
                         $furniture_variant_option_values[] = $FurnitureVariantOptionValues['value'];
                     }
 
-                    include CHARIHO_HELPER_FILEPATH . 'public/partials/single-product.php';
+                    include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/single-product.php';
                 }
             }
         } ?>
@@ -511,7 +511,7 @@ class Furniture_Infinite_Shortcodes
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
-        include CHARIHO_HELPER_FILEPATH . 'public/partials/search-grid-products.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/search-grid-products.php';
     }
 
     public function furniture_infinite_count_products($key, $cat_id)
