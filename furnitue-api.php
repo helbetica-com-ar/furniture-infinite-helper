@@ -33,7 +33,7 @@ function chariho_shortcode_home_collections()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('myplugin_option_name');
+	# $bearer = get_option('chariho_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 	$context = stream_context_create($options);
@@ -119,7 +119,7 @@ function chariho_shortcode_collections()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('myplugin_option_name');
+	# $bearer = get_option('chariho_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
@@ -210,7 +210,7 @@ function chariho_shortcode_all_products()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('myplugin_option_name');
+	# $bearer = get_option('chariho_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
@@ -344,7 +344,7 @@ function chariho_shortcode_sub_categories()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('myplugin_option_name');
+	# $bearer = get_option('chariho_option_name');
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
 	$context = stream_context_create($options);
@@ -425,7 +425,7 @@ function chariho_shortcode_pdp()
 	curl_close($curl);
 	$post_response = json_decode($post_response, true);
 	$bearer = $post_response["token"];
-	# $bearer = get_option('myplugin_option_name');
+	# $bearer = get_option('chariho_option_name');
 
 	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
 
@@ -546,38 +546,3 @@ function chariho_shortcode_pdp()
 <?php
 	//echo "<pre>"; print_r($response['categories']); echo "</pre>";
 }
-
-
-add_action('admin_init', 'myplugin_register_settings');
-function myplugin_register_settings()
-{
-	add_option('myplugin_option_name', 'This is my option value.');
-	register_setting('myplugin_options_group', 'myplugin_option_name', 'myplugin_callback');
-}
-
-add_action('admin_menu', 'myplugin_register_options_page');
-function myplugin_register_options_page()
-{
-	/* myplugin_options_page */
-	add_options_page('Furniture API', 'Furniture API', 'manage_options', 'myplugin', 'myplugin_options_page');
-}
-
-function myplugin_options_page()
-{ ?>
-	<div>
-		<?php //screen_icon(); 
-		?>
-		<h2>Furniture API Bearer Token</h2>
-		<form method="post" action="options.php">
-			<?php settings_fields('myplugin_options_group'); ?>
-			<table>
-				<tr valign="top">
-					<th scope="row"><label for="myplugin_option_name">Bearer Token</label></th>
-					<td><textarea id="myplugin_option_name" name="myplugin_option_name"><?php echo get_option('myplugin_option_name'); ?></textarea></td>
-				</tr>
-			</table>
-			<?php submit_button(); ?>
-		</form>
-	</div><?php
-		}
-			?>
