@@ -198,15 +198,14 @@ function furniture_infinite_shortcode_sub_categories()
 	<style type="text/css"></style>
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
 		<div class="img-heading-su-874">
-			<?php
-			$sub_cat_id = $_GET['cat-id'];
-			foreach ($response['categories'] as $col_key => $col_value) {
-				//echo "<pre>"; print_r($col_value); echo "</pre>";exit;
-				if ($col_value['id'] == $sub_cat_id) {
-			?><h1><?php echo $col_value['name']; ?></h1><?php
-													}
-												}
-														?>
+		<?php
+		$sub_cat_id = $_GET['cat-id'];
+		foreach ($response['categories'] as $col_key => $col_value) {
+			//echo "<pre>"; print_r($col_value); echo "</pre>";exit;
+			if ($col_value['id'] == $sub_cat_id) { ?>
+			<h1><?php echo $col_value['name']; ?></h1><?php
+			}
+		} ?>
 		</div>
 	</section>
 	<div class="grid-container furniture_infinite_shortcode_sub_categories collection-image collection-page-854564">
