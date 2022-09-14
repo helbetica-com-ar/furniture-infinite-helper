@@ -58,7 +58,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_all_main_categories()
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
         $categories = array();
 
@@ -92,7 +92,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_sub_categories($id)
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
         $categories = array();
         $main_category = $this->filter_array_by_id($response['categories'], $id);
@@ -126,7 +126,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_products_by_category()
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
         $categories = array();
 
@@ -160,7 +160,7 @@ class Furniture_Infinite_Shortcodes
         if (!isset($_GET['manufacturer-id']) || !is_numeric($_GET['manufacturer-id'])) {
             wp_redirect('/all-products');
         }
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
@@ -176,7 +176,7 @@ class Furniture_Infinite_Shortcodes
     {
 
         $main_categories = $this->get_main_categories();
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
         $main_categories_ids = [];
 
         foreach ($response['categories'] as $parent_category) {
@@ -191,7 +191,7 @@ class Furniture_Infinite_Shortcodes
     public function get_main_category_name_by_id($id)
     {
         $main_categories = $this->get_main_categories();
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
         foreach ($response['categories'] as $parent_category) {
             if ($parent_category['id'] == $id) {
@@ -205,7 +205,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_home_categories()
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
         $categories = $response['categories'];
         $display_cat = $this->get_main_categories();
 
@@ -215,7 +215,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_collections()
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
 ?>
         <style type="text/css"></style>
@@ -272,7 +272,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_all_collections()
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
         $collections = $response['collections'];
 
@@ -299,7 +299,7 @@ class Furniture_Infinite_Shortcodes
 
         $pid = $_GET['pid'];
         global $wp;
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
         $all_categories = $response['categories'];
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $cat_ids = array();
@@ -383,7 +383,7 @@ class Furniture_Infinite_Shortcodes
         if (isset($_GET['pid']) && is_numeric($_GET['pid'])) {
 
             $pid = $_GET['pid'];
-            $response = $this->furniture_infinite_get_api_response();
+            $response = get_transient('furniture_api_json_data_cron');
             $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
             foreach ($manufacturers as $key => $manufacturer) {
@@ -419,66 +419,13 @@ class Furniture_Infinite_Shortcodes
 
     public function furniture_infinite_get_api_response()
     {
-
-        if (false === (get_transient('furniture_api_data'))) {
-            $this->furniture_infinite_set_api_response_transient();
-            return get_transient('furniture_api_data');
-        } else {
-            return get_transient('furniture_api_data');
-        }
-    }
-
-    private function furniture_infinite_set_api_response_transient(){
-
-        $url = FURNITURE_WP_PATH;
-        $user = FURNITURE_WP_USER;
-        $pass = FURNITURE_WP_PASS; 
-        $auth = base64_encode($user . ':' . $pass);
-
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-        $headers = array(
-            "Accept: application/json",
-            "Authorization: Basic " . $auth . "",
-            "Content-Type: application/x-www-form-urlencoded",
-        );
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-        $data = "email=" . urlencode($user) . "&password=" . urlencode($pass) . "";
-
-
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-        //for debug only!
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-        $post_response = curl_exec($curl);
-        curl_close($curl);
-        $post_response = json_decode($post_response, true);
-        $bearer = $post_response["token"];
-        # $bearer = get_option('furniture_api_bearer_token');
-        $options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
-
-        $context = stream_context_create($options);
-
-        $response = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
-        $response = json_decode($response);
-        $response = json_encode($response, JSON_PRETTY_PRINT);
-        $response = json_decode($response, true);
-
-
-        // Expire time 6 hours
-        return set_transient('furniture_api_data', $response, 60 * 60 * 6);
+        return get_transient('furniture_api_json_data_cron');
     }
 
     public function furniture_infinite_check_product_available_in_category($key, $id)
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $availability = false;
 
@@ -507,7 +454,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_search()
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
@@ -517,7 +464,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_count_products($key, $cat_id)
     {
 
-        $response = $this->furniture_infinite_get_api_response();
+        $response = get_transient('furniture_api_json_data_cron');
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $pids = array();
 

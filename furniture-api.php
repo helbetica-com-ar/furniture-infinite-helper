@@ -3,45 +3,7 @@
 add_shortcode('home_collections', 'furniture_infinite_shortcode_home_collections');
 function furniture_infinite_shortcode_home_collections()
 {
-	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;
-	$pass = FURNITURE_WP_PASS; 
-	$auth = base64_encode($user . ':' . $pass);
-
-	$curl = curl_init($url);
-	curl_setopt($curl, CURLOPT_URL, $url);
-	curl_setopt($curl, CURLOPT_POST, true);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-	$headers = array(
-		"Accept: application/json",
-		"Authorization: Basic " . $auth . "",
-		"Content-Type: application/x-www-form-urlencoded",
-	);
-	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-	$data = "email=" . urlencode($user) . "&password=" . urlencode($pass) . "";
-
-
-	curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-	//for debug only!
-	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-	$post_response = curl_exec($curl);
-	curl_close($curl);
-	$post_response = json_decode($post_response, true);
-	$bearer = $post_response["token"];
-	# $bearer = get_option('furniture_infinite_option_name');
-
-	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
-	$context = stream_context_create($options);
-	$response = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
-	$response = json_decode($response);
-	$response = json_encode($response, JSON_PRETTY_PRINT);
-	$response = json_decode($response, true);
-	//echo "<pre>"; print_r($response); echo "</pre>";exit;
+	$response = get_transient('furniture_api_json_data_cron');
 ?>
 	<style type="text/css"></style>
 	<div class="grid-container furniture_infinite_shortcode_home_collections collection-image object-home">
@@ -89,48 +51,7 @@ function furniture_infinite_shortcode_home_collections()
 add_shortcode('collections', 'furniture_infinite_shortcode_collections');
 function furniture_infinite_shortcode_collections()
 {
-	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;
-	$pass = FURNITURE_WP_PASS;
-	$auth = base64_encode($user . ':' . $pass);
-
-	$curl = curl_init($url);
-	curl_setopt($curl, CURLOPT_URL, $url);
-	curl_setopt($curl, CURLOPT_POST, true);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-	$headers = array(
-		"Accept: application/json",
-		"Authorization: Basic " . $auth . "",
-		"Content-Type: application/x-www-form-urlencoded",
-	);
-	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-	$data = "email=" . urlencode($user) . "&password=" . urlencode($pass) . "";
-
-
-	curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-	//for debug only!
-	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-	$post_response = curl_exec($curl);
-	curl_close($curl);
-	$post_response = json_decode($post_response, true);
-	$bearer = $post_response["token"];
-	# $bearer = get_option('furniture_infinite_option_name');
-
-	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
-
-	$context = stream_context_create($options);
-
-	$response = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
-	$response = json_decode($response);
-	$response = json_encode($response, JSON_PRETTY_PRINT);
-	$response = json_decode($response, true);
-
-	//echo "<pre>"; print_r($response); echo "</pre>";exit;
+	$response = get_transient('furniture_api_json_data_cron');
 ?>
 	<style type="text/css"></style>
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
@@ -180,49 +101,7 @@ function furniture_infinite_shortcode_collections()
 add_shortcode('all-products', 'furniture_infinite_shortcode_all_products');
 function furniture_infinite_shortcode_all_products()
 {
-	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;
-	$pass = FURNITURE_WP_PASS;
-	$auth = base64_encode($user . ':' . $pass);
-
-	$curl = curl_init($url);
-	curl_setopt($curl, CURLOPT_URL, $url);
-	curl_setopt($curl, CURLOPT_POST, true);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-	$headers = array(
-		"Accept: application/json",
-		"Authorization: Basic " . $auth . "",
-		"Content-Type: application/x-www-form-urlencoded",
-	);
-	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-	$data = "email=" . urlencode($user) . "&password=" . urlencode($pass) . "";
-
-
-	curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-	//for debug only!
-	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-	$post_response = curl_exec($curl);
-	curl_close($curl);
-	$post_response = json_decode($post_response, true);
-	$bearer = $post_response["token"];
-	# $bearer = get_option('furniture_infinite_option_name');
-
-	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
-
-	$context = stream_context_create($options);
-
-	$response = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
-	$response = json_decode($response);
-	$response = json_encode($response, JSON_PRETTY_PRINT);
-	$response = json_decode($response, true);
-
-	//echo "<pre>"; print_r($response); echo "</pre>";exit;
-	//echo "<h1>Products</h1><ul>";
+	$response = get_transient('furniture_api_json_data_cron');
 ?>
 	<style type="text/css"></style>
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
@@ -314,45 +193,7 @@ function furniture_infinite_shortcode_all_products()
 add_shortcode('sub-categories', 'furniture_infinite_shortcode_sub_categories');
 function furniture_infinite_shortcode_sub_categories()
 {
-	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;
-	$pass = FURNITURE_WP_PASS;
-	$auth = base64_encode($user . ':' . $pass);
-
-	$curl = curl_init($url);
-	curl_setopt($curl, CURLOPT_URL, $url);
-	curl_setopt($curl, CURLOPT_POST, true);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-	$headers = array(
-		"Accept: application/json",
-		"Authorization: Basic " . $auth . "",
-		"Content-Type: application/x-www-form-urlencoded",
-	);
-	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-	$data = "email=" . urlencode($user) . "&password=" . urlencode($pass) . "";
-
-
-	curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-	//for debug only!
-	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-	$post_response = curl_exec($curl);
-	curl_close($curl);
-	$post_response = json_decode($post_response, true);
-	$bearer = $post_response["token"];
-	# $bearer = get_option('furniture_infinite_option_name');
-	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
-
-	$context = stream_context_create($options);
-	$response = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
-	$response = json_decode($response);
-	$response = json_encode($response, JSON_PRETTY_PRINT);
-	$response = json_decode($response, true);
-	//echo "<h1>Sub Categories</h1><ul>";
+	$response = get_transient('furniture_api_json_data_cron');
 ?>
 	<style type="text/css"></style>
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
@@ -395,45 +236,7 @@ function furniture_infinite_shortcode_sub_categories()
 add_shortcode('pdp', 'furniture_infinite_shortcode_pdp');
 function furniture_infinite_shortcode_pdp()
 {
-	$url = FURNITURE_WP_PATH;
-	$user = FURNITURE_WP_USER;
-	$pass = FURNITURE_WP_PASS;
-	$auth = base64_encode($user . ':' . $pass);
-
-	$curl = curl_init($url);
-	curl_setopt($curl, CURLOPT_URL, $url);
-	curl_setopt($curl, CURLOPT_POST, true);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-	$headers = array(
-		"Accept: application/json",
-		"Authorization: Basic " . $auth . "",
-		"Content-Type: application/x-www-form-urlencoded",
-	);
-	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-	$data = "email=" . urlencode($user) . "&password=" . urlencode($pass) . "";
-
-
-	curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-	//for debug only!
-	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-	$post_response = curl_exec($curl);
-	curl_close($curl);
-	$post_response = json_decode($post_response, true);
-	$bearer = $post_response["token"];
-	# $bearer = get_option('furniture_infinite_option_name');
-
-	$options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
-
-	$context = stream_context_create($options);
-	$response = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
-	$response = json_decode($response);
-	$response = json_encode($response, JSON_PRETTY_PRINT);
-	$response = json_decode($response, true);
+	$response = get_transient('furniture_api_json_data_cron');
 
 	$pid = $_GET['pid'];
 
