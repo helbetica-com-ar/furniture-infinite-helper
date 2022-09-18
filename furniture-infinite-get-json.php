@@ -74,13 +74,13 @@ function furniture_infinite_get_json(){
         # ENDPOINT /api/wp
         $api_response_wp = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
         $api_response_wp = json_decode($api_response_wp);
+        $api_response_wp = json_encode($api_response_wp, JSON_PRETTY_PRINT);
         $api_response_wp = json_decode($api_response_wp, true); 
         $furnitureInfinite_furnitureData__name = $api_response_wp['furnitureData'][0]['name'];
         $furnitureInfinite_furnitureData__Manufacturers = $api_response_wp['furnitureData'][0]['Manufacturers'];
         $furnitureInfinite__categories = $api_response_wp['categories'];
         $furnitureInfinite__collections = $api_response_wp['collections'];
-        update_option('furniture_api_options_Furniture_Infinite_given_store_name', $furnitureInfinite_furnitureData__name, '', false); // autoload false 
-        $api_response_wp = json_encode($api_response_wp, JSON_PRETTY_PRINT);
+        update_option('furniture_api_options_Furniture_Infinite_given_store_name',  $furnitureInfinite_furnitureData__name, '', false); // autoload false 
         // echo "<pre><code>" . $api_response_wp . "</code></pre>"; 
         // print_r($api_response_wp);
         set_transient('furniture_api_json_data_wp', $api_response_wp, 63115200); // Expire time 2 years ## REVIEW
@@ -91,9 +91,9 @@ function furniture_infinite_get_json(){
         # ENDPOINT /api/wp/general-info
         $api_response_wp_gral_info = file_get_contents("https://furnitureinfinite.com/api/wp/general-info", false, $context);
         $api_response_wp_gral_info = json_decode($api_response_wp_gral_info);
+        $api_response_wp_gral_info = json_encode($api_response_wp_gral_info, JSON_PRETTY_PRINT);
         $api_response_wp_gral_info = json_decode($api_response_wp_gral_info, true);
         $furnitureInfinite__woodTypes = $api_response_wp_gral_info['woodTypes'];
-        $api_response_wp_gral_info = json_encode($api_response_wp_gral_info, JSON_PRETTY_PRINT);
         // echo "<pre><code>" . $api_response_wp_gral_info . "</code></pre>"; 
         // print_r($api_response_wp_gral_info); 
         set_transient('furniture_api_json_data_wp_gral_info', $api_response_wp_gral_info, 63115200); // Expire time 2 years ## REVIEW
