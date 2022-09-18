@@ -30,7 +30,7 @@ class Furniture_Infinite_Helper_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+		require_once plugin_dir_path(__FILE__) . '../furniture-infinite-get-json.php';
 	}
 
 }

@@ -1,7 +1,7 @@
 <style type="text/css"></style>
 
 <section class="all-products-section">
-    <h2 style="text-align: center;">Broswe Products By Categories</h2>
+    <h2 style="text-align: center;">Browse Products By Categories [all-products] grid-categories-php</h2>
     <div class="grid-container php-grid-cateogries collection-image object-home">
         <?php
         $upload_dir = wp_upload_dir();

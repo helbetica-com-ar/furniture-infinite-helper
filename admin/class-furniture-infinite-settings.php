@@ -24,8 +24,13 @@ class Furniture_Infinite_Settings
     }
 
     public function furniture_infinite_register_settings() {
-        
-        add_option( 'furniture_api_bearer_token', 'This is my option value.');
+
+        #add_option( 'furniture_api_bearer_token', 'This is my option value.');
+        if (get_option('some_option')) {
+            update_option('some_option', 'value_we_want_to_add');
+        } else {
+            add_option('some_option', 'value_we_want_to_add');
+        }
         register_setting( 'furniture_api_options_group', 'furniture_api_bearer_token', 'furniture_api_plugin_callback' );
     }
 

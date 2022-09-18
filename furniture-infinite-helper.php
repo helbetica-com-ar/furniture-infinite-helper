@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              #
+ * @link              https://furnitureinfinite.com
  * @since             1.0.0
  * @package           Furniture_Infinite_helper
  *
  * @wordpress-plugin
  * Plugin Name:       Furniture Infinite Helper
- * Plugin URI:        #
- * Description:       #
- * Version:           5.6.5
- * Author:            WPSPIN LLC
- * Author URI:        https://wpspins.com/?utm_source=StartEngineHelperPlugin
+ * Plugin URI:        https://furnitureinfinite.com
+ * Description:       Plugin syncs furniture items from Furniture Infite Database using wpStoreAdmin user from Infinite Digital Solutions
+ * Version:           1.2.0
+ * Author:            Juan Pablo Tort
+ * Author URI:        https://helbetica.com.ar/resume/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       furniture-infinite-helper

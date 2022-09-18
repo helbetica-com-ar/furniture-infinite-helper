@@ -40,28 +40,31 @@ class Furniture_Infinite_Shortcodes
         if (isset($_GET['search']) && !empty($_GET['search'])) {
 
             $this->furniture_infinite_search();
+
         } elseif (isset($_GET['cat-id']) && !isset($_GET['sub-cat-id']) && in_array($_GET['cat-id'], $main_categories_ids)) {
 
             $this->furniture_infinite_sub_categories($_GET['cat-id']);
+
         } elseif (isset($_GET['sub-cat-id'])) {
 
             $this->furniture_infinite_products_by_category();
+
         } elseif (isset($_GET['manufacturer-id'])) {
 
             $this->furniture_infinite_products_by_collection();
+
         } else {
 
             $this->furniture_infinite_all_main_categories();
+
         }
     }
 
     public function furniture_infinite_all_main_categories()
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
-
+        $response = get_transient('furniture_api_json_data_wp');
         $categories = array();
-
         $display_cat = $this->get_main_categories();
 
         foreach ($response['categories'] as $parent_category) {
@@ -80,19 +83,22 @@ class Furniture_Infinite_Shortcodes
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
         if (isset($_GET['offset']) && is_numeric($_GET['offset'])) {
-
+            
             $categories = array_splice($categories, $_GET['offset'], $no_of_records_per_page);
+
         } else {
+            
             $categories = array_splice($categories, 0, $no_of_records_per_page);
+            
         }
 
-        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-categories.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-categories.php';
     }
 
     public function furniture_infinite_sub_categories($id)
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
 
         $categories = array();
         $main_category = $this->filter_array_by_id($response['categories'], $id);
@@ -120,13 +126,13 @@ class Furniture_Infinite_Shortcodes
             $categories = array_splice($sub_categories, 0, $no_of_records_per_page);
         }
 
-        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/sub-category-grid.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/sub-category-grid.php';
     }
 
     public function furniture_infinite_products_by_category()
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
 
         $categories = array();
 
@@ -151,7 +157,7 @@ class Furniture_Infinite_Shortcodes
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
-        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products.php';
     }
 
     public function furniture_infinite_products_by_collection()
@@ -160,11 +166,11 @@ class Furniture_Infinite_Shortcodes
         if (!isset($_GET['manufacturer-id']) || !is_numeric($_GET['manufacturer-id'])) {
             wp_redirect('/all-products');
         }
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
-        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
     }
 
     public function get_main_categories()
@@ -176,7 +182,7 @@ class Furniture_Infinite_Shortcodes
     {
 
         $main_categories = $this->get_main_categories();
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
         $main_categories_ids = [];
 
         foreach ($response['categories'] as $parent_category) {
@@ -191,7 +197,7 @@ class Furniture_Infinite_Shortcodes
     public function get_main_category_name_by_id($id)
     {
         $main_categories = $this->get_main_categories();
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
 
         foreach ($response['categories'] as $parent_category) {
             if ($parent_category['id'] == $id) {
@@ -205,17 +211,17 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_home_categories()
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
         $categories = $response['categories'];
         $display_cat = $this->get_main_categories();
 
-        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/furniture-infinite-home-categories.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/furniture-infinite-home-categories.php';
     }
 
     public function furniture_infinite_collections()
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
 
 ?>
         <style type="text/css"></style>
@@ -272,7 +278,7 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_all_collections()
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
 
         $collections = $response['collections'];
 
@@ -287,7 +293,7 @@ class Furniture_Infinite_Shortcodes
             $collections = array_splice($collections, 0, $no_of_records_per_page);
         }
 
-        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-collections.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-collections.php';
     }
 
     public function furniture_infinite_pdp()
@@ -299,7 +305,7 @@ class Furniture_Infinite_Shortcodes
 
         $pid = $_GET['pid'];
         global $wp;
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
         $all_categories = $response['categories'];
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $cat_ids = array();
@@ -358,7 +364,7 @@ class Furniture_Infinite_Shortcodes
                         $furniture_variant_option_values[] = $FurnitureVariantOptionValues['value'];
                     }
 
-                    include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/single-product.php';
+                    include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/single-product.php';
                 }
             }
         } ?>
@@ -383,7 +389,7 @@ class Furniture_Infinite_Shortcodes
         if (isset($_GET['pid']) && is_numeric($_GET['pid'])) {
 
             $pid = $_GET['pid'];
-            $response = get_transient('furniture_api_json_data_cron');
+            $response = get_transient('furniture_api_json_data_wp');
             $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
             foreach ($manufacturers as $key => $manufacturer) {
@@ -419,13 +425,13 @@ class Furniture_Infinite_Shortcodes
 
     public function furniture_infinite_get_api_response()
     {
-        return get_transient('furniture_api_json_data_cron');
+        return get_transient('furniture_api_json_data_wp');
     }
 
     public function furniture_infinite_check_product_available_in_category($key, $id)
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $availability = false;
 
@@ -454,17 +460,17 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_search()
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
 
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
 
-        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/search-grid-products.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/search-grid-products.php';
     }
 
     public function furniture_infinite_count_products($key, $cat_id)
     {
 
-        $response = get_transient('furniture_api_json_data_cron');
+        $response = get_transient('furniture_api_json_data_wp');
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         $pids = array();
 

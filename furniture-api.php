@@ -3,7 +3,7 @@
 add_shortcode('home_collections', 'furniture_infinite_shortcode_home_collections');
 function furniture_infinite_shortcode_home_collections()
 {
-	$response = get_transient('furniture_api_json_data_cron');
+	$response = get_transient('furniture_api_json_data_wp');
 ?>
 	<style type="text/css"></style>
 	<div class="grid-container furniture_infinite_shortcode_home_collections collection-image object-home">
@@ -51,7 +51,7 @@ function furniture_infinite_shortcode_home_collections()
 add_shortcode('collections', 'furniture_infinite_shortcode_collections');
 function furniture_infinite_shortcode_collections()
 {
-	$response = get_transient('furniture_api_json_data_cron');
+	$response = get_transient('furniture_api_json_data_wp');
 ?>
 	<style type="text/css"></style>
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
@@ -98,10 +98,10 @@ function furniture_infinite_shortcode_collections()
 }
 
 
-add_shortcode('all-products', 'furniture_infinite_shortcode_all_products');
+# add_shortcode('all-products', 'furniture_infinite_shortcode_all_products');
 function furniture_infinite_shortcode_all_products()
 {
-	$response = get_transient('furniture_api_json_data_cron');
+	$response = get_transient('furniture_api_json_data_wp');
 ?>
 	<style type="text/css"></style>
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
@@ -114,13 +114,13 @@ function furniture_infinite_shortcode_all_products()
 				//echo "<pre>"; print_r($col_value); echo "</pre>";exit;
 				if ($col_value['id'] == $cat_id) {
 					foreach ($col_value['SubCategories'] as $sub_col_key => $sub_col_value) {
-						if ($col_value['id'] == $cat_id) {
-			?><h1><?php print_r($sub_col_value['name']);	?></h1><?php
-																}
-															}
-														}
-													}
-																	?>
+						if ($col_value['id'] == $cat_id) { ?>
+							<h1><?php print_r($sub_col_value['name']);	?></h1><?php
+						}
+					}
+				}
+			}
+			?>
 		</div>
 	</section>
 	<div class="grid-container furniture_infinite_shortcode_all_products collection-image all-product-collection">
@@ -193,7 +193,7 @@ function furniture_infinite_shortcode_all_products()
 add_shortcode('sub-categories', 'furniture_infinite_shortcode_sub_categories');
 function furniture_infinite_shortcode_sub_categories()
 {
-	$response = get_transient('furniture_api_json_data_cron');
+	$response = get_transient('furniture_api_json_data_wp');
 ?>
 	<style type="text/css"></style>
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
@@ -235,7 +235,7 @@ function furniture_infinite_shortcode_sub_categories()
 add_shortcode('pdp', 'furniture_infinite_shortcode_pdp');
 function furniture_infinite_shortcode_pdp()
 {
-	$response = get_transient('furniture_api_json_data_cron');
+	$response = get_transient('furniture_api_json_data_wp');
 
 	$pid = $_GET['pid'];
 
