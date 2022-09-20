@@ -143,8 +143,9 @@ class Furniture_Infinite_Helper
     {
         // Adding settings
         $plugin_settings = new Furniture_Infinite_Settings($this->get_plugin_name(), $this->get_version());
-        $this->loader->add_action('admin_init', $plugin_settings, 'furniture_infinite_register_settings');
-        $this->loader->add_action('admin_menu', $plugin_settings, 'furniture_infinite_register_options_page');
+        # $this->loader->add_action('admin_init', $plugin_settings, 'furniture_infinite_register_settings');
+        # $this->loader->add_action('admin_menu', $plugin_settings, 'furniture_infinite_register_options_page');
+        $this->loader->add_action('admin_menu', $plugin_settings, 'furniture_infinite_helper_call_status_page');
     }
 
 

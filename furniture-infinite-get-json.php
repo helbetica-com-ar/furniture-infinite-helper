@@ -7,12 +7,12 @@ if (!defined('ABSPATH')) {
     require_once dirname(__FILE__) . '/../../../wp-load.php';
 }
 
-# echo 'DIR: ' . dirname(__FILE__) . "\n";
+# echo 'DIR: ' . dirname(__FILE__) . "\n"; 
 
 
 function furniture_infinite_get_json(){
 
-    echo 'furniture_infinite_get_json executed' . PHP_EOL;
+    # echo 'furniture_infinite_get_json executed' . PHP_EOL;
 
     # BASIC AUTHENTICATION POST REQUEST TO FURNITURE INFINITE DATABASE WITH 'WPSTOREADMIN' E-MAIL AND PASSWORD
 
@@ -45,61 +45,68 @@ function furniture_infinite_get_json(){
     $post_response = curl_exec($curl);
     curl_close($curl);
     $post_response = json_decode($post_response, true);
-    $bearer = $post_response["token"];
 
-    if ($post_response["message"]) {
-
-        if (false === get_transient('furniture_api_sync_message')) {
-            set_transient('furniture_api_sync_message', $post_response["message"], 5 * HOUR_IN_SECONDS); // Expire time 5 hours
-        }
-        
+    # First check for Invalid response (incorrect email or password)
+    if (isset($post_response["message"])) {
+        # echo 'message present, set it!' . PHP_EOL;
+        # echo 'sync status false' . PHP_EOL;
+        set_transient('furniture_api_sync_message', $post_response["message"], 5 * HOUR_IN_SECONDS); // Expire time 5 hours
+        set_transient('furniture_api_sync_status', 'false', 63115200); // Expire time 2 years ## REVIEW
     } else {
-
+        # echo 'delete message if present' . PHP_EOL;
         delete_transient('furniture_api_sync_message');
-        
-        $lenght = strlen($bearer);
-        if (!empty($bearer) && $lenght > 80) {
-            # echo 'TOKEN LENGHT IS VALID' . PHP_EOL;
-            set_transient('furniture_api_sync_status', true, 63115200); // Expire time 2 years ## REVIEW
-        } else {
-            # echo 'INVALID LOGIN' . PHP_EOL; 
-            set_transient('furniture_api_sync_status', false, 63115200); // Expire time 2 years ## REVIEW
-        }
-
-        # BEARER TOKEN AUTHENTICATION GET RESPONSE WITH JSON DATA
-
-        $options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
-        $context = stream_context_create($options);
-
-        # ENDPOINT /api/wp
-        $api_response_wp = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
-        $api_response_wp = json_decode($api_response_wp);
-        $api_response_wp = json_encode($api_response_wp, JSON_PRETTY_PRINT);
-        $api_response_wp = json_decode($api_response_wp, true); 
-        $furnitureInfinite_furnitureData__name = $api_response_wp['furnitureData'][0]['name'];
-        $furnitureInfinite_furnitureData__Manufacturers = $api_response_wp['furnitureData'][0]['Manufacturers'];
-        $furnitureInfinite__categories = $api_response_wp['categories'];
-        $furnitureInfinite__collections = $api_response_wp['collections'];
-        update_option('furniture_api_options_Furniture_Infinite_given_store_name',  $furnitureInfinite_furnitureData__name, '', false); // autoload false 
-        // echo "<pre><code>" . $api_response_wp . "</code></pre>"; 
-        // print_r($api_response_wp);
-        set_transient('furniture_api_json_data_wp', $api_response_wp, 63115200); // Expire time 2 years ## REVIEW
-        set_transient('furniture_api_json_data_Manufacturers', $furnitureInfinite_furnitureData__Manufacturers, 63115200); // Expire time 2 years ## REVIEW
-        set_transient('furniture_api_json_data_categories', $furnitureInfinite__categories, 63115200); // Expire time 2 years ## REVIEW
-        set_transient('furniture_api_json_data_collections', $furnitureInfinite__collections, 63115200); // Expire time 2 years ## REVIEW
-
-        # ENDPOINT /api/wp/general-info
-        $api_response_wp_gral_info = file_get_contents("https://furnitureinfinite.com/api/wp/general-info", false, $context);
-        $api_response_wp_gral_info = json_decode($api_response_wp_gral_info);
-        $api_response_wp_gral_info = json_encode($api_response_wp_gral_info, JSON_PRETTY_PRINT);
-        $api_response_wp_gral_info = json_decode($api_response_wp_gral_info, true);
-        $furnitureInfinite__woodTypes = $api_response_wp_gral_info['woodTypes'];
-        // echo "<pre><code>" . $api_response_wp_gral_info . "</code></pre>"; 
-        // print_r($api_response_wp_gral_info); 
-        set_transient('furniture_api_json_data_wp_gral_info', $api_response_wp_gral_info, 63115200); // Expire time 2 years ## REVIEW
-        set_transient('furniture_api_json_data_woodTypes', $furnitureInfinite__woodTypes, 63115200); // Expire time 2 years ## REVIEW
     }
+    
+    # Then check if response has Token
+    if(isset($post_response["token"])){
+        # echo 'token is set' . PHP_EOL;
+        $bearer = $post_response["token"];
+        $lenght = strlen($bearer);
+        # Then check if Token is not empty and Token lenght is valid
+        if (!empty($bearer) && $lenght > 80) {
+            # echo 'token not empty and lenght is valid' . PHP_EOL;
+            # echo 'sync status true' . PHP_EOL;
+            set_transient('furniture_api_sync_status', 'true', 63115200); // Expire time 2 years ## REVIEW
 
+            # BEARER TOKEN AUTHENTICATION GET RESPONSE WITH JSON DATA
+
+            $options = ["http" => ["header" => "Authorization: Bearer $bearer"]];
+            $context = stream_context_create($options);
+
+            # ENDPOINT /api/wp
+            $api_response_wp = file_get_contents("https://furnitureinfinite.com/api/wp", false, $context);
+            $api_response_wp = json_decode($api_response_wp);
+            $api_response_wp = json_encode($api_response_wp, JSON_PRETTY_PRINT);
+            $api_response_wp = json_decode($api_response_wp, true);
+            $furnitureInfinite_furnitureData_name = $api_response_wp['furnitureData'][0]['name'];
+            $furnitureInfinite_furnitureData_Manufacturers = $api_response_wp['furnitureData'][0]['Manufacturers'];
+            $furnitureInfinite_categories = $api_response_wp['categories'];
+            $furnitureInfinite_collections = $api_response_wp['collections'];
+            update_option('furniture_api_options_Furniture_Infinite_given_store_name',  $furnitureInfinite_furnitureData_name, '', false); // autoload false 
+            update_option('furniture_api_options_Furniture_Infinite_last_save',  date("l d\, M Y \- h:i"), '', false); // autoload 
+            // echo "<pre><code>" . $api_response_wp . "</code></pre>"; 
+            // print_r($api_response_wp);
+            set_transient('furniture_api_json_data_wp', $api_response_wp, 63115200); // Expire time 2 years ## REVIEW
+            set_transient('furniture_api_json_data_Manufacturers', $furnitureInfinite_furnitureData_Manufacturers, 63115200); // Expire time 2 years ## REVIEW
+            set_transient('furniture_api_json_data_categories', $furnitureInfinite_categories, 63115200); // Expire time 2 years ## REVIEW
+            set_transient('furniture_api_json_data_collections', $furnitureInfinite_collections, 63115200); // Expire time 2 years ## REVIEW
+
+            # ENDPOINT /api/wp/general-info
+            $api_response_wp_gral_info = file_get_contents("https://furnitureinfinite.com/api/wp/general-info", false, $context);
+            $api_response_wp_gral_info = json_decode($api_response_wp_gral_info);
+            $api_response_wp_gral_info = json_encode($api_response_wp_gral_info, JSON_PRETTY_PRINT);
+            $api_response_wp_gral_info = json_decode($api_response_wp_gral_info, true);
+            $furnitureInfinite_woodTypes = $api_response_wp_gral_info['woodTypes'];
+            // echo "<pre><code>" . $api_response_wp_gral_info . "</code></pre>"; 
+            // print_r($api_response_wp_gral_info); 
+            set_transient('furniture_api_json_data_wp_gral_info', $api_response_wp_gral_info, 63115200); // Expire time 2 years ## REVIEW
+            set_transient('furniture_api_json_data_woodTypes', $furnitureInfinite_woodTypes, 63115200); // Expire time 2 years ## REVIEW
+
+        } else {
+            # echo 'sync status false' . PHP_EOL;
+            set_transient('furniture_api_sync_status', 'Token Lenght Invalid', 63115200); // Expire time 2 years ## REVIEW
+        }
+    }
 }
 
 if (
@@ -107,14 +114,12 @@ if (
     defined('FURNITURE_WP_USER') && 
     defined('FURNITURE_WP_PASS')
     ) {
+    update_option('furniture_api_options_wpStoreAdmin_credentials_present', 'true', '', false); // autoload false
     # echo 'Custom CONSTANTS for wpStoreAdmin user were declared on WP-CONFIG File' . PHP_EOL; 
-    update_option('furniture_api_options_wpStoreAdmin_credentials__present', true, false); // autoload false
     furniture_infinite_get_json();
 } else {
-    # REPORT
-    # return 'Furniture Infinite User Credentials missing in Configuration File';
-    update_option('furniture_api_options_wpStoreAdmin_credentials__present', false, false); // autoload false
-
+    update_option('furniture_api_options_wpStoreAdmin_credentials_present', 'false', '', false); // autoload false
+    # echo 'Furniture Infinite User Credentials missing in Configuration File' . PHP_EOL; 
 }
 
 
