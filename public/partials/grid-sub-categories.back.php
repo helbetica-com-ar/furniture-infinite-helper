@@ -10,7 +10,7 @@
             
             <div class="col-md-2">
 
-                <?php if(isset($_GET['cat-id']) && $_GET['cat-id'] == $category['id'] ) ?>
+                <?php if(isset($_GET['cat-id']) && $_GET['cat-id'] == $category['id'] ){ ?>
                 
                     <?php foreach ($category['SubCategories'] as $sub_category) {  ?>
                         

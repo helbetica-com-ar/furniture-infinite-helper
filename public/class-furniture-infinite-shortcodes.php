@@ -105,9 +105,7 @@ class Furniture_Infinite_Shortcodes
         $main_category_name = $this->get_main_category_name_by_id($id);
         $sub_categories = $main_category['SubCategories'];
 
-
         // foreach ($sub_categories as $sub_category) {
-
         //     $categories[] = array(
         //         'cat-id'    => $sub_category['id'],
         //         'name'      => $sub_category['name'],
@@ -212,10 +210,18 @@ class Furniture_Infinite_Shortcodes
     {
 
         $response = get_transient('furniture_api_json_data_wp');
+        # $response_categories = get_transient('furniture_api_json_data_categories');
+        # print("<div id='var-dump' style='display:none;'><pre>".print_r($response_categories,true)."</pre></div>");
+        # print("<pre>" . print_r($response_categories, true) . "</pre>"); 
+        $count = count($response_categories);
+        for ($i = 0; $i < $count; $i++) {
+            #echo $response_categories[$i]['name'] . '<br>';
+        }
+
         $categories = $response['categories'];
         $display_cat = $this->get_main_categories();
 
-        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/furniture-infinite-home-categories.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/home-categories.php';
     }
 
     public function furniture_infinite_collections()
@@ -225,12 +231,12 @@ class Furniture_Infinite_Shortcodes
 
 ?>
         <style type="text/css"></style>
-        <section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
+        <section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);"> 
             <div class="img-heading-su-874">
                 <h1>COLLECTIONS</h1>
             </div>
         </section>
-        <div class="grid-container collection-image collection-984564">
+        <div class="grid-container class-furniture-infinite-shortcode-php collection-image collection-984564">
             <?php
 
             $manufacturers = $response['furnitureData'][0]['Manufacturers'];

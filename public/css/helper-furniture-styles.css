@@ -4,11 +4,6 @@
     grid-template-columns:repeat(3, 1fr); 
     gap: 50px;
 }
-.grid-container.collection-image.object-home .grid-item {
-    display: flex;
-    font-size: 1em;
-    padding-bottom: 5px;
-}
 
 .grid-container.collection-image.color-5432 div .grid-item {
     display: flex;
@@ -402,7 +397,60 @@
     .grid-container.collection-image.object-home {
         margin-bottom: 50px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 25px;
     }
+}
+
+
+
+.grid-container.collection-image.object-home a.grid-item {
+    display: flex;
+    font-size: 1em;
+    padding-bottom: 5px;
+    width: 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    position: relative;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.grid-container.collection-image.object-home a.grid-item:before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.54);
+    background-size: 100%;
+    top: 0;
+    left: 0;
+}
+.grid-container.collection-image.object-home a.grid-item:hover{
+    background-size: auto 130%;
+}
+.grid-container.collection-image.object-home a.grid-item h3,
+.grid-container.collection-image.object-home a.grid-item p {
+    color: white;
+    z-index: 1;
+}
+
+.grid-container.collection-image.object-home a.grid-item p {
+    opacity: 0;
+    -webkit-transition: .15s .3s all ease;
+    -moz-transition: .15s .3s all ease;
+    -ms-transition: .15s .3s all ease;
+    -o-transition: .15s .3s all ease;
+    transition: .15s .3s all ease;
+}
+.grid-container.collection-image.object-home a.grid-item:hover p {
+    opacity: 1;
 }

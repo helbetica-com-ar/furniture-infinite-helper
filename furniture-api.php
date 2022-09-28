@@ -59,7 +59,7 @@ function furniture_infinite_shortcode_collections()
 			<h1>COLLECTIONS</h1>
 		</div>
 	</section>
-	<div class="grid-container furniture_infinite_shortcode_collections collection-image collection-984564">
+	<div class="grid-container furniture_api_php furniture_infinite_shortcode_collections collection-image collection-984564">
 		<?php
 
 		$manufacturers = $response['furnitureData'][0]['Manufacturers'];
@@ -267,7 +267,7 @@ function furniture_infinite_shortcode_pdp()
 			if ($pid == $pro_Id) {
 				//echo "<pre>"; print_r($product); echo "</pre>";exit;
 	?>
-				<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
+				<section class="img-products-45 furniture-api-php" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
 					<div class="img-heading-su-874">
 						<h1>PRODUCT</h1>
 					</div>
