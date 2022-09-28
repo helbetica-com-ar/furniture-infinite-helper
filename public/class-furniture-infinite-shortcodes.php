@@ -124,7 +124,7 @@ class Furniture_Infinite_Shortcodes
             $categories = array_splice($sub_categories, 0, $no_of_records_per_page);
         }
 
-        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/sub-category-grid.php';
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-sub-category.php';
     }
 
     public function furniture_infinite_products_by_category()
