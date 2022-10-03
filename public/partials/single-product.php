@@ -1,18 +1,25 @@
 <div class="breadcrumbs">
+    <?php /* 
     <a href="<?= site_url() ?>">Home /</a>
     <a href="<?= site_url() ?>/all-products/">Furniture /</a>
     <a href="/all-products?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
     <a href="/all-products?sub-cat-id=<?= $sub_cat_id ?>"><?= (isset($sub_cat_name))? $sub_cat_name  : '' ?></a>
+    */ ?>
+    <a href="<?= site_url() ?>">Home /</a>
+    <a href="<?= site_url() ?>/furniture/">Furniture /</a>
+    <a href="/furniture/<?= (isset($p_cat_name))? strtolower($p_cat_name) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
+    <a href="/furniture/<?= (isset($p_cat_name))? strtolower($p_cat_name) . "/" : '' ?>?sub-cat-id=<?= $sub_cat_id ?>"><?= (isset($sub_cat_name))? $sub_cat_name  : '' ?></a>
 </div>
-<main class="container detail-product-85">
+<main class="container detail-product"> 
     <div class="left-column" id="img">
-        <div id="container">
+        <div id="container" class="boxShadow">
             <img id="hover-effect" data-image="black" class="active" src="<?php echo $img_url; ?>" alt="">
         </div>
     </div>
 
     <div class="right-column">
         <div class="product-description">
+            <?php #var_dump($product); ?>
             <div id="desc">
                 <h1><?= $product['name'] ?></h1>
                 <p><?= $product['description'] ?></p>
@@ -57,12 +64,14 @@
 
 <div class="furniture-infinite-quote-form">
     <span class="form-close-icon">X</span>
-    <div class="inner-wrap-323">
-        <div class="text-wrap-8767">
+    <div class="form-inner-wrapper">
+        <div class="form-header-wrapper">
             <h6><?php echo $product['name']  ?></h6>
             <p>I would like more information.</p>
         </div>
+        <div class="form-shortcode-wrapper">
         <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='sku=". $product['sku'] ."&name=". $product['name'] ."&url=". home_url(add_query_arg(array(), $wp->request)) ."']") ?>
+        </div>
     </div>
 </div>
 
