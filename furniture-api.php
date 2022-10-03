@@ -272,7 +272,7 @@ function furniture_infinite_shortcode_pdp()
 						<h1>PRODUCT</h1>
 					</div>
 				</section>
-				<main class="container furniture_infinite_shortcode_pdp detail-product-85">
+				<main class="container furniture_infinite_shortcode_pdp detail-product">
 					<div class="left-column">
 						<img data-image="black" class="active" src="<?php echo $img_url; ?>" alt="">
 					</div>
