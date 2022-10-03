@@ -122,7 +122,7 @@ class Furniture_Infinite_Helper
         $plugin_public = new Furniture_Infinite_Helper_Public($this->get_plugin_name(), $this->get_version());
 
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles', 999, 1);
-        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 999, 1);
+        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 1000, 1);
 
 
 
@@ -133,6 +133,7 @@ class Furniture_Infinite_Helper
         add_shortcode('collections', array($Furniture_Infinite_Shortcodes,'furniture_infinite_collections'));
         add_shortcode('pdp', array($Furniture_Infinite_Shortcodes,'furniture_infinite_pdp'));
         add_shortcode('all-collections', array($Furniture_Infinite_Shortcodes,'furniture_infinite_all_collections'));
+        add_shortcode('manufacturers-collections', array($Furniture_Infinite_Shortcodes,'furniture_infinite_manufacturers_collections'));
         
         // add meta tags
         $this->loader->add_action('wp_head', $Furniture_Infinite_Shortcodes, 'furniture_infinite_set_single_product_page_meta', 1);        
