@@ -21,7 +21,7 @@ class Furniture_Infinite_Shortcodes
         "Outdoor",
         "Specialty",
         "Youth"
-    );
+    ); 
 
     private $image_prefix = 'https://infinite-digital-production.s3.us-east-2.amazonaws.com/';
 
@@ -213,15 +213,17 @@ class Furniture_Infinite_Shortcodes
         # $response_categories = get_transient('furniture_api_json_data_categories');
         # print("<div id='var-dump' style='display:none;'><pre>".print_r($response_categories,true)."</pre></div>");
         # print("<pre>" . print_r($response_categories, true) . "</pre>"); 
-        $count = count($response_categories);
-        for ($i = 0; $i < $count; $i++) {
-            #echo $response_categories[$i]['name'] . '<br>';
-        }
+        #$count = count($response_categories);
+        #for ($i = 0; $i < $count; $i++) {
+        #    echo $response_categories[$i]['name'] . '<br>';
+        #}
 
         $categories = $response['categories'];
         $display_cat = $this->get_main_categories();
+        $ordered_categories = array_column($categories, 'name');
+        array_multisort($ordered_categories, SORT_ASC, $categories);
 
-        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/home-categories.php';
+        include FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/home-categories.php';
     }
 
     public function furniture_infinite_collections()
@@ -293,7 +295,6 @@ class Furniture_Infinite_Shortcodes
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
         if (isset($_GET['offset']) && is_numeric($_GET['offset'])) {
-
             $collections = array_splice($collections, $_GET['offset'], $no_of_records_per_page);
         } else {
             $collections = array_splice($collections, 0, $no_of_records_per_page);
