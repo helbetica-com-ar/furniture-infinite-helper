@@ -13,8 +13,8 @@ if ( defined('FURNITURE_CAT_BTN_LEYEND') ) {
 $upload_dir = wp_upload_dir();
 $upload_dir = $upload_dir['baseurl'];
 
-$ordered_categories = array_column($categories, 'name');
-array_multisort($ordered_categories, SORT_ASC, $categories);
+#$ordered_categories = array_column($categories, 'name'); 
+#array_multisort($ordered_categories, SORT_ASC, $categories);     
 
     foreach ($categories as $category) {
         
