@@ -2,7 +2,7 @@
 
 <section class="all-products-section">
 
-    <h2 style="text-align: center;">Broswe Products By Collections</h2>
+    <h2 style="text-align: center;">Browse Products By Collections</h2> 
 
     <div class="row">
         
@@ -10,8 +10,7 @@
             
             <div class="col-md-2">
                     <a href="/all-products?manufacturer-id=<?= $collection['ManufacturerId'] ?>">
-                        <img src="<?= site_url() ?>/wp-content/uploads/2022/05/download.png">
-                        <p><?= trim( ucwords( strtolower( $collection['name'] ) ) ) ?></p>
+                        <?= trim( ucwords( strtolower( $collection['name'] ) ) ) ?>
                     </a>
             </div>
 
