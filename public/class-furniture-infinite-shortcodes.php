@@ -21,7 +21,7 @@ class Furniture_Infinite_Shortcodes
         "Outdoor",
         "Specialty",
         "Youth"
-    ); 
+    );
 
     private $image_prefix = 'https://infinite-digital-production.s3.us-east-2.amazonaws.com/';
 
@@ -49,7 +49,7 @@ class Furniture_Infinite_Shortcodes
 
             $this->furniture_infinite_products_by_category();
 
-        } elseif (isset($_GET['manufacturer-id'])) {
+        } elseif (isset($_GET['collection-id'])) {
 
             $this->furniture_infinite_products_by_collection();
 
@@ -161,14 +161,15 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_products_by_collection()
     {
 
-        if (!isset($_GET['manufacturer-id']) || !is_numeric($_GET['manufacturer-id'])) {
-            wp_redirect('/all-products');
-        }
+        #if (!isset($_GET['manufacturer-id']) || !is_numeric($_GET['manufacturer-id'])) { wp_redirect('/all-products'); }
+        #$response = get_transient('furniture_api_json_data_wp');
+        #$manufacturers = $response['furnitureData'][0]['Manufacturers'];
+        #include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
+        if (!isset($_GET['collection-id']) || !is_numeric($_GET['collection-id'])) { wp_redirect('/furniture'); }
         $response = get_transient('furniture_api_json_data_wp');
-
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-collection-s-products.php';
 
-        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
     }
 
     public function get_main_categories()
@@ -290,7 +291,7 @@ class Furniture_Infinite_Shortcodes
 
         $collections = $response['collections'];
 
-        $no_of_records_per_page = 12;
+        $no_of_records_per_page = 30;
         $total_rows = count($collections);
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
@@ -301,6 +302,25 @@ class Furniture_Infinite_Shortcodes
         }
 
         include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-collections.php';
+    }
+
+    public function furniture_infinite_manufacturers_collections()
+    {
+
+        $response = get_transient('furniture_api_json_data_wp');
+
+        $collections = $response['collections'];
+        #$responseManufacturers = get_transient('furniture_api_json_data_Manufacturers');
+        #$response = get_transient('furniture_api_json_data_wp');
+        #$collections = $response['collections'];
+        #$manufacturers = $response['furnitureData'][0]['Manufacturers'];
+        #$collections = get_transient('furniture_api_json_data_collections');
+        $manufacturers = get_transient('furniture_api_json_data_Manufacturers');
+        $manufacturersCollections = [];
+        foreach ($manufacturers as $manufacturer) {
+            $manufacturersCollections[$manufacturer['id']] = array( "manufacturerName" => $manufacturer['name'], "collectionsArray" => []);
+        }
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-manufacturers-collections.php';
     }
 
     public function furniture_infinite_pdp()

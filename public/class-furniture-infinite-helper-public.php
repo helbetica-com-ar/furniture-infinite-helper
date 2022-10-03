@@ -19,7 +19,8 @@ class Furniture_Infinite_Helper_Public
 
     public function enqueue_scripts()
     {
-        wp_enqueue_script($this->plugin_name . '-init', plugin_dir_url(__FILE__) . 'js/init-furniture-infinite.js', array('jQuery'), rand(), true);
+        wp_register_script('init-furniture-infinite-js', plugin_dir_url(__FILE__) . 'js/init-furniture-infinite.js', array('jquery'), date('U'), true);
+        wp_enqueue_script('init-furniture-infinite-js');
     }
 
 }
