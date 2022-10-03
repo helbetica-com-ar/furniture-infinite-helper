@@ -18,7 +18,7 @@
         } 
         foreach ($subCategories as $subCategory){  ?>
         <div class="furniture-infinite-grid-items">
-            <a href="<?= site_url() ?>/all-products?sub-cat-id=<?php echo $subCategory["id"]; ?>">
+            <a href="<?= get_permalink() ?>?sub-cat-id=<?php echo $subCategory["id"]; ?>">
                 <?php 
                 $manufacturers = $response['furnitureData'][0]['Manufacturers'];
                 foreach ($manufacturers as $manufacturer) {
