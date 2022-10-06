@@ -1,5 +1,4 @@
 <section class="all-products-section">
-    <!-- <h2 style="text-align: center;">Browse Manufacturers By Collections</h2> -->
     <?php 
     foreach ($collections as $collection) {  
         array_push($manufacturersCollections[$collection['ManufacturerId']]['collectionsArray'], array( "collectionName" => $collection['name'], "collectionID" => $collection['id']));
@@ -9,10 +8,6 @@
         <?php 
         $columns = array_column($manufacturersCollections, 'manufacturerName');
         array_multisort($columns, SORT_ASC, $manufacturersCollections);
-
-        echo "<pre id='var-dump' style='display:none;'>";
-        print_r($manufacturersCollections);
-        echo "</pre>";
 
         $counter = 0;
         $placeholder = 0;
@@ -24,7 +19,7 @@
             $counter++;
             if ( count($manufacturerCollection['collectionsArray']) >= 1 ){
                 if ( $counter == 1 ){ $html_prefix .= '<div class="tab">'; }
-                if (isset($_GET['showing-collecion']) && $_GET['showing-collecion'] == sanitize_title($manufacturerCollection['manufacturerName']) ) {
+                if (isset($_GET['showing-collection']) && $_GET['showing-collection'] == sanitize_title($manufacturerCollection['manufacturerName']) ) {
                     $tablinks .=  '<a class="tablinks active" data-manufacturer="'. sanitize_title($manufacturerCollection['manufacturerName'])  .'" data-tab="Tab' . $counter . '" onclick="openTab(event, \'Tab' . $counter . '\')">' . $manufacturerCollection['manufacturerName']  . '</a>';
                 } else {
                     $tablinks .=  '<a class="tablinks" data-manufacturer="'. sanitize_title($manufacturerCollection['manufacturerName']) .'" data-tab="Tab' . $counter . '" onclick="openTab(event, \'Tab' . $counter . '\')">' . $manufacturerCollection['manufacturerName']  . '</a>';
@@ -37,7 +32,7 @@
                 array_multisort($columns, SORT_ASC, $itsCollections);
                 $collectionCounter = 0;
                 foreach ($itsCollections as $theCollection) {
-                    if (!isset($_GET['showing-collecion']) && $placeholder == 0) {
+                    if (!isset($_GET['showing-collection']) && $placeholder == 0) {
                         $tabs .= '<div id="TabPlaceholder" class="tabcontent tabcontent-placeholder active"><div class="tabcontent-wrapper-placeholder"><h3>Choose a Manufacturer from the left...</h3></div><!--/.tabcontent-wrapper--></div><!--/.tabcontent-->';
                     }
                     $placeholder++;

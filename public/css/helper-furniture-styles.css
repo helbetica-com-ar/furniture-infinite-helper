@@ -308,10 +308,12 @@ a:focus {
 
 
 
+.home .manufacturersCollections-wrapper {
+    margin-top: 3em;
+}
 .manufacturersCollections-wrapper {
     display: flex;
     flex-direction: row; 
-    margin-top: 3em;
 }
 .manufacturersCollections-wrapper .tab {
     border: 1px solid #ccc;
@@ -366,6 +368,7 @@ a:focus {
 .manufacturersCollections-wrapper .tab:before { content: 'Our Manufacturers';}
 .manufacturersCollections-wrapper .tabcontent:not(.tabcontent-placeholder):before { 
     content: 'Their Collections'; 
+    /* content: attr(data-before) " | Their Collections"; */
     content: attr(data-before);
 }
 
@@ -425,7 +428,8 @@ a:focus {
 
 
 /* Pre-footer margins */
-.container.detail-product {
+.container.detail-product,
+.manufacturersCollections-wrapper {
     margin-bottom:12em;
 }
 

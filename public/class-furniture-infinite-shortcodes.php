@@ -11,7 +11,6 @@ class Furniture_Infinite_Shortcodes
     private $auth_token;
 
     private $main_categories = array(
-        "Bar",
         "Bathroom",
         "Bedroom",
         "Dining Room",
@@ -167,6 +166,7 @@ class Furniture_Infinite_Shortcodes
         #include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-products-by-collection.php';
         if (!isset($_GET['collection-id']) || !is_numeric($_GET['collection-id'])) { wp_redirect('/furniture'); }
         $response = get_transient('furniture_api_json_data_wp');
+        $collections = get_transient('furniture_api_json_data_collections');
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
         include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-collection-s-products.php';
 
@@ -516,9 +516,8 @@ class Furniture_Infinite_Shortcodes
 
     public function pre($arg)
     {
-
-        echo "<pre>";
-        print_r($arg);
+        echo "<pre id='var-dump' style='display:none;'>";
+        print_r($manufacturersCollections);
         echo "</pre>";
     }
 }

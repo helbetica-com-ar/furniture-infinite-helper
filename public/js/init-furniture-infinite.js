@@ -1,18 +1,24 @@
 (function ($) {
+    
     // $(window).load(function () { });
+    
     if ($('.tablinks.active').length){
-        which = $('.tablinks.active').attr('data-tab');
-        $('#' + which).show();
+        which = $('.tablinks.active');
+        $('#' + which.attr('data-tab')).show();
+        addPseudoContentBeforeSufix(which);
     }
+    
     $(".tablinks").on("click", function () {
-        //alert($(this).text().slice(-1));
-        if (  $(this).text().slice(-1) != 's'){
-            $('#' + $(this).attr("data-tab")).attr("data-before", $(this).text() + "'s Collection");
-        } else {
-            $('#' + $(this).attr("data-tab")).attr("data-before", $(this).text() + "' Collection");
-        }
-        
+        addPseudoContentBeforeSufix($(this));
     });
+
+    function addPseudoContentBeforeSufix(selector){
+        if ($(selector).text().slice(-1) != 's') {
+            $('#' + $(selector).attr("data-tab")).attr("data-before", $(selector).text() + "'s Collection");
+        } else {
+            $('#' + $(selector).attr("data-tab")).attr("data-before", $(selector).text() + "' Collection");
+        }
+    }
 
 
 }(jQuery));
