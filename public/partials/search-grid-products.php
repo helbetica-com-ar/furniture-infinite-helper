@@ -28,7 +28,7 @@
                     ?>
                                       
                     <div class="furniture-infinite-grid-items">
-                        <a href="/product-details/?pid=<?= $product['id'] ?>">
+                        <a href="/product-details/?from-furniture-item=<?= sanitize_title($product['name']) ?>&pid=<?= $product['id'] ?>">
                             
                             <img src="<?= $img_url ?>">
                             <p class="pro-name"><?= $product['name'] ?></p>

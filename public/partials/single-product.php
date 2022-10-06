@@ -7,8 +7,8 @@
     */ ?>
     <a href="<?= site_url() ?>">Home /</a>
     <a href="<?= site_url() ?>/furniture/">Furniture /</a>
-    <a href="/furniture/<?= (isset($p_cat_name))? strtolower($p_cat_name) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
-    <a href="/furniture/<?= (isset($p_cat_name))? strtolower($p_cat_name) . "/" : '' ?>?sub-cat-id=<?= $sub_cat_id ?>"><?= (isset($sub_cat_name))? $sub_cat_name  : '' ?></a>
+    <a href="/furniture/<?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
+    <a href="/furniture/<?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?showing-subcategory=<?= (isset($sub_cat_name))? strtolower(str_replace(" ", "-", $sub_cat_name))  : '' ?>&sub-cat-id=<?= $sub_cat_id ?>"><?= (isset($sub_cat_name))? $sub_cat_name  : '' ?></a>
 </div>
 <main class="container detail-product"> 
     <div class="left-column" id="img">
