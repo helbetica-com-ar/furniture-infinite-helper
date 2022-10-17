@@ -56,21 +56,33 @@
                             <th class="cell label title-highlight" colspan="2"><label for="pd_variant_<?= strtolower(str_replace(" ", "-", $p_variants_options[0]['name'])) ?>"><?= $p_variants_options[0]['name'] ?> <span class="which"></span></label></th>
                         </tr><?php
                             $p_variant_counter = 1;
+                            $p_variants_option_value_vulues = array();
                             foreach($p_variant_values as $p_variant_value){
-                                    $option_value_id = $p_variant_value['FurnitureVariantOptionValueId'];
-                                    foreach($p_variants_option_values as $p_variants_option_value){
-                                        if( $p_variants_option_value['id'] == $option_value_id ){ ?>
-                        <tr class="row-highlight row-variant row-single-variant" data-variant="<?= $p_variant_counter; ?>">
-                            <td class="cell value single" colspan="2"><p><?= ucwords(strtolower($p_variants_option_value['value'])); ?></p></td>
-                        </tr><?php
-                                        }
+                                $option_value_id = $p_variant_value['FurnitureVariantOptionValueId'];
+                                foreach($p_variants_option_values as $p_variants_option_value){
+                                    if( $p_variants_option_value['id'] == $option_value_id ){ 
+                                        array_push($p_variants_option_value_vulues, $p_variants_option_value['value']);
                                     }
-                                $p_variant_counter++;
+                                }
+                            }
+                            asort($p_variants_option_value_vulues);
+                            foreach ($p_variants_option_value_vulues as $p_variants_option_value_vulue) { ?>
+                        <tr class="row-highlight row-variant row-single-variant" data-variant="<?= $p_variant_counter; ?>">
+                        <?php 
+                                    if(ucwords(strtolower($p_variants_option_value_vulue)) == 'Qswo'){ ?>
+                            <td class="cell value single" colspan="2"><p>Quarter Sawn White Oak</p></td><?php
+                                    } elseif(ucwords(strtolower($p_variants_option_value_vulue)) == 'Rustic Qswo'){ ?>
+                            <td class="cell value single" colspan="2"><p>Rustic Quarter Sawn White Oak</p></td><?php
+                                    } else { ?>
+                            <td class="cell value single this" colspan="2"><p><?= ucwords(strtolower($p_variants_option_value_vulue)); ?></p></td><?php
+                                    } ?>
+                        </tr><?php
+                            $p_variant_counter++;
                             }
 
                         } elseif (sizeof($p_variants_options) > 1) { ?>
                             <tr class="row-highlight-header row-variants-header">
-                                <th class="cell label title-highlight" colspan="2"><label for="pd_variants">Variants <span class="which"></span></label></th>
+                                <th class="cell label title-highlight" colspan="2"><label for="pd_variants">Alternatives <span class="which"></span></label></th>
                             </tr><?php 
                             for($i = 0; $i < count($p_variants); ++$i) { 
                             $variantID = $p_variants[$i]['id']; ?>
@@ -112,8 +124,14 @@
                                         if($p_variant_value['FurnitureVariantId'] == $variantID ){
                                             $option_value_id = $p_variant_value['FurnitureVariantOptionValueId'];
                                             foreach($p_variants_option_values as $p_variants_option_value){
-                                                if( $p_variants_option_value['id'] == $option_value_id ){ ?>
+                                                if( $p_variants_option_value['id'] == $option_value_id ){ 
+                                                    if(ucwords(strtolower($p_variants_option_value['value'])) == 'Qswo'){ ?>
+                                        <p>Quarter Sawn White Oak</p><?php
+                                                    } elseif(ucwords(strtolower($p_variants_option_value['value'])) == 'Rustic Qswo'){ ?>
+                                        <p>Rustic Quarter Sawn White Oak</p><?php
+                                                    } else { ?>
                                         <p><?= ucwords(strtolower($p_variants_option_value['value'])); ?></p><?php
+                                                    } 
                                                 }
                                             }
                                         }
@@ -137,9 +155,17 @@
             <button class="get-quote-form-btn" disabled>Get A Quote
                 <small>Select <span class="option">an OPTION</span><span class="variant">a <?= strtoupper($which_variant) ?></span></small>
             </button><?php 
+            } elseif (isset($p_variants) && sizeof($p_variants_options) == 1) { 
+                $which_variant = $p_variants_options[0]['name'];
+                if( substr( $which_variant, -1 == "s") ){
+                    $which_variant = substr_replace( $which_variant, "", -1);
+                } ?>
+            <button class="get-quote-form-btn" disabled>Get A Quote
+                <small>Select </span><span class="variant">a <?= strtoupper($which_variant) ?></span></small>
+            </button><?php 
             } elseif ((isset($p_options) && sizeof($p_options) > 1) &&  (isset($p_variants) && sizeof($p_variants) > 1)) { ?>
             <button class="get-quote-form-btn" disabled>Get A Quote
-                <small>Select <span class="option">an OPTION</span><span class="variant">a VARIANT</span></small>
+                <small>Select <span class="option">an OPTION</span><span class="variant">an ALTERNATIVE</span></small>
             </button><?php 
             } elseif (isset($p_options) && sizeof($p_options) > 1) { ?>
             <button class="get-quote-form-btn" disabled>Get A Quote
@@ -147,7 +173,7 @@
             </button><?php 
             } elseif (isset($p_variants) && sizeof($p_variants_options) > 1) { ?>
             <button class="get-quote-form-btn" disabled>Get A Quote
-                <small>Select <span class="variant">a VARIANT</span></small>
+                <small>Select <span class="variant">an ALTERNATIVE</span></small>
             </button><?php 
             } else {  ?>
             <button class="get-quote-form-btn">Get A Quote</button><?php 

@@ -5,6 +5,15 @@
     optionSelected = false;
     variantSelected = false;
 
+    if ($('.row-options-header').length){ 
+    } else {
+        optionSelected = true; 
+    }
+    if ($('.row-variants-header').length) { 
+    } else {
+        variantSelected = true;
+    }
+
     $('.row-options-header, .row-variants-header').on('click', function () {
         $(this).toggleClass('open');
     });
