@@ -1,7 +1,37 @@
 (function ($) {
     
     // $(window).load(function () { });
-    
+
+    optionSelected = false;
+    variantSelected = false;
+
+    $('.row-options-header, .row-variants-header').on('click', function () {
+        $(this).toggleClass('open');
+    });
+
+    $('tr.row-option').on('click', function () {
+        $('tr.row-option').removeClass('active');
+        $(this).addClass('active');
+        $('.row-options-header label span.which').html($(this).attr('data-option')).show();
+        optionSelected = true;
+        $('.get-quote-form-btn small span.option').remove();
+        if (variantSelected == true){
+            $('.get-quote-form-btn').removeAttr('disabled');
+            $('.get-quote-form-btn small').html('ALL SET!!');
+        }
+    });
+    $('tr.row-variant').on('click', function () {
+        $('tr.row-variant').removeClass('active');
+        $(this).addClass('active');
+        $('.row-variants-header label span.which').html($(this).attr('data-variant')).show();
+        variantSelected = true;
+        $('.get-quote-form-btn small span.variant').remove();
+        if (optionSelected == true) {
+            $('.get-quote-form-btn').removeAttr('disabled');
+            $('.get-quote-form-btn small').html('ALL SET!!');
+        }
+    });
+
     if ($('.tablinks.active').length){
         which = $('.tablinks.active');
         $('#' + which.attr('data-tab')).show();

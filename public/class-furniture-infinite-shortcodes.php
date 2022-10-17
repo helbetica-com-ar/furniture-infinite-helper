@@ -14,6 +14,7 @@ class Furniture_Infinite_Shortcodes
         "Bathroom",
         "Bedroom",
         "Dining Room",
+        "DUMMY Test Furniture Category",
         "Kitchen",
         "Living Room",
         "Office",
@@ -326,8 +327,8 @@ class Furniture_Infinite_Shortcodes
     public function furniture_infinite_pdp()
     {
 
-        if (!isset($_GET['pid']) || !is_numeric($_GET['pid']) && !is_admin()) {
-            wp_redirect('/all-products');
+        if ((!isset($_GET['pid']) || !is_numeric($_GET['pid'])) && !is_admin()) {
+            wp_redirect('/furniture');
         }
 
         $pid = $_GET['pid'];
@@ -409,6 +410,101 @@ class Furniture_Infinite_Shortcodes
         </script>
         <?php
     }
+    public function furniture_infinite_furniture_item()
+    {
+
+        if ((!isset($_GET['pid']) || !is_numeric($_GET['pid'])) && !is_admin()) {
+            wp_redirect('/furniture');
+        }
+
+        $pid = $_GET['pid'];
+        #global $wp;
+        $response = get_transient('furniture_api_json_data_wp');
+        $all_categories = $response['categories'];
+        $manufacturers = $response['furnitureData'][0]['Manufacturers'];
+
+        foreach ($manufacturers as $key => $manufacturer) 
+        {
+            $products = $manufacturer['Furniture'];
+            foreach ($products as $key => $product)
+            {
+                
+                $loop_pid = $product['id'];
+
+                if ($pid == $loop_pid) {
+                    
+                    // GOTCHA! Got the product required by _GET!
+                    
+                    $image = $product['Images'][0];
+                    if (empty($image['type'])) { $img_type = "jpeg"; } else { $img_type = $image['type']; }
+                    $img_url =  $this->image_prefix . $image['path']; 
+
+                    foreach ($product['Options'] as $option) {
+                        $p_options[] = $option['name'];
+                    }
+                    asort($p_options);
+                    
+                    foreach ($product['FurnitureVariantOptions'] as $FurnitureVariantOption) {
+                        $p_variants_options[] = $FurnitureVariantOption;
+                    }
+
+                    foreach ($product['FurnitureVariantValues'] as $FurnitureVariantValue) {
+                        $p_variant_values[] = $FurnitureVariantValue;
+                    }
+
+                    foreach ($product['FurnitureVariantOptionValues'] as $FurnitureVariantOptionValue) {
+                        $p_variants_option_values[] = $FurnitureVariantOptionValue; 
+                    }
+
+                    foreach ($product['FurnitureVariants'] as $FurnitureVariant) {
+                        $p_variants[] = $FurnitureVariant;
+                    }
+
+                    // Loop through Category and SubCategory to use data on breadcrumb
+                    if(!empty($product['CategoryId'])){ 
+                        
+                        $p_cat_id = $product['CategoryId']; 
+
+                        foreach ($all_categories as $category) 
+                        {
+                            if ($category['id'] != $p_cat_id) {
+
+                                continue 1;
+
+                            } elseif($category['id'] == $p_cat_id) {
+
+                                $p_cat_name = $category['name'];
+
+                                if(!empty($product['SubCategoryId'])){ 
+
+                                    $p_sub_cat_id = $product['SubCategoryId']; 
+
+                                    foreach ($category['SubCategories'] as $sub_category) 
+                                    {
+                                        if ($sub_category['id'] != $p_sub_cat_id) {
+
+                                            continue 1;
+
+                                        } elseif ($sub_category['id'] == $p_sub_cat_id) {
+
+                                            $p_sub_cat_name = $sub_category['name'];
+                                            break 1;
+                                            
+                                        }
+                                    }
+                                }
+                                break 1;
+                            }
+
+                        }
+                    }
+                    include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/single-furniture-item.php';
+                    break 2;
+                }
+
+            }
+        } 
+    }
 
     public function furniture_infinite_set_single_product_page_meta()
     {
@@ -433,17 +529,12 @@ class Furniture_Infinite_Shortcodes
                         $img_type = "jpeg";
                     }
 
-                    if ($pro_Id == $pid) {
-
-                        $img_url =  $this->image_prefix . $image['path'];
-
-        ?>
-
-                        <meta property="og:title" content="<?= $product['name'] ?>" />
+                    if ($pro_Id == $pid) 
+                    {
+                        $img_url =  $this->image_prefix . $image['path']; ?>
+                        <meta property="og:title" content="<?= esc_html($product['name']) ?>" />
                         <meta property="og:image" content="<?= $img_url ?>" />
-                        <meta property="og:description" content="<?= $product['description'] ?>" />
-
-<?php
+                        <meta property="og:description" content="<?= esc_html($product['description']) ?>" /><?php
                     }
                 }
             }
@@ -516,8 +607,8 @@ class Furniture_Infinite_Shortcodes
 
     public function pre($arg)
     {
-        echo "<pre id='var-dump' style='display:none;'>";
-        print_r($manufacturersCollections);
+        echo "<pre>";
+        print_r($arg);
         echo "</pre>";
     }
 }

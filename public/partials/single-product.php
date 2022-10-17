@@ -10,7 +10,7 @@
     <a href="/furniture/<?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
     <a href="/furniture/<?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?showing-subcategory=<?= (isset($sub_cat_name))? strtolower(str_replace(" ", "-", $sub_cat_name))  : '' ?>&sub-cat-id=<?= $sub_cat_id ?>"><?= (isset($sub_cat_name))? $sub_cat_name  : '' ?></a>
 </div>
-<main class="container detail-product"> 
+<main class="container product-details"> 
     <div class="left-column" id="img">
         <div id="container" class="boxShadow">
             <img id="hover-effect" data-image="black" class="active" src="<?php echo $img_url; ?>" alt="">
@@ -19,7 +19,7 @@
 
     <div class="right-column">
         <div class="product-description">
-            <?php #var_dump($product); ?>
+            <?php var_dump($product); ?>
             <div id="desc">
                 <h1><?= $product['name'] ?></h1>
                 <p><?= $product['description'] ?></p>
