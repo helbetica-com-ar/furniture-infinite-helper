@@ -422,7 +422,7 @@ class Furniture_Infinite_Shortcodes
         $response = get_transient('furniture_api_json_data_wp');
         $all_categories = $response['categories'];
         $manufacturers = $response['furnitureData'][0]['Manufacturers'];
-
+        $products_from_same_manufacturer = array();
         foreach ($manufacturers as $key => $manufacturer) 
         {
             $products = $manufacturer['Furniture'];
@@ -435,9 +435,66 @@ class Furniture_Infinite_Shortcodes
                     
                     // GOTCHA! Got the product required by _GET!
                     
+                    $this_p_id = $product['id'];
+                    $this_p_collection_id = $product['CollectionId'];
+                    foreach( $response['collections'] as $collection ){
+                        if($collection['id'] == $this_p_collection_id){
+                            $this_p_collection_name = $collection['name'];
+                            break 1;
+                        }
+                    }
+
+
+                    $this_p_manufacturer_id = $product['ManufacturerId'];
+                    $products_IDs_from_same_collection = array();
+                    if(isset($this_p_manufacturer_id) && ( $manufacturer['id'] == $this_p_manufacturer_id ) ){
+                        $products_from_same_manufacturer = $manufacturer['Furniture'];
+                        foreach($products_from_same_manufacturer as $product_from_same_manufacturer){
+                            if($product_from_same_manufacturer['id'] != $this_p_id){
+                                if($product_from_same_manufacturer['CollectionId'] == $this_p_collection_id){
+                                    $products_IDs_from_same_collection[] = $product_from_same_manufacturer['id'];
+                                }
+                            }
+                        }
+                        $upto_five_random_keys_from_products_IDs_from_same_collection = array_rand($products_IDs_from_same_collection, 5);
+
+                        if($upto_five_random_keys_from_products_IDs_from_same_collection){
+                            $upto_five_random_products_IDs_from_same_collection = array();
+                            foreach( $upto_five_random_keys_from_products_IDs_from_same_collection as $random_key){
+                                $upto_five_random_products_IDs_from_same_collection[] .= $products_IDs_from_same_collection[$random_key];
+                            }
+                            $upto_five_random_products_from_same_collection = array();
+                            for ($i=0; $i < count($upto_five_random_products_IDs_from_same_collection); $i++) { 
+                                foreach ($products_from_same_manufacturer as $product_from_same_manufacturer) {
+                                    if($product_from_same_manufacturer['id'] == $upto_five_random_products_IDs_from_same_collection[$i]){
+                                        $upto_five_random_products_from_same_collection[$i]['id'] = $product_from_same_manufacturer['id'];
+                                        $upto_five_random_products_from_same_collection[$i]['name'] = $product_from_same_manufacturer['name'];
+                                        $upto_five_random_products_from_same_collection[$i]['image_path'] = $product_from_same_manufacturer['Images'][0]['path'];
+                                        break 1;
+                                    }
+                                }
+                            }
+                        } else {
+                            $products_from_same_collection = array();
+                            for ($i=0; $i < count($products_IDs_from_same_collection); $i++) { 
+                                foreach ($products_from_same_manufacturer as $product_from_same_manufacturer) {
+                                    if($product_from_same_manufacturer['id'] == $products_IDs_from_same_collection[$i]){
+                                        $products_from_same_collection[$i]['id'] = $product_from_same_manufacturer['id'];
+                                        $products_from_same_collection[$i]['name'] = $product_from_same_manufacturer['name'];
+                                        $products_from_same_collection[$i]['image_path'] = $product_from_same_manufacturer['Images'][0]['path'];
+                                        break 1;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+
+
+
                     $image = $product['Images'][0];
                     if (empty($image['type'])) { $img_type = "jpeg"; } else { $img_type = $image['type']; }
-                    $img_url =  $this->image_prefix . $image['path']; 
+                    $main_img_url =  $this->image_prefix . $image['path']; 
 
                     foreach ($product['Options'] as $option) {
                         $p_options[] = $option['name'];

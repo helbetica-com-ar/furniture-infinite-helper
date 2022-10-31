@@ -15,6 +15,7 @@ class Furniture_Infinite_Helper_Public
     public function enqueue_styles()
     {
         wp_enqueue_style($this->plugin_name . '-furniture-styles', plugin_dir_url(__FILE__) . 'css/helper-furniture-styles.css' , array(), rand(), 'all');
+        wp_enqueue_style($this->plugin_name . '-sites', plugin_dir_url(__FILE__) . 'css/sites.css' , array(), rand(), 'all'); 
     }
 
     public function enqueue_scripts()
