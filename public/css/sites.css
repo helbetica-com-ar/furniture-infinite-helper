@@ -1,4 +1,7 @@
 /* charihofurniture.com */
+body, h1, h2, h3, h4, h5, h6, li, a {
+    font-family: 'Montserrat', sans-serif!important;
+}
 aside.chariho-furniture header {
     padding-top: 15px;
     padding-bottom: 5px;
@@ -10,3 +13,115 @@ aside.chariho-furniture header {
 aside.chariho-furniture header h2 {
     color: #00375b;
 } 
+
+.noSliderSpacer {
+    display: none!important;
+}
+.headerWrapper {
+    position: inherit!important;
+    background-image: url('../img/main-background-wood-grain.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breadcrumbs {
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    margin-left: -300px;
+    padding-left: 300px;
+    margin-right: -300px;
+    padding-right: 300px;
+    background-image: url('../img/main-background-wood-grain.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.breadcrumbs a {
+    display: inline-block;
+}
+
+.middleHeader {
+    grid-template-columns: 300px 1fr;
+}
+.middleRightHeader {
+    padding-top: 0;
+}
+
+.large-icons .icons {
+    font-size: 19px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #CACACA;
+}
+.large-icons .icons:active,
+.large-icons .icons:focus,
+.large-icons .icons:hover {
+    color: #fff
+}
+.staticHeader {
+    grid-template-columns: auto auto auto;
+}
+.mobileStaticHeader {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.mobileHeaderLogoWrapper {
+    padding-top: 4em;
+}
+
+.mobileMenuWrapper {
+    bottom: 45px;
+    width: calc(100% - 45px);
+}
+
+.staticAddressWrapper {
+    text-align: center;
+}
+.mobileButton>div {
+    width: 100%;
+}
+.searchButtonWrapper {
+    display: none;
+}
+
+.mobileStaticHeaderWrapper {
+    height: 45px;
+    background-color: #72949c;
+}
+
+.mobileButtonWrapper {
+    height: 45px;
+}
+
+.hamburger {
+    padding: 8px 15px 8px 15px;
+}
+
+.drawerClosed {
+    margin-left: 45px;
+}
+.sliderButtonWrapper.openSlider,
+.sliderButtonWrapper.closeSlider {
+    width: 45px;
+}
+.sliderButtonWrapper.openSlider.offScreen,
+.sliderContentWrapper {
+    left: -45px;
+}
+.sliderMenuContact {
+    margin-right: 45px;
+}
+.sliderMenuLogoWrapper,
+.sliderRoomBrowseHeaderWrapper,
+.middleRightHeader {
+    padding-right: 45px;
+}
+.mobileButtonWrapper,
+.mobileStaticHeaderWrapper {
+    width: calc(100% - 45px);
+}
+.middleHeaderWrapper {
+    padding-top: 45px;
+}

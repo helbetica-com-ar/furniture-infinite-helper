@@ -14,7 +14,6 @@ class Furniture_Infinite_Shortcodes
         "Bathroom",
         "Bedroom",
         "Dining Room",
-        "DUMMY Test Furniture Category",
         "Kitchen",
         "Living Room",
         "Office",
