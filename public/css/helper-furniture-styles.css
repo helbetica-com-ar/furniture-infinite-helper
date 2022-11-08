@@ -15,6 +15,12 @@
     background-color: #ff00002b;
 }
 
+.alignfull {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
+
 p {
     font-family: inherit!important;
 }
@@ -1046,10 +1052,6 @@ aside.related-products {
         border-color: black;
     }
     aside.related-products header {
-        margin-left: -15em;
-        padding-left: 15em;
-        margin-right: -15em;
-        padding-right: 15em;
         padding-top: 15px;
         padding-bottom: 5px;
     }

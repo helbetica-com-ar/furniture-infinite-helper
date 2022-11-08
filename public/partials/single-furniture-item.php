@@ -2,17 +2,19 @@
 if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == '') ) {
     $cat_prefix = '/furniture/';
 } else {
-    $cat_prefix = FURNITURE_CAT_LINK_PREFIX;
+    $cat_prefix = FURNITURE_CAT_LINK_PREFIX; 
 }
 ?>
-<div class="breadcrumbs">
-    <a href="<?= site_url() ?>">Home /</a>
-    <a href="<?= site_url() . $cat_prefix ?>">Furniture /</a>
-    <a href="<?= $cat_prefix ?><?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
-    <a href="<?= $cat_prefix ?><?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?showing-subcategory=<?= (isset($p_sub_cat_name))? strtolower(str_replace(" ", "-", $p_sub_cat_name))  : '' ?>&sub-cat-id=<?= $p_sub_cat_id ?>"><?= (isset($p_sub_cat_name))? $p_sub_cat_name  : '' ?></a>
+<div class="alignfull wood-background">
+    <div class="breadcrumbs container <?= str_replace(" ", "-", strtolower(get_bloginfo( 'name' ))); ?>">
+        <a href="<?= site_url() ?>">Home /</a>
+        <a href="<?= site_url() . $cat_prefix ?>">Furniture /</a>
+        <a href="<?= $cat_prefix ?><?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
+        <a href="<?= $cat_prefix ?><?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?showing-subcategory=<?= (isset($p_sub_cat_name))? strtolower(str_replace(" ", "-", $p_sub_cat_name))  : '' ?>&sub-cat-id=<?= $p_sub_cat_id ?>"><?= (isset($p_sub_cat_name))? $p_sub_cat_name  : '' ?></a>
+    </div>
 </div>
 <?php /* 
-<div><a class="pre-pre" href="#post-pre"><small>scroll</small></a></div><pre><?php 
+<div><a class="pre-pre" href="#post-pre"><small>scroll</small></a></div><pre><?php  
 echo '$this_p_collection_id: ' . $this_p_collection_id . '<br>';
 echo '$this_p_collection_name: ' . $this_p_collection_name . '<br>';
 echo '$this_p_manufacturer_id: ' . $this_p_manufacturer_id . '<br>';
@@ -107,7 +109,10 @@ print_r($products_from_same_collection);
                                     }
                                 }
                             }
-                            asort($p_variants_option_value_vulues);
+                            if(isset($p_variants_option_value_vulues) && !empty($p_variants_option_value_vulues)){
+                                asort($p_variants_option_value_vulues);
+                            }
+
                             foreach ($p_variants_option_value_vulues as $p_variants_option_value_vulue) { ?>
                         <tr class="row-highlight row-variant row-single-variant" data-variant-value="" data-variant="<?= $p_variant_counter; ?>">
                         <?php 
@@ -255,7 +260,7 @@ print_r($products_from_same_collection);
             data-url='<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'
             data-title="<?php echo $product['name']; ?>"
             data-description="<?php echo $product['description']; ?>"
-            data-media="<?php echo $img_url; ?>"
+            data-media="<?php echo $main_img_url; ?>" 
             >
             </div>
             <button class="print-btn" onclick="printProduct()"><i class="fa fa-print" aria-hidden="true"></i>Print</button>
@@ -266,12 +271,14 @@ print_r($products_from_same_collection);
 <aside class="related-products products-from-same-collection <?= str_replace(" ", "-", strtolower(get_bloginfo( 'name' ))); ?>">
     <?php 
     if( !empty($products_IDs_from_same_collection) ){ ?>
-    <header>
-        <h2><?= $this_p_collection_name ?></h2>
-        <h4>Other items from the same collection</h4>
-    </header>
+    <div class="alignfull wood-background">
+        <header class="container">
+            <h2><?= $this_p_collection_name ?></h2>
+            <h4>Other items from the same collection</h4>
+        </header>
+    </div>
     <div class="grid-container php-single-furniture-item collection-image object-home"><?php 
-        if ($upto_five_random_products_from_same_collection) {
+        if (isset($upto_five_random_products_from_same_collection)) {
             foreach ($upto_five_random_products_from_same_collection as $product_from_same_collection) { ?>
         <div class="furniture-infinite-grid-items">
             <a href="/product-details/?from-furniture-item=<?= sanitize_title($product_from_same_collection['name']) ?>&pid=<?= $product_from_same_collection['id'] ?>">

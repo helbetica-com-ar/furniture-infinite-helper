@@ -381,12 +381,15 @@ class Furniture_Infinite_Shortcodes
                         }
                     }
 
+                    $furniture_variant_options = array();
                     foreach ($product['FurnitureVariantOptions'] as $FurnitureVariantOption) {
                         $furniture_variant_options[] = $FurnitureVariantOption['name'];
                     }
+                    $p_options = array();
                     foreach ($product['Options'] as $option) {
                         $p_options[] = $option['name'];
                     }
+                    $furniture_variant_option_values = array();
                     foreach ($product['FurnitureVariantOptionValues'] as $FurnitureVariantOptionValue) {
                         $furniture_variant_option_values[] = $FurnitureVariantOptionValues['value'];
                     }
@@ -455,9 +458,12 @@ class Furniture_Infinite_Shortcodes
                                 }
                             }
                         }
-                        $upto_five_random_keys_from_products_IDs_from_same_collection = array_rand($products_IDs_from_same_collection, 5);
+                        if(sizeof($products_IDs_from_same_collection) > 5 ){
+                            $upto_five_random_keys_from_products_IDs_from_same_collection = array_rand($products_IDs_from_same_collection, 5);
+                        }
+                        
 
-                        if($upto_five_random_keys_from_products_IDs_from_same_collection){
+                        if(isset($upto_five_random_keys_from_products_IDs_from_same_collection)){
                             $upto_five_random_products_IDs_from_same_collection = array();
                             foreach( $upto_five_random_keys_from_products_IDs_from_same_collection as $random_key){
                                 $upto_five_random_products_IDs_from_same_collection[] .= $products_IDs_from_same_collection[$random_key];
@@ -495,15 +501,21 @@ class Furniture_Infinite_Shortcodes
                     if (empty($image['type'])) { $img_type = "jpeg"; } else { $img_type = $image['type']; }
                     $main_img_url =  $this->image_prefix . $image['path']; 
 
+                    $p_options = array();
                     foreach ($product['Options'] as $option) {
                         $p_options[] = $option['name'];
                     }
-                    asort($p_options);
+
+                    if(isset($p_options) && !empty($p_options)){
+                        asort($p_options);
+                    }
                     
+                    $p_variants_options = array();
                     foreach ($product['FurnitureVariantOptions'] as $FurnitureVariantOption) {
                         $p_variants_options[] = $FurnitureVariantOption;
                     }
 
+                    $p_variant_values = array();
                     foreach ($product['FurnitureVariantValues'] as $FurnitureVariantValue) {
                         $p_variant_values[] = $FurnitureVariantValue;
                     }

@@ -1,8 +1,10 @@
 <style type="text/css"></style>
 
 <section class="all-products-section">
-    
-    <h2 style="text-align: center;">Category:  <strong>
+    <?php if ( isset($_GET['cat-id']) ){ $header = "Category:"; } elseif (isset($_GET['sub-cat-id'])) { $header = 'Subcategory:'; } ?>
+    <h2 style="text-align: center;">
+        <?= $header; ?>
+        <strong>
         <?php 
         foreach ($categories as $category) {
             
