@@ -1,8 +1,15 @@
+<?php 
+if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == '') ) {
+    $cat_prefix = '/furniture/';
+} else {
+    $cat_prefix = FURNITURE_CAT_LINK_PREFIX;
+}
+?>
 <div class="breadcrumbs">
     <a href="<?= site_url() ?>">Home /</a>
-    <a href="<?= site_url() ?>/furniture/">Furniture /</a>
-    <a href="/furniture/<?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
-    <a href="/furniture/<?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?showing-subcategory=<?= (isset($p_sub_cat_name))? strtolower(str_replace(" ", "-", $p_sub_cat_name))  : '' ?>&sub-cat-id=<?= $p_sub_cat_id ?>"><?= (isset($p_sub_cat_name))? $p_sub_cat_name  : '' ?></a>
+    <a href="<?= site_url() . $cat_prefix ?>">Furniture /</a>
+    <a href="<?= $cat_prefix ?><?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?cat-id=<?= $p_cat_id ?>"><?= (isset($p_cat_name))? $p_cat_name . " /" : '' ?></a>
+    <a href="<?= $cat_prefix ?><?= (isset($p_cat_name))? strtolower(str_replace(" ", "-", $p_cat_name)) . "/" : '' ?>?showing-subcategory=<?= (isset($p_sub_cat_name))? strtolower(str_replace(" ", "-", $p_sub_cat_name))  : '' ?>&sub-cat-id=<?= $p_sub_cat_id ?>"><?= (isset($p_sub_cat_name))? $p_sub_cat_name  : '' ?></a>
 </div>
 <?php /* 
 <div><a class="pre-pre" href="#post-pre"><small>scroll</small></a></div><pre><?php 
