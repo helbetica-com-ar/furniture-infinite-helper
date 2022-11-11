@@ -32,7 +32,8 @@
 
                     <?php 
                         $records_available = true;
-                        $image      = $product['Images'][0];
+                        $how_many_images = sizeof($product['Images']);
+                        $image      = $product['Images'][$how_many_images];
                         // $img_type   = $image['type'];
                         // $img_type   = (empty($img_type))? "jpeg" : $img_type;
 
