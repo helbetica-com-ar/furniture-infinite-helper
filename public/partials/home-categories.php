@@ -1,5 +1,5 @@
 <style type="text/css"></style>
-<div class="grid-container php-home-categories collection-image object-home">
+<div class="grid-container php-home-categories collection-image object-home <?= str_replace(" ", "-", strtolower(get_bloginfo( 'name' ))); ?>">
 <?php
 
 if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == '') ) {
