@@ -10,17 +10,7 @@ class Furniture_Infinite_Shortcodes
     private $legacyBaseURL;
     private $auth_token;
 
-    private $main_categories = array(
-        "Bathroom",
-        "Bedroom",
-        "Dining Room",
-        "Kitchen",
-        "Living Room",
-        "Office",
-        "Outdoor",
-        "Specialty",
-        "Youth"
-    );
+    private $main_categories = FURNITURE_CAT_LIST;
 
     private $image_prefix = 'https://infinite-digital-production.s3.us-east-2.amazonaws.com/';
 
