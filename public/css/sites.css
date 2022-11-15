@@ -106,10 +106,6 @@
 
 
 /* charihofurniture.com */
-body.chariho-furniture{
-    width: 100%;
-}
-
 body.chariho-furniture, 
 body.chariho-furniture h1, 
 body.chariho-furniture h2, 
@@ -119,7 +115,7 @@ body.chariho-furniture h5,
 body.chariho-furniture h6, 
 body.chariho-furniture li, 
 body.chariho-furniture a {
-    /* font-family: 'Montserrat', sans-serif!important; */
+    font-family: 'Montserrat', sans-serif!important;
 }
 aside.chariho-furniture header {
     padding-top: 15px;
