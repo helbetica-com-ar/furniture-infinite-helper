@@ -1,9 +1,9 @@
 <section class="all-products-section">
     
-    <h2 style="text-align: center;">Category: <strong><?php echo $main_category_name; ?></strong></h2>
-    <div class="grid-container php-sub-category-grid collection-image object-home">
+    <h2 style="text-align: center;"><strong><?php echo $main_category_name; ?> subcategories</strong></h2>
+    <div class="grid-container alignfull php-sub-category-grid collection-image object-home">
         <?php 
-        $subCategories = [];
+        $subCategories = []; 
         foreach ($categories as $category){ 
             if( $this->furniture_infinite_check_product_available_in_category("SubCategoryId", $category['id']) ){ 
                 $count = $this->furniture_infinite_count_products('SubCategoryId', $category['id']);

@@ -21,7 +21,7 @@
         </strong>
     </h2>
 
-    <div class="grid-container php-grid-proucts collection-image object-home">
+    <div class="grid-container alignfull php-grid-proucts collection-image object-home">
         <?php
         $records_available = false;
 
@@ -32,16 +32,16 @@
 
                     <?php 
                         $records_available = true;
-                        $image      = $product['Images'][0];
-                        $how_many_images = sizeof($product['Images']);
-                        // $img_type   = $image['type'];
-                        // $img_type   = (empty($img_type))? "jpeg" : $img_type;
+                        // first uploaded image gets dumped in last position of array on json data
+                        $last_images = sizeof($product['Images'])-1; // minus 1 to match array position
+                        $image      = $product['Images'][$last_images];
 
                         $img_url =  'https://infinite-digital-production.s3.us-east-2.amazonaws.com/'.$image['path'];
                         $img_url = str_replace("-original", "-300x300", $img_url);
                     ?>
                                       
                     <div class="furniture-infinite-grid-items">
+                        <div id="post-pre" style="display: none;"><pre><?php print_r($last_images); ?></pre></div>
                         <a href="/product-details/?from-furniture-item=<?= sanitize_title($product['name']) ?>&pid=<?= $product['id'] ?>">
                             
                             <img src="<?= $img_url ?>">

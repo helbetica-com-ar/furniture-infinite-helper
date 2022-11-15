@@ -1,6 +1,6 @@
 /* charihofurniture.com */
 body, h1, h2, h3, h4, h5, h6, li, a {
-    font-family: 'Montserrat', sans-serif!important;
+    /* font-family: 'Montserrat', sans-serif!important; */
 }
 aside.chariho-furniture header {
     padding-top: 15px;
@@ -13,6 +13,19 @@ aside.chariho-furniture header {
 aside.chariho-furniture header h2 {
     color: #00375b;
 } 
+.chariho-furniture .mobileButtonWrapper,
+.chariho-furniture .mobileStaticHeaderWrapper {
+    width: calc(100% - 45px);
+}
+
+/* padutchwoodcraft.com  */
+.pa-dutch-woodcraft .furnitureMenuButton a {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    top: inherit;
+    display: inline-block;
+}
 
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.chariho-furniture {
@@ -128,10 +141,6 @@ aside.chariho-furniture header h2 {
 .sliderRoomBrowseHeaderWrapper,
 .middleRightHeader {
     padding-right: 45px;
-}
-.mobileButtonWrapper,
-.mobileStaticHeaderWrapper {
-    width: calc(100% - 45px);
 }
 .middleHeaderWrapper {
     padding-top: 45px;

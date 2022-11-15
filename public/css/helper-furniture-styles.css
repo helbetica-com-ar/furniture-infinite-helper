@@ -110,10 +110,6 @@ a:focus {
     display: none; 
 }
 
-.object-home img{ 
-    height: 234px !important;
-    width: 346px !important;
-}
 .pagination {
     display: inline-block;
 }
@@ -273,36 +269,6 @@ a:focus {
     width: 100%;
 }
 
-
-.collection-image div {
-    padding: 15px;
-}
-
-.collection-image div img {
-    width: 100%;
-    height: auto;
-}
-
-.collection-image .furniture-infinite-grid-items p {
-    text-align: center;
-    font-family: inherit;
-    font-size: 18px;
-    font-weight: 400;
-    text-transform: capitalize;
-}
-.object-home img{ 
-    height: 234px !important;
-}
-.pagination {
-    display: inline-block;
-}
-
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-}
 .pro-name{
     text-transform: capitalize !important;
 }
@@ -311,10 +277,6 @@ a:focus {
     content: "";
     clear: both;
     display: table;
-}
-
-.all-products-section img{
-    height: 166px;
 }
 
 .alert {
