@@ -900,6 +900,8 @@ aside.related-products {
     }
     #scroll-top {
         bottom: 60px;
+        width: 36px;
+        height: 36px;
     }
 }
 
