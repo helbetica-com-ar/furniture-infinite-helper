@@ -141,7 +141,10 @@ function furniture_infinite_shortcode_all_products()
 				//$pro_ManufacturerId = $product['ManufacturerId'];
 				$pro_SubCategoryId = $product['SubCategoryId'];
 				//echo "<pre>"; print_r($pro_SubCategoryId); echo "</pre>";
-				$image = $product['Images'][0];
+                
+				// first uploaded image gets dumped in last position of array on json data
+                $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                $image      = $product['Images'][$last_image];
 				$img_type = $image['type'];
 				if (empty($img_type)) {
 					$img_type = "jpeg";
@@ -247,7 +250,9 @@ function furniture_infinite_shortcode_pdp()
 
 		foreach ($products as $key => $product) {
 			$pro_Id = $product['id'];
-			$image = $product['Images'][0];
+			// first uploaded image gets dumped in last position of array on json data
+			$last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+			$image      = $product['Images'][$last_image];
 			$img_type = $image['type'];
 			if (empty($img_type)) {
 				$img_type = "jpeg";

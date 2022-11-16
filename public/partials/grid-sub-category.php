@@ -24,7 +24,9 @@
                 foreach ($manufacturers as $manufacturer) {
                     foreach ($manufacturer['Furniture'] as $product) {
                         if($product['SubCategoryId'] == $subCategory["id"]){
-                            $img_url =  'https://infinite-digital-production.s3.us-east-2.amazonaws.com/'.$product['Images'][0]['path'];
+                            // first uploaded image gets dumped in last position of array on json data
+                            $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                            $img_url =  'https://infinite-digital-production.s3.us-east-2.amazonaws.com/'.$product['Images'][$last_image]['path'];
                             $img_url = str_replace("-original", "-300x300", $img_url);
                             break;
                         }

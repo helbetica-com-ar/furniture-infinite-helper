@@ -16,9 +16,11 @@
                 foreach ($manufacturer['Furniture'] as $product) {
                     if ($product['CollectionId'] == $_GET['collection-id']) {
                         $records_available = true;
-                        $image      = $product['Images'][0];
+                        // first uploaded image gets dumped in last position of array on json data
+                        $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                        $image      = $product['Images'][$last_image];
                         $img_url =  'https://infinite-digital-production.s3.us-east-2.amazonaws.com/'.$image['path'];
-                        $img_url = str_replace("-original", "-300x300", $img_url);
+                        $img_url = str_replace("-original", "-84x84", $img_url);
                         ?>
                         <div class="col-md-2 col-furniture-item">
                             <a href="/product-details/?from-furniture-item=<?= sanitize_title($product['name']) ?>&pid=<?= $product['id'] ?>">

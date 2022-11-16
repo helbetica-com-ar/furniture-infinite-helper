@@ -254,6 +254,82 @@ a:focus {
     font-family: inherit !important;
 }
 
+.thumbnails-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.3);
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18px;
+}
+.thumbnails-wrapper .thumbnail{
+    margin: 15px;
+}
+.thumbnails-wrapper .thumbnail:first-child{
+    margin-left: 22px;
+}
+.thumbnails-wrapper .thumbnail:last-child{
+    margin-right: 22px;
+}
+
+.thumbnail-container,
+.thumbnails-wrapper .thumbnail img {
+    transition: 0.4s opacity ease;
+    -moz-transition: 0.4s opacity ease;
+    -webkit-transition: 0.4s opacity ease;
+}
+.thumbnails-wrapper .thumbnail img {
+    border: 1px solid transparent;
+}
+
+.thumbnails-wrapper .thumbnail img.active {
+    border: 1px solid black;
+}
+.thumbnails-wrapper .thumbnail img:not(.active){
+    opacity: 0.6;
+}
+.thumbnail-container:hover {
+    background-color: rgba(255,255,255,0.45);
+}
+
+.thumbnails-wrapper .thumbnail img:hover{
+    opacity: 1;
+}
+
+/* magnifying glass icon */
+.zoom:before {
+    content: 'Grab';
+    position: absolute;
+    display: inline;
+    right: 25px;
+    font-weight: 700;
+}
+.zoom:after {
+    content:'';
+    display:block; 
+    width:33px; 
+    height:33px; 
+    position:absolute; 
+    top:0;
+    right:0;
+    background:url('../img/magnifier.png');
+}
+
+.zoom img {
+    display: block;
+}
+
+.zoom img::selection { background-color: transparent; }
 
 #container{
     overflow: hidden;
@@ -268,6 +344,9 @@ a:focus {
 .product-details #container img#hover-effect {
     width: 100%;
 }
+.zoom:hover{ cursor: url('../img/grab.cur'), default; }
+.zoom:active{ cursor: url('../img/grabbed.cur'), default; }
+
 
 .pro-name{
     text-transform: capitalize !important;
@@ -670,6 +749,9 @@ div.product_variant input {
     color:#3e3e3e;
 }
 
+.product-details-wrapper #desc p {
+    text-align: left;
+}
 
 pre {
     font-size: 10px;
@@ -852,6 +934,9 @@ aside.related-products {
     display: flex;
     max-width: 100%;
     flex-direction: column;
+}
+.container.product-details .left-column {
+    position: relative;
 }
 .container.product-details .left-column, 
 .container.product-details .right-column {
@@ -1070,7 +1155,7 @@ aside.related-products {
 
 @media (min-width: 800px){
     .container.product-details {
-        padding-top: 2.5em;
+        padding-top: 0em;
         flex-direction: row;
     }
     .container.product-details .left-column, 

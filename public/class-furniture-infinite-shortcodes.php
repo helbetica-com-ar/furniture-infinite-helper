@@ -333,7 +333,10 @@ class Furniture_Infinite_Shortcodes
 
             foreach ($products as $key => $product) {
                 $pro_Id = $product['id'];
-                $image = $product['Images'][0];
+
+                // first uploaded image gets dumped in last position of array on json data
+                $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                $image      = $product['Images'][$last_image];
                 $img_type = $image['type'];
 
                 if (empty($img_type)) {
@@ -464,7 +467,9 @@ class Furniture_Infinite_Shortcodes
                                     if($product_from_same_manufacturer['id'] == $upto_five_random_products_IDs_from_same_collection[$i]){
                                         $upto_five_random_products_from_same_collection[$i]['id'] = $product_from_same_manufacturer['id'];
                                         $upto_five_random_products_from_same_collection[$i]['name'] = $product_from_same_manufacturer['name'];
-                                        $upto_five_random_products_from_same_collection[$i]['image_path'] = $product_from_same_manufacturer['Images'][0]['path'];
+                                        // first uploaded image gets dumped in last position of array on json data
+                                        $last_image = sizeof($product_from_same_manufacturer['Images'])-1; // minus 1 to match array position
+                                        $upto_five_random_products_from_same_collection[$i]['image_path'] = $product_from_same_manufacturer['Images'][$last_image]['path'];
                                         break 1;
                                     }
                                 }
@@ -476,7 +481,9 @@ class Furniture_Infinite_Shortcodes
                                     if($product_from_same_manufacturer['id'] == $products_IDs_from_same_collection[$i]){
                                         $products_from_same_collection[$i]['id'] = $product_from_same_manufacturer['id'];
                                         $products_from_same_collection[$i]['name'] = $product_from_same_manufacturer['name'];
-                                        $products_from_same_collection[$i]['image_path'] = $product_from_same_manufacturer['Images'][0]['path'];
+                                        // first uploaded image gets dumped in last position of array on json data
+                                        $last_image = sizeof($product_from_same_manufacturer['Images'])-1; // minus 1 to match array position
+                                        $products_from_same_collection[$i]['image_path'] = $product_from_same_manufacturer['Images'][$last_image]['path'];
                                         break 1;
                                     }
                                 }
@@ -485,15 +492,30 @@ class Furniture_Infinite_Shortcodes
                         }
                     }
 
-
-
-                    $image = $product['Images'][0];
+                    // first uploaded image gets dumped in last position of array on json data
+                    $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                    $image      = $product['Images'][$last_image];
                     if (empty($image['type'])) { $img_type = "jpeg"; } else { $img_type = $image['type']; }
                     $main_img_url =  $this->image_prefix . $image['path']; 
 
+                    $thumbnails = array();
+                    foreach ($product['Images'] as $the_image){
+                        if($last_image < 0){
+                            break 1;
+                        } else {
+                            $last_image = $last_image-1;
+                            $thumbnails[$last_image]['path'] = $the_image['path'];
+                            $thumbnails[$last_image]['type'] = $the_image['type'];
+                        }
+                    }
+
+                    if(isset($thumbnails) && !empty($thumbnails)){
+                        ksort($thumbnails);
+                    }
+
                     $p_options = array();
                     foreach ($product['Options'] as $option) {
-                        $p_options[] = $option['name'];
+                        $p_options[] = $option['name']; 
                     }
 
                     if(isset($p_options) && !empty($p_options)){
@@ -580,7 +602,9 @@ class Furniture_Infinite_Shortcodes
                 foreach ($products as $product) {
 
                     $pro_Id = $product['id'];
-                    $image = $product['Images'][0];
+                    // first uploaded image gets dumped in last position of array on json data
+                    $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                    $image      = $product['Images'][$last_image];
                     $img_type = $image['type'];
 
                     if (empty($img_type)) {

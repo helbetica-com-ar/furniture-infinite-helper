@@ -33,15 +33,15 @@
                     <?php 
                         $records_available = true;
                         // first uploaded image gets dumped in last position of array on json data
-                        $last_images = sizeof($product['Images'])-1; // minus 1 to match array position
-                        $image      = $product['Images'][$last_images];
+                        $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                        $image      = $product['Images'][$last_image];
 
                         $img_url =  'https://infinite-digital-production.s3.us-east-2.amazonaws.com/'.$image['path'];
                         $img_url = str_replace("-original", "-300x300", $img_url);
                     ?>
                                       
                     <div class="furniture-infinite-grid-items">
-                        <div id="post-pre" style="display: none;"><pre><?php print_r($last_images); ?></pre></div>
+                        <div id="post-pre" style="display: none;"><pre><?php print_r($last_image); ?></pre></div>
                         <a href="/product-details/?from-furniture-item=<?= sanitize_title($product['name']) ?>&pid=<?= $product['id'] ?>">
                             
                             <img src="<?= $img_url ?>">

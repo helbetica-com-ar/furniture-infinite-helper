@@ -31,9 +31,36 @@ print_r($products_from_same_collection);
 ?></pre><div id="post-pre"></div>
 */ ?>
 <section class="container product-details single-furniture-item">
-    <div class="left-column" id="img">
+    <div class="left-column alignfull" id="img">
         <div id="container" class="boxShadow">
-            <img id="hover-effect" data-image="black" class="active" src="<?php echo $main_img_url; ?>" alt="" />
+            <?php 
+            if(sizeof($thumbnails) > 1){  ?>
+            <div class="thumbnails-wrapper">
+                <div id="post-pre" style="display: none;"><pre><?php print_r($thumbnails); ?></pre></div>
+                <div class="thumbnail-container">
+                    <?php 
+                    $c = 0;
+                foreach($thumbnails as $thumb){
+                    $c++;
+                    $img_url =  'https://infinite-digital-production.s3.us-east-2.amazonaws.com/'.$thumb['path'];
+                    $img_url = str_replace("-original", "-84x84", $img_url);
+                    $img_type = $thumb['type'];
+                    if (empty($img_type)) {
+                        $img_type = "jpeg";
+                    }  ?>
+                    <div class="thumbnail">
+                        <img src="<?= $img_url  ?>" class="<?php if($c == 1){ echo 'active'; } ?>" alt="" />
+                    </div>
+                    <?php 
+                }
+                ?>
+                </div>
+            </div><?php 
+            }
+            ?>
+            <div class="zoom">
+                <img id="hover-effect" data-image="black" class="active" src="<?php echo $main_img_url; ?>" alt="" />
+            </div>
         </div>
     </div>
     <div class="right-column">
@@ -320,7 +347,6 @@ print_r($products_from_same_collection);
     </div>
 </div>
 
-<style type="text/css"></style>
 <script type="text/javascript">
     jQuery(document).ready(function(e){
         jQuery(".get-quote-form-btn").click(function(e){
@@ -329,33 +355,12 @@ print_r($products_from_same_collection);
         jQuery(".form-close-icon").click(function(e){
             jQuery(".furniture-infinite-quote-form").hide();
         });
+        jQuery('.zoom').zoom({ on:'grab' });
     });
 
-    // Image Mouse hover effect
-    const container = document.getElementById("container");
-    const img = document.getElementById("hover-effect");
-
-    container.addEventListener("mousemove", onZoom);
-    container.addEventListener("mouseover", onZoom);
-    container.addEventListener("mouseleave", offZoom);
-
-    function onZoom(e) {
-        const x = e.clientX - e.target.offsetLeft;
-        const y = e.clientY - e.target.offsetTop;
-
-        //console.log(x, y);
-
-        img.style.transformOrigin = `${x}px ${y}px`;
-        img.style.transform = "scale(1.5)";
-    }
-
-    function offZoom(e) {
-        img.style.transformOrigin = `center center`;
-        img.style.transform = "scale(1)";
-    }
 
     function printProduct() {
-        var img = document.getElementById("img").innerHTML;
+        var img = document.getElementById("hover-effect").innerHTML;
         var desc = document.getElementById("desc").innerHTML;
         var a = window.open('', '', 'height=1200, width=1200');
 

@@ -19,7 +19,9 @@
 
                     <?php 
                         $records_available = true;
-                        $image      = $product['Images'][0];
+                        // first uploaded image gets dumped in last position of array on json data
+                        $last_image = sizeof($product['Images'])-1; // minus 1 to match array position
+                        $image      = $product['Images'][$last_image];
                         // $img_type   = $image['type'];
                         // $img_type   = (empty($img_type))? "jpeg" : $img_type;
 
