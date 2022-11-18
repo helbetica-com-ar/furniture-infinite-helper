@@ -141,6 +141,11 @@ aside.chariho-furniture header h2 {
 }
 
 /* padutchwoodcraft.com  */
+.pa-dutch-woodcraft a#loadMore {
+    background-color: black;
+    color: #dcad6f;
+}
+
 .pa-dutch-woodcraft .furnitureMenuButton a {
     position: relative;
     height: 40px;

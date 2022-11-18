@@ -281,6 +281,7 @@ print_r($products_from_same_collection);
             <button class="get-quote-form-btn">Get A Quote</button><?php 
             }  ?>
             
+            <?php /* 
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <div 
             class="addthis_inline_share_toolbox_z3mt"
@@ -291,7 +292,7 @@ print_r($products_from_same_collection);
             >
             </div>
             <button class="print-btn" onclick="printProduct()"><i class="fa fa-print" aria-hidden="true"></i>Print</button>
-            
+            */ ?>
         </div>
     </div>
 </section>
@@ -304,7 +305,7 @@ print_r($products_from_same_collection);
             <h4>Other items from the same collection</h4>
         </header>
     </div>
-    <div class="grid-container php-single-furniture-item collection-image object-home"><?php 
+    <div class="grid-container alignfull php-single-furniture-item collection-image object-home"><?php 
         if (isset($upto_five_random_products_from_same_collection)) {
             foreach ($upto_five_random_products_from_same_collection as $product_from_same_collection) { ?>
         <div class="furniture-infinite-grid-items">
