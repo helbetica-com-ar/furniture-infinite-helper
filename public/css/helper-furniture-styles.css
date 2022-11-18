@@ -1025,6 +1025,15 @@ a#loadMore {
         width: 36px;
         height: 36px;
     }
+
+    /* popup maker right bottom slide-in */
+    .pum-container.custom-position {
+        margin-top: -70px!important;
+        left: 5vw!important;
+        width: 90vw!important; 
+    }
+
+
 }
 
 @media only screen and (max-width: 750px){

@@ -171,6 +171,12 @@ aside.chariho-furniture header h2 {
         gap: 25px;
     }
     .grid-container.collection-image.object-home.pa-dutch-woodcraft .grid-item{
-        height: 300px;
-    }
+        height: 340px;
+    } 
+}
+
+@media all and (min-width:82em){
+  body.pa-dutch-woodcraft .bottomLinks{
+    width: 33.33%;
+  }
 }
