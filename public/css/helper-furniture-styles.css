@@ -1028,9 +1028,10 @@ a#loadMore {
 
     /* popup maker right bottom slide-in */
     .pum-container.custom-position {
-        margin-top: -70px!important;
         left: 5vw!important;
-        width: 90vw!important; 
+        width: 90vw!important;
+        transform: translateY(-50%)!important;
+        top: 50%!important;
     }
 
 
