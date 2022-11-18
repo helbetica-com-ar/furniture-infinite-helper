@@ -139,6 +139,17 @@ aside.chariho-furniture header h2 {
 .chariho-furniture .mobileStaticHeaderWrapper {
     width: calc(100% - 45px);
 }
+@media only screen and (min-width: 1024px){
+    .grid-container.collection-image.object-home.chariho-furniture {
+        grid-template-columns: repeat(4, 1fr)!important;
+        gap: 25px;
+    }
+    .grid-container.collection-image.object-home.chariho-furniture .grid-item{
+        height: 300px;
+    }
+}
+
+
 
 /* padutchwoodcraft.com  */
 .pa-dutch-woodcraft a#loadMore {
@@ -155,11 +166,11 @@ aside.chariho-furniture header h2 {
 }
 
 @media only screen and (min-width: 1024px){
-    .grid-container.collection-image.object-home.chariho-furniture {
+    .grid-container.collection-image.object-home.pa-dutch-woodcraft {
         grid-template-columns: repeat(4, 1fr)!important;
         gap: 25px;
     }
-    .grid-container.collection-image.object-home.chariho-furniture .grid-item{
+    /* .grid-container.collection-image.object-home.chariho-furniture .grid-item{
         height: 300px;
-    }
+    } */
 }
