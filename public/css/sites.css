@@ -1,3 +1,12 @@
+/* disabling Drawer */
+.drawerClosed {
+    margin-left: 0px!important;
+}
+.sliderSystemWrapper {
+    display: none!important;
+}
+
+
 .noSliderSpacer {
     display: none!important;
 }
@@ -81,7 +90,7 @@
     padding: 8px 15px 8px 15px;
 }
 
-.drawerClosed {
+/* .drawerClosed {
     margin-left: 45px;
 }
 .sliderButtonWrapper.openSlider,
@@ -99,7 +108,7 @@
 .sliderRoomBrowseHeaderWrapper,
 .middleRightHeader {
     padding-right: 45px;
-}
+} */
 .middleHeaderWrapper {
     padding-top: 45px;
 }
@@ -129,21 +138,17 @@ aside.chariho-furniture header h2 {
     color: #00375b;
 }
 
-.chariho-furniture .alignfull {
-    width: calc(100vw - 45px);
-    max-width: calc(100vw - 45px); 
-    margin-left: calc(50% - 50vw);
-}
-
 .chariho-furniture .mobileMenuWrapper {
     bottom: 45px;
-    width: calc(100% - 45px);
+    /* width: calc(100% - 45px); */
+    width: 100%;
 }
 
 
 .chariho-furniture .mobileButtonWrapper,
 .chariho-furniture .mobileStaticHeaderWrapper {
-    width: calc(100% - 45px);
+    /* width: calc(100% - 45px); */
+    width: 100%;
 }
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.chariho-furniture {
