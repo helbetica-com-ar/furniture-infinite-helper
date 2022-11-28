@@ -35,13 +35,29 @@
         }, "5000")
     });
 
+    //console.log($('input[name=gform_field_values]').attr('value'));
+
+    fieldValues = $('input[name=gform_field_values]').attr('value');
+    val1 = 'product_option=';
+    val2 = 'product_variant=';
+
+    console.log('fieldValues' + fieldValues);
+
+    splitted = fieldValues.split('&');
+
+
     $('tr.row-option').on('click', function () {
         $('tr.row-option').removeClass('active');
         $(this).addClass('active');
         $(this).attr('data-option-value', $(this).find('.cell.value.single p').text() );
         if ($('#gform_1').length) {
             // $('#gform_1 .product_option').removeClass('gfield_visibility_hidden');
-            $('#gform_1 .product_option input').attr('value', 'Option ' + $(this).attr('data-option').toUpperCase() + ': ' + $(this).attr('data-option-value') );
+            chosenOption = 'Option ' + $(this).attr('data-option').toUpperCase() + ': ' + $(this).attr('data-option-value');
+            $('#gform_1 .product_option input').attr('value', chosenOption );
+            chosenOptionEncoded = encodeURIComponent(chosenOption).replace(/%20/g, "+");
+            splitted[0] = 'product_option=' + chosenOptionEncoded;
+            fieldValues = splitted.join('&');
+            $('input[name=gform_field_values]').attr('value', fieldValues );
         }
         $('.row-options-header').addClass('has-choice');
         $('.row-options-header label span.which').html($(this).attr('data-option')).show();
@@ -62,9 +78,19 @@
         if ($('#gform_1').length) {
             // $('#gform_1 .product_variant').removeClass('gfield_visibility_hidden');
             if ($('.single-variant').length) { 
-                $('#gform_1 .product_variant input').attr('value', $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant') + ': ' + $(this).attr('data-variant-value'));
+                chosenVariant = $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant') + ': ' + $(this).attr('data-variant-value');
+                $('#gform_1 .product_variant input').attr('value', chosenVariant);
+                chosenVariantEncoded = encodeURIComponent(chosenVariant).replace(/%20/g, "+");
+                splitted[1] = 'product_variant=' + chosenVariantEncoded;
+                fieldValues = splitted.join('&');
+                $('input[name=gform_field_values]').attr('value', fieldValues);
             } else {
-                $('#gform_1 .product_variant input').attr('value', $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant') );
+                chosenVariant = $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant')
+                $('#gform_1 .product_variant input').attr('value', chosenVariant );
+                chosenVariantEncoded = encodeURIComponent(chosenVariant).replace(/%20/g, "+");
+                splitted[1] = 'product_variant=' + chosenVariantEncoded;
+                fieldValues = splitted.join('&');
+                $('input[name=gform_field_values]').attr('value', fieldValues);
             }
         }
         $('.row-variants-header').addClass('has-choice');
@@ -98,6 +124,8 @@
         }
     }
 
+
+    
 
     $.preloadImages = function () {
         for (var i = 0; i < arguments.length; i++) {

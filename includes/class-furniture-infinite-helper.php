@@ -135,6 +135,7 @@ class Furniture_Infinite_Helper
         add_shortcode('furniture-item', array($Furniture_Infinite_Shortcodes,'furniture_infinite_furniture_item'));
         add_shortcode('all-collections', array($Furniture_Infinite_Shortcodes,'furniture_infinite_all_collections'));
         add_shortcode('manufacturers-collections', array($Furniture_Infinite_Shortcodes,'furniture_infinite_manufacturers_collections'));
+        add_shortcode('search-by-id', array($Furniture_Infinite_Shortcodes,'furniture_infinite_search_by_ID'));
         
         // add meta tags
         $this->loader->add_action('wp_head', $Furniture_Infinite_Shortcodes, 'furniture_infinite_set_single_product_page_meta', 1);    

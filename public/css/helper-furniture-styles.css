@@ -25,6 +25,49 @@ p {
     font-family: inherit!important;
 }
 
+@media screen {
+    .hide-screen { display: none; }
+}
+
+
+.search-heading {
+    display: block;
+    padding-top: 7rem;
+    text-align: center;
+    font-size: 2.5em;
+}
+.searches-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 3em 0 10rem 0;
+}
+.search-bar-wrapper {
+    width: 50%;
+    position: relative;
+    padding: 3%;
+}
+.search-by-builder-id,
+.search-by-product-id {
+    display: flex;
+}
+.search-by-builder-id input[type=number],
+.search-by-product-id input[type=number] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    max-width: inherit;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
 .mobileSearchBoxWrapper {
     display: none!important;
 }

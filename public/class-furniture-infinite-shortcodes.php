@@ -294,6 +294,11 @@ class Furniture_Infinite_Shortcodes
         include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-collections.php';
     }
 
+    public function furniture_infinite_search_by_ID()
+    {
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/search-by-id.php'; 
+    }
+
     public function furniture_infinite_manufacturers_collections()
     {
 
@@ -420,6 +425,7 @@ class Furniture_Infinite_Shortcodes
         $products_from_same_manufacturer = array();
         foreach ($manufacturers as $key => $manufacturer) 
         {
+            $manufacturerName = $manufacturer['name'];
             $products = $manufacturer['Furniture'];
             foreach ($products as $key => $product)
             {
@@ -431,6 +437,7 @@ class Furniture_Infinite_Shortcodes
                     // GOTCHA! Got the product required by _GET!
                     
                     $this_p_id = $product['id'];
+                    $this_p_manufacturer_name = $manufacturerName;
                     $this_p_collection_id = $product['CollectionId'];
                     foreach( $response['collections'] as $collection ){
                         if($collection['id'] == $this_p_collection_id){

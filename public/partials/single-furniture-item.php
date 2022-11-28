@@ -17,6 +17,7 @@ if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == ''
 <div><a class="pre-pre" href="#post-pre"><small>scroll</small></a></div><pre><?php  
 echo '$this_p_collection_id: ' . $this_p_collection_id . '<br>';
 echo '$this_p_collection_name: ' . $this_p_collection_name . '<br>';
+echo '$this_p_manufacturer_name: ' . $this_p_manufacturer_name . '<br>';
 echo '$this_p_manufacturer_id: ' . $this_p_manufacturer_id . '<br>';
 echo 'upto_five_random_keys_from_products_IDs_from_same_collection:<br>';
 print_r($upto_five_random_keys_from_products_IDs_from_same_collection); 
@@ -71,14 +72,6 @@ print_r($products_from_same_collection);
                 <table class="product-data" cellspacing="0">
                     <tbody>
                     <?php  
-                    /* 
-                    if( isset( $product['id'] ) ){  ?>
-                        <tr>
-                            <th class="cell label"><label for="pd_id">ID</label></th>
-                            <td class="cell value"><p><?= $product['id'] ?></p></td>
-                        </tr><?php 
-                    }
-                    */
                     if( isset( $product['sku'] ) ){  ?>
                         <tr>
                             <th class="cell label"><label for="pd_sku">SKU</label></th>
@@ -89,6 +82,18 @@ print_r($products_from_same_collection);
                         <tr>
                             <th class="cell label"><label for="pd_dimensions">Dimensions</label></th>
                             <td class="cell value"><p><?= strtoupper($product['dimensions'][0]) ?></p></td>
+                        </tr><?php 
+                    }
+                    if( isset( $product['id'] ) ){  ?>
+                        <tr>
+                            <th class="cell label"><label for="pd_id">Furniture Item ID</label></th>
+                            <td class="cell value"><p><?= $product['id'] ?></p></td>
+                        </tr><?php 
+                    }
+                    if( isset( $this_p_manufacturer_id ) ){  ?>
+                        <tr class="hide-screen">
+                            <th class="cell label"><label for="pd_id">Builder ID</label></th>
+                            <td class="cell value"><p><?= $this_p_manufacturer_id ?></p></td>
                         </tr><?php 
                     }
                     if(isset($p_options)){  
@@ -280,19 +285,13 @@ print_r($products_from_same_collection);
             } else {  ?>
             <button class="get-quote-form-btn">Get A Quote</button><?php 
             }  ?>
-            
-            <?php /* 
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <div 
-            class="addthis_inline_share_toolbox_z3mt"
-            data-url='<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'
+            <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+            <div data-url='<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'
             data-title="<?php echo $product['name']; ?>"
             data-description="<?php echo $product['description']; ?>"
             data-media="<?php echo $main_img_url; ?>" 
-            >
+            class="addthis_inline_share_toolbox">
             </div>
-            <button class="print-btn" onclick="printProduct()"><i class="fa fa-print" aria-hidden="true"></i>Print</button>
-            */ ?>
         </div>
     </div>
 </section>
@@ -343,7 +342,7 @@ print_r($products_from_same_collection);
             <p><?= $product['description']; ?></p>
         </div>
         <div class="form-shortcode-wrapper">
-        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='sku=". $product['sku'] ."&name=". $product['name'] ."&description=" . $product['description'] . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "']") ?>
+        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $product['sku'] ."&name=". $product['name'] ."&description=" . $product['description'] . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "']") ?>
         </div>
     </div>
 </div>
@@ -358,22 +357,6 @@ print_r($products_from_same_collection);
         });
         jQuery('.zoom').zoom({ on:'grab' });
     });
-
-
-    function printProduct() {
-        var img = document.getElementById("hover-effect").innerHTML;
-        var desc = document.getElementById("desc").innerHTML;
-        var a = window.open('', '', 'height=1200, width=1200');
-
-
-        a.document.write('<html>');
-        a.document.write('<body >');
-        a.document.write(img);
-        a.document.write(desc);
-        a.document.write('</body></html>');
-        a.document.close();
-        a.print();
-    }
-    // <!-- Go to www.addthis.com/dashboard to customize your tools -->
 </script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-637ef52d00864aac"></script>
 <!-- end single_furniture_php -->
