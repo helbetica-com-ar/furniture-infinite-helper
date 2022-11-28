@@ -38,11 +38,6 @@
     //console.log($('input[name=gform_field_values]').attr('value'));
 
     fieldValues = $('input[name=gform_field_values]').attr('value');
-    val1 = 'product_option=';
-    val2 = 'product_variant=';
-
-    console.log('fieldValues' + fieldValues);
-
     splitted = fieldValues.split('&');
 
 
