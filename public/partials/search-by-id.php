@@ -1,5 +1,5 @@
 <h2 class="search-heading">Search Builder Name or Furniture Item by ID</h2>
-<h3 style="color:red;" class="search-subheading">This search forms do not work yet | WORK IN PROGRESS</h3>
+<h3 style="color:red; display: block; text-align: center;" class="search-subheading">THIS SEARCH FORMS DO NOT WORK YET | WORK IN PROGRESS</h3>
 <div class="searches-wrapper">
   <div class="search-bar-wrapper">
       <h3>Enter Builder ID</h3>
