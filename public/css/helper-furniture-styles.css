@@ -561,23 +561,23 @@ table.product-data .row-single-variant > td:before{
 .row-highlight:last-child > th, .row-highlight:last-child > td { 
     border-bottom: none!important;
 }
-tr.row-highlight{
+.furniture-single-view tr.row-highlight{
     cursor: url("../img/plus_cursor.png") 25 25, pointer;
 }
 
-tr.row-highlight.active,
-tr.row-highlight:hover{
+.furniture-single-view tr.row-highlight.active,
+.furniture-single-view tr.row-highlight:hover{
     background-color: rgb(0 154 255 / 25%); /*form color*/
     cursor: url("../img/plus_cursor.png") 25 25, pointer;
 }
 
-tr.row-highlight.active label, tr.row-highlight.active p,
-tr.row-highlight:hover label, tr.row-highlight:hover p {
+.furniture-single-view tr.row-highlight.active label, .furniture-single-view tr.row-highlight.active p,
+.furniture-single-view tr.row-highlight:hover label, .furniture-single-view tr.row-highlight:hover p {
     border-bottom: 1px solid transparent!important;
     cursor: url("../img/plus_cursor.png") 25 25, pointer;
 }
-tr.row-highlight:active,
-tr.row-highlight:active label, tr.row-highlight:active p {
+.furniture-single-view tr.row-highlight:active,
+.furniture-single-view tr.row-highlight:active label, .furniture-single-view tr.row-highlight:active p {
     cursor: url("../img/active_cursor.png") 25 25, pointer;
 }
 
@@ -754,15 +754,15 @@ div.product_variant input {
     background-color: #0085dd !important;
 }
 
-.get-quote-form-btn:disabled,
-.get-quote-form-btn:disabled:hover {
+.furniture-single-view .get-quote-form-btn:disabled,
+.furniture-single-view .get-quote-form-btn:disabled:hover {
     background: rgb(168, 168, 168)!important;
     /* cursor: url("../img/disabled_cursor.png") 25 25, pointer; */
 }
-.get-quote-form-btn:disabled:active{
+.furniture-single-view .get-quote-form-btn:disabled:active{
     cursor: url("../img/disabled_cursor.png") 25 25, pointer;
 }
-/* .get-quote-form-btn:disabled:hover {
+/* .furniture-single-view .get-quote-form-btn:disabled:hover {
     background: grey!important;
 } */
 
@@ -1035,6 +1035,9 @@ a#loadMore {
  /* MEDIA QUERIES  */
  /* MAX WIDTH  */
 @media only screen and (max-width: 799px){
+    .hide-mobile {
+        display: none !important;
+    }
     .form-inner-wrapper{
         padding: 20px;
         width: 100%;
