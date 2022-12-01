@@ -299,6 +299,15 @@ class Furniture_Infinite_Shortcodes
         include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/search-by-id.php'; 
     }
 
+    public function furniture_infinite_set_additonal_body_classes($classes)
+    {
+        $classes[] = str_replace(" ", "-", strtolower(get_bloginfo( 'name' )));
+        if ( is_page( 'product-details' ) ) {
+            $classes[] = 'furniture-single-view';
+        }
+        return $classes;
+    }
+
     public function furniture_infinite_manufacturers_collections()
     {
 

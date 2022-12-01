@@ -35,71 +35,76 @@
         }, "5000")
     });
 
-    //console.log($('input[name=gform_field_values]').attr('value'));
-
-    fieldValues = $('input[name=gform_field_values]').attr('value');
-    splitted = fieldValues.split('&');
 
 
-    $('tr.row-option').on('click', function () {
-        $('tr.row-option').removeClass('active');
-        $(this).addClass('active');
-        $(this).attr('data-option-value', $(this).find('.cell.value.single p').text() );
-        if ($('#gform_1').length) {
-            // $('#gform_1 .product_option').removeClass('gfield_visibility_hidden');
-            chosenOption = 'Option ' + $(this).attr('data-option').toUpperCase() + ': ' + $(this).attr('data-option-value');
-            $('#gform_1 .product_option input').attr('value', chosenOption );
-            chosenOptionEncoded = encodeURIComponent(chosenOption).replace(/%20/g, "+");
-            splitted[0] = 'product_option=' + chosenOptionEncoded;
-            fieldValues = splitted.join('&');
-            $('input[name=gform_field_values]').attr('value', fieldValues );
-        }
-        $('.row-options-header').addClass('has-choice');
-        $('.row-options-header label span.which').html($(this).attr('data-option')).show();
-        optionSelected = true;
-        $('.get-quote-form-btn small span.option').remove();
-        if (variantSelected == true){
-            $('.get-quote-form-btn').removeAttr('disabled');
-            $('.get-quote-form-btn small').html('ALL SET!!');
-            $('html, body').animate({
-                scrollTop: ($(".right-column").offset().top + $(".right-column").height() - $(window).height())
-            }, 500);
-        }
-    });
-    $('tr.row-variant').on('click', function () {
-        $('tr.row-variant').removeClass('active');
-        $(this).addClass('active');
-        if ($('.single-variant').length) { $(this).attr('data-variant-value', $(this).find('.cell.value.single p').text()); }
-        if ($('#gform_1').length) {
-            // $('#gform_1 .product_variant').removeClass('gfield_visibility_hidden');
-            if ($('.single-variant').length) { 
-                chosenVariant = $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant') + ': ' + $(this).attr('data-variant-value');
-                $('#gform_1 .product_variant input').attr('value', chosenVariant);
-                chosenVariantEncoded = encodeURIComponent(chosenVariant).replace(/%20/g, "+");
-                splitted[1] = 'product_variant=' + chosenVariantEncoded;
-                fieldValues = splitted.join('&');
-                $('input[name=gform_field_values]').attr('value', fieldValues);
-            } else {
-                chosenVariant = $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant')
-                $('#gform_1 .product_variant input').attr('value', chosenVariant );
-                chosenVariantEncoded = encodeURIComponent(chosenVariant).replace(/%20/g, "+");
-                splitted[1] = 'product_variant=' + chosenVariantEncoded;
+    if ($('body').hasClass('furniture-single-view') ){
+
+        fieldValues = $('input[name=gform_field_values]').attr('value');
+        splitted = fieldValues.split('&');
+
+
+        $('tr.row-option').on('click', function () {
+            $('tr.row-option').removeClass('active');
+            $(this).addClass('active');
+            $(this).attr('data-option-value', $(this).find('.cell.value.single p').text());
+            if ($('#gform_1').length) {
+                // $('#gform_1 .product_option').removeClass('gfield_visibility_hidden');
+                chosenOption = 'Option ' + $(this).attr('data-option').toUpperCase() + ': ' + $(this).attr('data-option-value');
+                $('#gform_1 .product_option input').attr('value', chosenOption);
+                chosenOptionEncoded = encodeURIComponent(chosenOption).replace(/%20/g, "+");
+                splitted[0] = 'product_option=' + chosenOptionEncoded;
                 fieldValues = splitted.join('&');
                 $('input[name=gform_field_values]').attr('value', fieldValues);
             }
-        }
-        $('.row-variants-header').addClass('has-choice');
-        $('.row-variants-header label span.which').html($(this).attr('data-variant')).show();
-        variantSelected = true;
-        $('.get-quote-form-btn small span.variant').remove();
-        if (optionSelected == true) {
-            $('.get-quote-form-btn').removeAttr('disabled');
-            $('.get-quote-form-btn small').html('ALL SET!!');
-            $('html, body').animate({
-                scrollTop: ($(".right-column").offset().top + $(".right-column").height() - $(window).height())
-            }, 500);
-        }
-    });
+            $('.row-options-header').addClass('has-choice');
+            $('.row-options-header label span.which').html($(this).attr('data-option')).show();
+            optionSelected = true;
+            $('.get-quote-form-btn small span.option').remove();
+            if (variantSelected == true) {
+                $('.get-quote-form-btn').removeAttr('disabled');
+                $('.get-quote-form-btn small').html('ALL SET!!');
+                $('html, body').animate({
+                    scrollTop: ($(".right-column").offset().top + $(".right-column").height() - $(window).height())
+                }, 500);
+            }
+        });
+        $('tr.row-variant').on('click', function () {
+            $('tr.row-variant').removeClass('active');
+            $(this).addClass('active');
+            if ($('.single-variant').length) { $(this).attr('data-variant-value', $(this).find('.cell.value.single p').text()); }
+            if ($('#gform_1').length) {
+                // $('#gform_1 .product_variant').removeClass('gfield_visibility_hidden');
+                if ($('.single-variant').length) {
+                    chosenVariant = $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant') + ': ' + $(this).attr('data-variant-value');
+                    $('#gform_1 .product_variant input').attr('value', chosenVariant);
+                    chosenVariantEncoded = encodeURIComponent(chosenVariant).replace(/%20/g, "+");
+                    splitted[1] = 'product_variant=' + chosenVariantEncoded;
+                    fieldValues = splitted.join('&');
+                    $('input[name=gform_field_values]').attr('value', fieldValues);
+                } else {
+                    chosenVariant = $('.row-variants-header .placeholder-data').attr('data-placeholder') + ' #' + $(this).attr('data-variant')
+                    $('#gform_1 .product_variant input').attr('value', chosenVariant);
+                    chosenVariantEncoded = encodeURIComponent(chosenVariant).replace(/%20/g, "+");
+                    splitted[1] = 'product_variant=' + chosenVariantEncoded;
+                    fieldValues = splitted.join('&');
+                    $('input[name=gform_field_values]').attr('value', fieldValues);
+                }
+            }
+            $('.row-variants-header').addClass('has-choice');
+            $('.row-variants-header label span.which').html($(this).attr('data-variant')).show();
+            variantSelected = true;
+            $('.get-quote-form-btn small span.variant').remove();
+            if (optionSelected == true) {
+                $('.get-quote-form-btn').removeAttr('disabled');
+                $('.get-quote-form-btn small').html('ALL SET!!');
+                $('html, body').animate({
+                    scrollTop: ($(".right-column").offset().top + $(".right-column").height() - $(window).height())
+                }, 500);
+            }
+        });
+
+
+    } // if ($('body').hasClass('furniture-single-view') )
 
     if ($('.tablinks.active').length){
         which = $('.tablinks.active');

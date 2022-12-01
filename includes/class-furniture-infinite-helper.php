@@ -140,6 +140,9 @@ class Furniture_Infinite_Helper
         // add meta tags
         $this->loader->add_action('wp_head', $Furniture_Infinite_Shortcodes, 'furniture_infinite_set_single_product_page_meta', 1);    
 
+        // add body class
+        $this->loader->add_filter('body_class', $Furniture_Infinite_Shortcodes, 'furniture_infinite_set_additonal_body_classes', 10, 1 );
+
     }
 
     private function create_master_settings()
