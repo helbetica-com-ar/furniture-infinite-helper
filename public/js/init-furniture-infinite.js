@@ -103,6 +103,16 @@
             }
         });
 
+        $.preloadImages = function () {
+            for (var i = 0; i < arguments.length; i++) {
+                $("<img />").attr("src", arguments[i]);
+            }
+        }
+
+        $.preloadImages("../wp-content/plugins/furniture-infinite-helper/public/img/active_cursor.png", "../wp-content/plugins/furniture-infinite-helper/public/img/plus_cursor.png", "../wp-content/plugins/furniture-infinite-helper/public/img/disabled_cursor.png");
+
+        swapThumb();
+
 
     } // if ($('body').hasClass('furniture-single-view') )
 
@@ -123,19 +133,6 @@
             $('#' + $(selector).attr("data-tab")).attr("data-before", $(selector).text() + "' Collection");
         }
     }
-
-
-    
-
-    $.preloadImages = function () {
-        for (var i = 0; i < arguments.length; i++) {
-            $("<img />").attr("src", arguments[i]);
-        }
-    }
-
-    $.preloadImages("../wp-content/plugins/furniture-infinite-helper/public/img/active_cursor.png", "../wp-content/plugins/furniture-infinite-helper/public/img/plus_cursor.png", "../wp-content/plugins/furniture-infinite-helper/public/img/disabled_cursor.png" );
-
-    swapThumb();
 
 }(jQuery));
 

@@ -299,12 +299,19 @@ class Furniture_Infinite_Shortcodes
         include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/search-by-id.php'; 
     }
 
-    public function furniture_infinite_set_additonal_body_classes($classes)
+    public function furniture_infinite_add_body_classes($classes)
     {
         $classes[] = str_replace(" ", "-", strtolower(get_bloginfo( 'name' )));
-        if ( is_page( 'product-details' ) ) {
-            $classes[] = 'furniture-single-view';
-        }
+        global $post;
+        if ( is_home() || is_front_page() ) { $classes[] = 'homepage'; } 
+        if ( isset( $post ) ) { $classes[] = $post->post_name; } 
+        # if ( isset( $post ) ) { $classes[] = 'id-' . $post->ID; } 
+        if ( is_page('furniture')) { $classes[] = 'furniture-page'; } 
+        $furniture_page = get_page_by_path( 'furniture' );
+        $furniture_page_id = $furniture_page->ID;
+        if ( $post->post_parent == $furniture_page_id ){ $classes[] = 'furniture-category'; } 
+        if ( is_page( 'product-details' ) ) { $classes[] = 'furniture-single-view'; } 
+        if ( is_user_logged_in() ) { $classes[] = 'loggedin'; } else {$classes[] = 'loggedout'; }
         return $classes;
     }
 
@@ -325,6 +332,11 @@ class Furniture_Infinite_Shortcodes
             $manufacturersCollections[$manufacturer['id']] = array( "manufacturerName" => $manufacturer['name'], "collectionsArray" => []);
         }
         include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/grid-manufacturers-collections.php';
+    }
+
+    public function furniture_infinite_dumper_helper()
+    {
+        include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/dumper-recycler-shortcode.php';
     }
 
     public function furniture_infinite_pdp()
