@@ -145,6 +145,10 @@ aside.chariho-furniture header h2 {
     /* width: calc(100% - 45px); */
     width: 100%;
 }
+.chariho-furniture .mobileMenuWrapper,
+.chariho-furniture .mobileButtonWrapper {
+    margin-left: -1.5em;
+}
 
 
 .chariho-furniture .mobileButtonWrapper,
