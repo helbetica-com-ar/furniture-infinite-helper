@@ -68,6 +68,10 @@ print_r($products_from_same_collection);
         <div class="product-details-wrapper">
             <div id="desc">
                 <h1><?= $product['name'] ?></h1>
+                <?php 
+                if(isset($this_p_manufacturer_name) ) {  ?>
+                    <h2 style="display: none"><?= $this_p_manufacturer_name; ?><h2><?php 
+                } ?>
                 <p><?= $product['description'] ?></p>
                 <table class="product-data" cellspacing="0">
                     <tbody>
