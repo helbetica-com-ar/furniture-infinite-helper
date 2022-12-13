@@ -129,7 +129,7 @@ print_r($products_from_same_collection);
                             elseif( strtolower($p_variants_options[0]['name']) == "stain brands") {     $which_variant = 'variant-stain-brands';    } 
                             ?>
                         <tr class="row-highlight-header row-variants-header single-variant">
-                            <th class="cell label title-highlight" colspan="2"><label for="pd_variant_<?= strtolower(str_replace(" ", "-", $p_variants_options[0]['name'])) ?>"><?= $p_variants_options[0]['name'] ?> <span class="which"></span><span class="placeholder">Select a <?php                 
+                            <th class="cell label title-highlight" colspan="2"><label for="pd_variant_<?= strtolower(str_replace(" ", "-", $p_variants_options[0]['name'])) ?>"><?= $p_variants_options[0]['name'] ?> <span class="which"></span><span class="placeholder"><?php                 
                             $the_variant = $p_variants_options[0]['name'];
                             if( substr( $the_variant, -1 == "s") ){
                                 $the_variant = substr_replace( $the_variant, "", -1);
