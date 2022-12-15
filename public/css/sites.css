@@ -227,6 +227,26 @@ body.pa-dutch-woodcraft .noSliderSpacer {
   }
 }
 
+
+/* circlesinthewind.us  */
+
+/* shopach.com  */
+/* amish-country-heirlooms---arthur-il  */
+body.home.amish-country-heirlooms---arthur-il .outerFurnitureLinkBoxWrapper {
+    display: none!important;
+}
+
+@media only screen and (max-width: 640px){{
+    .amish-country-heirlooms---arthur-il .logoWrapper,
+    .amish-country-heirlooms---arthur-il .mobileButtonWrapper {
+        width: 100%!important;
+    }
+}
+
+
+
+
+
 /* Share AddThis.com */
 .at-share-btn-elements {
     max-width: 240px;
