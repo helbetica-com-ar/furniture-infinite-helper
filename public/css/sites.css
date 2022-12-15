@@ -1,7 +1,4 @@
 
-/* .noSliderSpacer {
-    display: none!important;
-} */
 .headerWrapper {
     position: inherit!important;
     background-image: url('../img/main-background-wood-grain.jpg');
@@ -128,6 +125,10 @@ body.chariho-furniture li,
 body.chariho-furniture a {
     font-family: 'Montserrat', sans-serif!important;
 }
+body.chariho-furniture .noSliderSpacer {
+    display: none!important;
+}
+
 aside.chariho-furniture header {
     padding-top: 15px;
     padding-bottom: 5px;
