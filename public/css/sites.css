@@ -246,6 +246,31 @@ body.amish-country-heirlooms---arthur-il a.header-icon img {
     margin: 0px 6px;
 }
 
+body.amish-country-heirlooms---arthur-il .fixedHeaderWrapper {
+    text-align: center;
+}
+body.amish-country-heirlooms---arthur-il .fixedHeader {
+    max-width: 1200px;
+    padding: 0 2em;
+}
+body.amish-country-heirlooms---arthur-il .fixedHeader > div.phoneWidgetWrapper {
+    text-align: left;
+}
+body.amish-country-heirlooms---arthur-il .fixedHeader > div.addressWidgetWrapper {
+    text-align: right;
+}
+body.amish-country-heirlooms---arthur-il .mobileMenu ul,
+body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children .sub-menu {
+    padding-top: 0em;
+}
+
+body.amish-country-heirlooms---arthur-il #menu-main-menu > li > a { display: block; }
+
+body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openSubMenu > a {
+    background-color: #000000;
+    color: #f2eee9;
+}
+
 @media only screen and (max-width: 640px){
     .amish-country-heirlooms---arthur-il .logoWrapper,
     .amish-country-heirlooms---arthur-il .mobileButtonWrapper {
@@ -258,18 +283,6 @@ body.amish-country-heirlooms---arthur-il a.header-icon img {
     }
     body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
         display: block;
-    }
-    body.amish-country-heirlooms---arthur-il .fixedHeaderWrapper {
-        text-align: center;
-    }
-    body.amish-country-heirlooms---arthur-il .fixedHeader {
-        max-width: 1200px;
-    }
-    body.amish-country-heirlooms---arthur-il .fixedHeader > div.phoneWidgetWrapper {
-        text-align: left;
-    }
-    body.amish-country-heirlooms---arthur-il .fixedHeader > div.addressWidgetWrapper {
-        text-align: right;
     }
 }
 
