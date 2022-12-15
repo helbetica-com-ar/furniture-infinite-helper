@@ -204,7 +204,7 @@ body.pa-dutch-woodcraft {
 }
 
 @media only screen and (min-width: 1024px){
-    body.pa-dutch-woodcraft .headerWrapper {
+    body.home.pa-dutch-woodcraft .headerWrapper {
         position: absolute!important;
         background-image: none!important;
     }
