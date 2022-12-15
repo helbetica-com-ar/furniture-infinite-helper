@@ -235,11 +235,26 @@ body.pa-dutch-woodcraft .noSliderSpacer {
 body.home.amish-country-heirlooms---arthur-il .outerFurnitureLinkBoxWrapper {
     display: none!important;
 }
+body.amish-country-heirlooms---arthur-il .facebook-link-mobile {
+    display: none;
+}
+body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
+    display: block;
+}
 
-@media only screen and (max-width: 640px){{
+
+@media only screen and (max-width: 640px){
     .amish-country-heirlooms---arthur-il .logoWrapper,
     .amish-country-heirlooms---arthur-il .mobileButtonWrapper {
         width: 100%!important;
+    }
+}
+@media only screen and (min-width: 800px){
+    body.amish-country-heirlooms---arthur-il .facebook-link-mobile {
+        display: block;
+    }
+    body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
+        display: none;
     }
 }
 
