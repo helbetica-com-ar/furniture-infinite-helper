@@ -236,10 +236,10 @@ body.home.amish-country-heirlooms---arthur-il .outerFurnitureLinkBoxWrapper {
     display: none!important;
 }
 body.amish-country-heirlooms---arthur-il .facebook-link-mobile {
-    display: none;
+    display: block;
 }
 body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
-    display: block;
+    display: none;
 }
 body.amish-country-heirlooms---arthur-il a.header-icon img {
     max-height: 25px;
@@ -254,10 +254,10 @@ body.amish-country-heirlooms---arthur-il a.header-icon img {
 }
 @media only screen and (min-width: 800px){
     body.amish-country-heirlooms---arthur-il .facebook-link-mobile {
-        display: block;
+        display: none;
     }
     body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
-        display: none;
+        display: block;
     }
     body.amish-country-heirlooms---arthur-il .fixedHeaderWrapper {
         text-align: center;
