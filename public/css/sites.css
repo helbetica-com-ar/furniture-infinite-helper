@@ -241,7 +241,10 @@ body.amish-country-heirlooms---arthur-il .facebook-link-mobile {
 body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
     display: block;
 }
-
+body.amish-country-heirlooms---arthur-il a.header-icon img {
+    max-height: 25px;
+    margin: 0px 6px;
+}
 
 @media only screen and (max-width: 640px){
     .amish-country-heirlooms---arthur-il .logoWrapper,
