@@ -292,7 +292,7 @@ body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openS
 
 /* Share AddThis.com */
 .at-share-btn-elements {
-    max-width: 240px;
+    max-width: 250px;
 }
 .at-svc-print {
     background-color: rgb(168 168 168);
@@ -305,10 +305,10 @@ body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openS
     font-size: 16px;
     line-height: 29px;
     font-weight: 700;
-    margin-right: 18px;
+    margin-right: 25px;
     margin-top: 3px;
     letter-spacing: 1px;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 .at-resp-share-element .at-share-btn:focus, 
 .at-resp-share-element .at-share-btn:hover {
