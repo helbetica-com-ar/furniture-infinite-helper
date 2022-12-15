@@ -177,6 +177,9 @@ body.pa-dutch-woodcraft {
     background-color: black;
     color: #dcad6f;
 }
+body.pa-dutch-woodcraft .noSliderSpacer {
+    display: none!important;
+}
 
 .pa-dutch-woodcraft .furnitureMenuButton a {
     position: relative;
