@@ -256,6 +256,18 @@ body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
     body.amish-country-heirlooms---arthur-il .facebook-link-desktop {
         display: none;
     }
+    body.amish-country-heirlooms---arthur-il .fixedHeaderWrapper {
+        text-align: center;
+    }
+    body.amish-country-heirlooms---arthur-il .fixedHeader {
+        max-width: 1200px;
+    }
+    body.amish-country-heirlooms---arthur-il .fixedHeader > div.phoneWidgetWrapper {
+        text-align: left;
+    }
+    body.amish-country-heirlooms---arthur-il .fixedHeader > div.addressWidgetWrapper {
+        text-align: right;
+    }
 }
 
 
