@@ -297,6 +297,17 @@ body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openS
 .amish-connection .mobileStaticHeader {
     padding-top: 0em;
 }
+.amish-connection a:hover {
+    letter-spacing: normal!important;
+}
+.amish-connection .swiperOverlay {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.amish-connection .SlideHeadlineWrapper h2,
+.amish-connection .SlideHeadlineWrapper h3,
+.amish-connection .SlideHeadlineWrapper a.ctaLink {
+    text-shadow: 1px 2px 3px white;
+}
 
 
 
