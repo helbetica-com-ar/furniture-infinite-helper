@@ -286,7 +286,17 @@ body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openS
     }
 }
 
-
+/* theamishconnection.com */
+.amish-connection .noSliderSpacer {
+    background-image: none!important;
+}
+.amish-connection .mobileStaticHeaderWrapper {
+    height: 50px;
+    background-color: #000;
+}
+.amish-connection .mobileStaticHeader {
+    padding-top: 0em;
+}
 
 
 
