@@ -312,9 +312,15 @@ body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openS
 .amish-connection.furniture-category .single-page-article .entry > div.pagination-wrap {
     display: none;
 }
+.amish-connection.furniture-category .single-page-article .entry {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
 .amish-connection.furniture-category .single-page-article .entry > section.all-products-section,
 .amish-connection.furniture-category .single-page-article .entry > div.panel-layout {
     display: flex!important;
+    width: 100vw;
 }
 
 /* Share AddThis.com */
