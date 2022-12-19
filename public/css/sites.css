@@ -288,7 +288,7 @@ body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openS
 
 /* theamishconnection.com */
 .amish-connection .noSliderSpacer {
-    background-image: none!important;
+    display: none!important;
 }
 .amish-connection .mobileStaticHeaderWrapper {
     height: 50px;
@@ -309,7 +309,13 @@ body.amish-country-heirlooms---arthur-il .menu-item.menu-item-has-children.openS
     text-shadow: 1px 2px 3px white;
 }
 
-
+.amish-connection.furniture-category .single-page-article .entry > div.pagination-wrap {
+    display: none;
+}
+.amish-connection.furniture-category .single-page-article .entry > section.all-products-section,
+.amish-connection.furniture-category .single-page-article .entry > div.panel-layout {
+    display: flex!important;
+}
 
 /* Share AddThis.com */
 .at-share-btn-elements {
