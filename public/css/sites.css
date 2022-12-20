@@ -1,3 +1,11 @@
+.SlideHeadlineWrapper .ctaLink {
+    display: none;
+}
+
+.noSliderWrapper + #main .hide-when-no-slider {
+    display: none!important;
+}
+
 
 .headerWrapper {
     position: inherit!important;
