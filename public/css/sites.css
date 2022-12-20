@@ -2,7 +2,7 @@
     display: none;
 }
 
-.noSliderWrapper + #main .hide-when-no-slider {
+.noSliderSpacer + #main .hide-when-no-slider {
     display: none!important;
 }
 
