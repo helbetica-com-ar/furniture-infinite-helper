@@ -292,6 +292,10 @@ body.pa-dutch-woodcraft .noSliderSpacer {
     width: 100%;
 }
 
+.amish-country-heirlooms---arthur-il .rightMenuWrapper {
+    width: 100%;
+}
+
 .amish-country-heirlooms---arthur-il .rightMenuWrapper ul.menu {
     display: flex;
     flex-wrap: wrap;
@@ -306,6 +310,10 @@ body.pa-dutch-woodcraft .noSliderSpacer {
     height: 0px;
 }
 
+.amish-country-heirlooms---arthur-il .wideMenuWrapper li {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 
 @media only screen and (max-width: 640px){
