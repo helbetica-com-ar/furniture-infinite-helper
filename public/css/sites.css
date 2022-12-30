@@ -1,5 +1,5 @@
 /* GRID */
-.grid-container.object-home{
+.grid-container.object-home:not(.php-home-categories){
     gap: 1%!important;
     display: flex!important;
     flex-wrap: wrap!important;
