@@ -480,7 +480,7 @@ body.pa-dutch-woodcraft .noSliderSpacer {
     }*/
 
     body * {
-        display: none!important;
+        display: none;
     }
 
     img.custom-logo,
