@@ -426,7 +426,7 @@ body.pa-dutch-woodcraft .noSliderSpacer {
 /*********/
 
 @media print {
-    aside,
+    /* aside,
     aside *,
     footer,
     footer *,
@@ -465,7 +465,6 @@ body.pa-dutch-woodcraft .noSliderSpacer {
     { 
         display: none!important;
     }
-
     .pa-dutch-woodcraft #menu-main-menu,
     .pa-dutch-woodcraft #menu-main-menu * {
         display: block!important;
@@ -478,8 +477,13 @@ body.pa-dutch-woodcraft .noSliderSpacer {
     .pa-dutch-woodcraft #menu-item-19,
     .pa-dutch-woodcraft #menu-item-1541 {
         display: none!important;
+    }*/
+
+    body * {
+        display: none!important;
     }
 
+    img.custom-logo,
     .left-column,
     .right-column {
         display: block!important;
@@ -488,7 +492,8 @@ body.pa-dutch-woodcraft .noSliderSpacer {
         margin-top: 10mm;
     }
     img#hover-effect {
-        max-width: 120mm!important;
+        width: auto!important;
+        max-height: 150mm!important;
         margin: 20mm auto!important;
     }
     a[href]:after {
