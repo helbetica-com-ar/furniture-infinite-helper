@@ -450,7 +450,7 @@ body.pa-dutch-woodcraft .noSliderSpacer {
 
 /*********/
 /* PRINT */
-/*********/
+/*********/ 
 
 @media print {
     aside,
@@ -473,6 +473,7 @@ body.pa-dutch-woodcraft .noSliderSpacer {
     .furnitureOptionsBlockWrapper *,
     .contactBlockWrapper,
     .contactBlockWrapper *,
+    #menu-every-items-menu, 
     #menu-main-menu,
     #menu-main-menu *,
     #scroll-top,
