@@ -270,11 +270,8 @@ body.pa-dutch-woodcraft .noSliderSpacer {
 .home.amish-country-heirlooms---arthur-il .outerFurnitureLinkBoxWrapper {
     display: none!important;
 }
-.home.amish-country-heirlooms---arthur-il .desktopHeaderWrapper {
+.amish-country-heirlooms---arthur-il .desktopHeaderWrapper {
     background-color: transparent;
-}
-.home.amish-country-heirlooms---arthur-il #menu-every-items-menu-container{
-    background-color: white;
 }
 .amish-country-heirlooms---arthur-il .facebook-link-mobile {
     display: block;
@@ -339,6 +336,7 @@ body.pa-dutch-woodcraft .noSliderSpacer {
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: flex-start;
+    background-color: white;
 }
 
 .amish-country-heirlooms---arthur-il .breaker {
