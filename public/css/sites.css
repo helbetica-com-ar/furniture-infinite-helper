@@ -282,6 +282,9 @@ body.pa-dutch-woodcraft .noSliderSpacer {
 .amish-country-heirlooms---arthur-il .facebook-link-desktop {
     display: none;
 }
+.amish-country-heirlooms---arthur-il .innerSwiperContentWrapper {
+    background-color: rgba(255, 255, 255, 1);
+}
 .amish-country-heirlooms---arthur-il a.header-icon img {
     max-height: 25px;
     margin: 0px 6px;
