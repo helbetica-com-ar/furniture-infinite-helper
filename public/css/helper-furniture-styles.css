@@ -178,6 +178,10 @@ a:focus {
     color: #fff !important;
 }
 
+li.breaker {
+    border-bottom: 2px solid;
+}
+
 .addthis_inline_share_toolbox{
     float: left;
 }
