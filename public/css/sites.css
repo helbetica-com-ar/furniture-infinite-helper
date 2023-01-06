@@ -202,6 +202,10 @@ aside.chariho-furniture header h2 {
 .furniture-single-view .title-highlight {
     background-color: #009aff!important;
 }
+.breadcrumbs.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
 /* padutchwoodcraft.com  */
 body.pa-dutch-woodcraft { 
