@@ -21,7 +21,9 @@
 }
 /* //GRID */
 
-
+.slideCTAWrapper {
+    display: none;
+}
 
 .SlideHeadlineWrapper .ctaLink {
     display: none;
