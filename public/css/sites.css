@@ -166,6 +166,9 @@
         max-height: 187px;
         border-bottom: 7px solid #750f1c;
     }
+    .weavers-farm-and-furniture .mobileStaticSocial > div > ul {
+        margin: 0;
+    }
 }
 .weavers-farm-and-furniture .furnitureMenuButton a {
     height: 40px;
