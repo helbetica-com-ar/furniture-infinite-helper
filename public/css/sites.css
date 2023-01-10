@@ -167,6 +167,11 @@
         border-bottom: 7px solid #750f1c;
     }
 }
+.weavers-farm-and-furniture .furnitureMenuButton a {
+    height: 40px;
+    width: 40px;
+    top: -20px;
+}
 
 /* charihofurniture.com */
 body.chariho-furniture, 
