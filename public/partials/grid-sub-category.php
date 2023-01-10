@@ -1,5 +1,4 @@
 <section class="all-products-section">
-    
     <h2 style="text-align: center;"><strong><?php echo $main_category_name; ?> subcategories</strong></h2>
     <div class="grid-container alignfull php-sub-category-grid collection-image object-home">
         <?php 
@@ -32,7 +31,7 @@
                         }
                     }
                 }  ?>
-                <img src="<?php echo $img_url; ?>">
+                <img src="<?php echo $img_url; ?>" alt="" />
                 <p>
                     <?php echo $subCategory["name"]; ?>
                     <span class="prodCount">(<?php echo $subCategory["amount"]; ?>)</span>
@@ -43,19 +42,3 @@
         ?>
     </div>
 </section>
-<div class="pagination-wrap">
-    <div class="pagination">
-
-      <?php 
-            // $offset = $no_of_records_per_page;
-            // echo "<a href='?offset=0'>1</a>";
-
-            // for ($i=2; $i <= $total_pages; $i++) { 
-
-            //     echo "<a href='?offset=". $offset ."'>". $i ."</a>";
-            //     $offset = $offset + $no_of_records_per_page;
-            // } 
-      ?>
-
-    </div>
-</div>
