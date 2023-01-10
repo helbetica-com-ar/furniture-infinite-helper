@@ -223,7 +223,7 @@ class Furniture_Infinite_Shortcodes
         $response = get_transient('furniture_api_json_data_wp');
 
 ?>
-        <style type="text/css"></style>
+        
         <section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);"> 
             <div class="img-heading-su-874">
                 <h1>COLLECTIONS</h1>

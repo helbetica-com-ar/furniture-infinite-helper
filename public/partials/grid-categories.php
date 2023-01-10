@@ -1,4 +1,4 @@
-<style type="text/css"></style>
+
 
 <section class="all-products-section">
     <h2 style="text-align: center;">Browse Products By Categories [all-products] grid-categories-php</h2>

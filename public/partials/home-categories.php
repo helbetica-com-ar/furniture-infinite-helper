@@ -1,4 +1,4 @@
-<style type="text/css"></style>
+
 <div class="grid-container php-home-categories collection-image object-home <?= str_replace(" ", "-", strtolower(get_bloginfo( 'name' ))); ?>">
 <?php
 

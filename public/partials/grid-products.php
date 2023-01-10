@@ -1,4 +1,4 @@
-<style type="text/css"></style>
+
 
 <section class="all-products-section">
     <?php if ( isset($_GET['cat-id']) ){ $header = "Category:"; } elseif (isset($_GET['sub-cat-id'])) { $header = 'Subcategory:'; } ?>

@@ -5,7 +5,7 @@ function furniture_infinite_shortcode_home_collections()
 {
 	$response = get_transient('furniture_api_json_data_wp');
 ?>
-	<style type="text/css"></style>
+	
 	<div class="grid-container furniture_infinite_shortcode_home_collections collection-image object-home">
 		<?php
 		$manufacturers = $response['furnitureData'][0]['Manufacturers'];
@@ -53,7 +53,7 @@ function furniture_infinite_shortcode_collections()
 {
 	$response = get_transient('furniture_api_json_data_wp');
 ?>
-	<style type="text/css"></style>
+	
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
 		<div class="img-heading-su-874">
 			<h1>COLLECTIONS</h1>
@@ -103,7 +103,7 @@ function furniture_infinite_shortcode_all_products()
 {
 	$response = get_transient('furniture_api_json_data_wp');
 ?>
-	<style type="text/css"></style>
+	
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
 		<div class="img-heading-su-874">
 			<?php
@@ -180,7 +180,7 @@ function furniture_infinite_shortcode_all_products()
 		if ($rowCount == 'no') {
 			//echo "<pre>"; print_r($rowCount); echo "</pre>";exit;	
 		?>
-			<style type="text/css"></style>
+			
 			<div class="alert" style="background-color: #f8d7da !important; padding: 0.75rem 1.25rem !important;">
 				No product found.
 			</div>
@@ -198,7 +198,7 @@ function furniture_infinite_shortcode_sub_categories()
 {
 	$response = get_transient('furniture_api_json_data_wp');
 ?>
-	<style type="text/css"></style>
+	
 	<section class="img-products-45" style="background-image: url(/wp-content/uploads/2022/03/rustic-country-room.jpg);">
 		<div class="img-heading-su-874">
 		<?php
