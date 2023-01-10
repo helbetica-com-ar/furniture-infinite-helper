@@ -1,5 +1,5 @@
 <section class="all-products-section">
-    <h2 style="text-align: center;"><strong><?php echo $main_category_name; ?> subcategories</strong></h2>
+    <h2 style="text-align: center;"><strong><?= $main_category_name; ?> subcategories</strong></h2>
     <div class="grid-container alignfull php-sub-category-grid collection-image object-home">
         <?php 
         $subCategories = []; 
@@ -17,7 +17,7 @@
         } 
         foreach ($subCategories as $subCategory){  ?>
         <div class="furniture-infinite-grid-items">
-            <a href="<?= get_permalink() ?>?showing-subcategory=<?= urlencode(strtolower(str_replace(" ", "-", $subCategory["name"]))); ?>&sub-cat-id=<?php echo $subCategory["id"]; ?>">
+            <a href="<?= get_permalink() ?>?showing-subcategory=<?= urlencode(strtolower(str_replace(" ", "-", $subCategory["name"]))); ?>&sub-cat-id=<?= $subCategory["id"]; ?>">
                 <?php 
                 $manufacturers = $response['furnitureData'][0]['Manufacturers'];
                 foreach ($manufacturers as $manufacturer) {
@@ -31,10 +31,10 @@
                         }
                     }
                 }  ?>
-                <img src="<?php echo $img_url; ?>" alt="" />
+                <img src="<?= $img_url; ?>" alt="" />
                 <p>
-                    <?php echo $subCategory["name"]; ?>
-                    <span class="prodCount">(<?php echo $subCategory["amount"]; ?>)</span>
+                    <?= $subCategory["name"]; ?>
+                    <span class="prodCount">(<?= $subCategory["amount"]; ?>)</span>
                 </p>
             </a>
         </div><?php 
