@@ -147,6 +147,13 @@
 }
 
 
+/* weaversfarmandfurniture.com */
+.weavers-farm-and-furniture .mobileStaticHeaderWrapper {
+    height: 50px;
+    background-color: rgb(117, 15, 28);
+}
+
+
 /* charihofurniture.com */
 body.chariho-furniture, 
 body.chariho-furniture h1, 
