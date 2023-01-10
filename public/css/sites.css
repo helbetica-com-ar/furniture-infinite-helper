@@ -162,6 +162,10 @@
     padding-top: 0.em;
 }
 @media screen and (max-width: 863px) {
+    .weavers-farm-and-furniture .mobileStaticHeaderWrapper.boxShadow * {
+        outline: 1px solir red;
+    }
+
     .weavers-farm-and-furniture .headerWrapper {
         max-height: 187px;
         border-bottom: 7px solid #750f1c;
