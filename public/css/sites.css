@@ -169,6 +169,9 @@
     .weavers-farm-and-furniture .mobileStaticSocial > div > ul {
         margin: 0;
     }
+    .weavers-farm-and-furniture .mobileStaticHeader > div {
+        width: 50%;
+    }
 }
 .weavers-farm-and-furniture .furnitureMenuButton a {
     height: 40px;
