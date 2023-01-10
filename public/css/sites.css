@@ -152,6 +152,9 @@
     height: 50px;
     background-color: rgb(117, 15, 28);
 }
+.weavers-farm-and-furniture .wood-background {
+    background-image: none;
+}
 
 
 /* charihofurniture.com */
