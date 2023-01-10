@@ -163,7 +163,7 @@
 }
 @media screen and (max-width: 863px) {
     .weavers-farm-and-furniture .mobileStaticHeaderWrapper.boxShadow * {
-        outline: 1px solir red;
+        outline: 1px solid red;
     }
 
     .weavers-farm-and-furniture .headerWrapper {
