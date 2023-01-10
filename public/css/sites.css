@@ -155,6 +155,9 @@
 .weavers-farm-and-furniture .wood-background {
     background-image: none;
 }
+.weavers-farm-and-furniture .noSliderSpacer {
+    display: none;
+}
 
 
 /* charihofurniture.com */
