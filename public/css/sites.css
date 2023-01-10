@@ -158,7 +158,15 @@
 .weavers-farm-and-furniture .noSliderSpacer {
     display: none;
 }
-
+.weavers-farm-and-furniture .mobileStaticHeader {
+    padding-top: 0.em;
+}
+@media screen and (max-width: 863px) {
+    .weavers-farm-and-furniture .headerWrapper {
+        max-height: 187px;
+        border-bottom: 7px solid #750f1c;
+    }
+}
 
 /* charihofurniture.com */
 body.chariho-furniture, 
