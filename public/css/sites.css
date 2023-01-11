@@ -189,8 +189,16 @@
         max-height: 187px;
         border-bottom: 7px solid #750f1c;
     }
+    .weavers-farm-and-furniture a#mobileContactCall {
+        text-align: right;
+    }
     .weavers-farm-and-furniture .mobileStaticSocial > div > ul {
         margin: 0;
+    }
+    .weavers-farm-and-furniture .mobileContactLink:after {
+        font-family: "Font Awesome 5 Free";
+        font-size: 1.25em;
+        margin-left: 5px;
     }
     .weavers-farm-and-furniture .mobileStaticHeader > div:first-child {
         width: 33%;
