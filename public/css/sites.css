@@ -161,6 +161,18 @@
 .weavers-farm-and-furniture .mobileStaticHeader {
     padding-top: 0.em;
 }
+.weavers-farm-and-furniture .mobileContactLink:after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.25em;
+    margin-left: 5px;
+}
+.weavers-farm-and-furniture .furnitureMenuButton a {
+    height: 40px;
+    width: 40px;
+    top: -20px;
+}
+
+
 @media screen and (max-width: 863px) {
     .weavers-farm-and-furniture .mobileStaticContactWrapper p,
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
@@ -192,11 +204,6 @@
     .weavers-farm-and-furniture .mobileStaticSocial > div > ul {
         margin: 0;
     }
-    .weavers-farm-and-furniture .mobileContactLink:after {
-        font-family: "Font Awesome 5 Free";
-        font-size: 1.25em;
-        margin-left: 5px;
-    }
     .weavers-farm-and-furniture .mobileStaticHeader > div:first-child {
         width: 33%;
     }
@@ -204,11 +211,18 @@
         width: 66%;
     }
 }
-.weavers-farm-and-furniture .furnitureMenuButton a {
-    height: 40px;
-    width: 40px;
-    top: -20px;
+@media screen and (min-width: 864px) {
+    .mobileStaticHeaderWrapper.boxShadow * {
+        outline: 1px solid yellow;
+        display: flex!important;
+        padding: 0;
+        margin: 0;
+        font-weight: 400;
+        align-items: center;
+        justify-content: center;
+    }
 }
+
 
 /* charihofurniture.com */
 body.chariho-furniture, 
