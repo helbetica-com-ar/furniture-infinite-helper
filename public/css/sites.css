@@ -168,11 +168,17 @@
     .weavers-farm-and-furniture .mobileStaticContactWrapper p,
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
         margin: 0;
-        height: 30px; 
+        height: 50px; 
     }
     .weavers-farm-and-furniture .mobileStaticHeader {
         padding-top: 0em;
         padding-bottom: 0em;
+    }
+    .weavers-farm-and-furniture .mobileStaticSocialWrapper a {
+        height: 50px;
+    }
+    .weavers-farm-and-furniture .mobileStaticSocialWrapper .fa-2x {
+        line-height: 50px;
     }
 
     .weavers-farm-and-furniture .headerWrapper {
