@@ -165,6 +165,13 @@
     .weavers-farm-and-furniture .mobileStaticHeaderWrapper.boxShadow * {
         outline: 1px solid red;
     }
+    .weavers-farm-and-furniture .mobileStaticContactWrapper p {
+        margin: 0;
+    }
+    .weavers-farm-and-furniture .mobileStaticHeader {
+        padding-top: 0em;
+        padding-bottom: 0em;
+    }
 
     .weavers-farm-and-furniture .headerWrapper {
         max-height: 187px;
@@ -173,8 +180,11 @@
     .weavers-farm-and-furniture .mobileStaticSocial > div > ul {
         margin: 0;
     }
-    .weavers-farm-and-furniture .mobileStaticHeader > div {
-        width: 50%;
+    .weavers-farm-and-furniture .mobileStaticHeader > div:first-child {
+        width: 33%;
+    }
+    .weavers-farm-and-furniture .mobileStaticHeader > div:last-child {
+        width: 66%;
     }
 }
 .weavers-farm-and-furniture .furnitureMenuButton a {
