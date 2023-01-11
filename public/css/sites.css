@@ -165,8 +165,10 @@
     .weavers-farm-and-furniture .mobileStaticHeaderWrapper.boxShadow * {
         outline: 1px solid red;
     }
-    .weavers-farm-and-furniture .mobileStaticContactWrapper p {
+    .weavers-farm-and-furniture .mobileStaticContactWrapper p,
+    .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
         margin: 0;
+        height: 30px; 
     }
     .weavers-farm-and-furniture .mobileStaticHeader {
         padding-top: 0em;
