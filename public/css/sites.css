@@ -148,6 +148,82 @@
 
 
 
+/* weaversfarmandfurniture.com */
+.weavers-farm-and-furniture .mobileStaticHeaderWrapper {
+    height: 50px;
+    background-color: rgb(117, 15, 28);
+}
+.weavers-farm-and-furniture .wood-background {
+    background-image: none;
+}
+.weavers-farm-and-furniture .noSliderSpacer {
+    display: none;
+}
+.weavers-farm-and-furniture .mobileStaticHeader {
+    padding-top: 0.em;
+}
+.weavers-farm-and-furniture .mobileContactLink:after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.25em;
+    margin-left: 5px;
+}
+.weavers-farm-and-furniture .furnitureMenuButton a {
+    height: 40px;
+    width: 40px;
+    top: -20px;
+}
+
+
+@media screen and (max-width: 863px) {
+    .weavers-farm-and-furniture .mobileStaticContactWrapper p,
+    .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
+        margin: 0;
+        height: 50px; 
+        line-height: 50px;
+    }
+    .weavers-farm-and-furniture .mobileStaticHeader {
+        padding-top: 0em;
+        padding-bottom: 0em;
+    }
+    .weavers-farm-and-furniture .deskTopHeaderInfo {
+        display: inline;
+    }
+    .weavers-farm-and-furniture .mobileStaticSocialWrapper a {
+        height: 50px;
+    }
+    .weavers-farm-and-furniture .mobileStaticSocialWrapper .fa-2x {
+        line-height: 50px;
+    }
+
+    .weavers-farm-and-furniture .headerWrapper {
+        max-height: 187px;
+        border-bottom: 7px solid #750f1c;
+    }
+    .weavers-farm-and-furniture a#mobileContactCall {
+        text-align: right;
+    }
+    .weavers-farm-and-furniture .mobileStaticSocial > div > ul {
+        margin: 0;
+    }
+    .weavers-farm-and-furniture .mobileStaticHeader > div:first-child {
+        width: 33%;
+    }
+    .weavers-farm-and-furniture .mobileStaticHeader > div:last-child {
+        width: 66%;
+    }
+}
+@media screen and (min-width: 864px) {
+    .weavers-farm-and-furniture .mobileStaticHeaderWrapper.boxShadow * {
+        outline: 1px solid yellow;
+        display: flex!important;
+        padding: 0;
+        margin: 0;
+        font-weight: 400;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 
 
 /* charihofurniture.com */
