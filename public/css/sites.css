@@ -162,9 +162,6 @@
     padding-top: 0.em;
 }
 @media screen and (max-width: 863px) {
-    .weavers-farm-and-furniture .mobileStaticHeaderWrapper.boxShadow * {
-        outline: 1px solid red;
-    }
     .weavers-farm-and-furniture .mobileStaticContactWrapper p,
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
         margin: 0;
