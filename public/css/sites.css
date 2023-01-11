@@ -222,6 +222,13 @@
         align-items: center;
         justify-content: center;
     }
+    .weavers-farm-and-furniture .desktopMainMenuWrapper li {
+        padding: 0 12px;
+    }
+    .weavers-farm-and-furniture .mobileStaticContact,
+    .weavers-farm-and-furniture .mobileStaticContact * {
+        width: 100%;
+    }
 }
 
 
