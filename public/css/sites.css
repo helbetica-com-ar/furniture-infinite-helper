@@ -231,6 +231,18 @@
     }
 }
 
+@media screen and (min-width: 50em){
+    .weavers-farm-and-furniture .desktopMainMenuWrapper {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 60%;
+    }
+    .weavers-farm-and-furniture .mobileStaticSocialWrapper,
+    .weavers-farm-and-furniture .mobileStaticContactWrapper {
+        width: 20%;
+    }
+}
+
 
 
 /* charihofurniture.com */
