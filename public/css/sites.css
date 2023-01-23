@@ -6,6 +6,8 @@
     align-items: center!important;
     justify-content: center!important;
     margin: 1% 0.5%!important;
+    padding: 0!important;
+    max-width: 100%!important;
 }
 
 .furniture-infinite-grid-items { flex: 0 1 48%!important; }
