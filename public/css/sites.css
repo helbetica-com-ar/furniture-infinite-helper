@@ -156,9 +156,7 @@
 .weavers-farm-and-furniture .wood-background {
     background-image: none;
 }
-.weavers-farm-and-furniture .noSliderSpacer {
-    display: none;
-}
+
 .weavers-farm-and-furniture .mobileStaticHeader {
     padding-top: 0.em;
 }
@@ -245,9 +243,6 @@ body.chariho-furniture li,
 body.chariho-furniture a {
     font-family: 'Montserrat', sans-serif!important;
 }
-body.chariho-furniture .noSliderSpacer {
-    display: none!important;
-}
 
 aside.chariho-furniture header {
     padding-top: 15px;
@@ -306,9 +301,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     background-color: black;
     color: #dcad6f;
 }
-body.pa-dutch-woodcraft .noSliderSpacer {
-    display: none!important;
-}
 
 .pa-dutch-woodcraft .furnitureMenuButton a {
     position: relative;
@@ -364,6 +356,19 @@ body.pa-dutch-woodcraft .noSliderSpacer {
 .home.amish-country-heirlooms---arthur-il .outerFurnitureLinkBoxWrapper {
     display: none!important;
 }
+.amish-country-heirlooms---arthur-il .noSliderSpacer {
+    display: block;
+    padding-top: 15em;
+    margin-bottom: -2.5em;
+}
+
+@media (min-width: 54em){
+    .amish-country-heirlooms---arthur-il .noSliderSpacer {
+        margin-bottom: -3.8em;
+        padding-top: 20em;
+    }
+}
+
 .amish-country-heirlooms---arthur-il .custom-logo {
     max-width: 255px;
 }
@@ -484,9 +489,6 @@ body.pa-dutch-woodcraft .noSliderSpacer {
 }
 
 /* theamishconnection.com */
-.amish-connection .noSliderSpacer {
-    display: none!important;
-}
 .amish-connection .mobileStaticHeaderWrapper {
     height: 50px;
     background-color: #000;
