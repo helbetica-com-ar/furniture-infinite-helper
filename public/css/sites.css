@@ -245,16 +245,15 @@
         width: 25%;
     }
     .weavers-farm-and-furniture .mobileStaticSocialWrapper {
-        padding-left: 3%;
         justify-content: left;
     }
     .weavers-farm-and-furniture .mobileStaticSocialWrapper a {
         width: 35px;
         margin-right: 13px;
     }
-    .weavers-farm-and-furniture .mobileStaticContactWrapper {
+    /* .weavers-farm-and-furniture .mobileStaticContactWrapper {
         padding-right: 3%;
-    }
+    } */
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
         margin-left: 13px;
     }
