@@ -247,10 +247,10 @@ body.chariho-furniture a {
 aside.chariho-furniture header {
     padding-top: 15px;
     padding-bottom: 5px;
-    background-image: url(https://charihofurniture.com/wp-content/themes/selectConnectLeftDrawerStyle/assets/images/main-background-wood-grain.jpg);
+    /* background-image: url(https://charihofurniture.com/wp-content/themes/selectConnectLeftDrawerStyle/assets/images/main-background-wood-grain.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 aside.chariho-furniture header h2 {
     color: #00375b;
