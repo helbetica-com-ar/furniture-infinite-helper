@@ -164,7 +164,7 @@
 }
 .weavers-farm-and-furniture .mobileContactLink:after {
     font-family: "Font Awesome 5 Free";
-    font-size: 1.25em;
+    font-size: 17px;
     margin-left: 5px;
 }
 .weavers-farm-and-furniture .furnitureMenuButton a {
@@ -258,10 +258,15 @@
         margin-left: 13px;
     }
 
-    .weavers-farm-and-furniture .mobileStaticSocialWrapper a,
+    /* .weavers-farm-and-furniture .mobileStaticSocialWrapper a,
     .weavers-farm-and-furniture .mobileStaticHeaderWrapper a,
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
         line-height: 31px;
+    } */
+
+    .weavers-farm-and-furniture .mobileStaticHeaderWrapper a {
+        line-height: 31px!important;
+        font-size: 17px!important;
     }
 
 }
