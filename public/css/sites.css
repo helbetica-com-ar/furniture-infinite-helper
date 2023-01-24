@@ -313,7 +313,25 @@
         width: 15%;
     }
 }
+@media only screen and (max-width: 799px) {
+    .weavers-farm-and-furniture .grid-container.collection-image.object-home {
+        grid-template-columns: repeat(1, 1fr);
+    }    
+}
+@media only screen and (min-width: 800px) and (max-width: 1024px){
+    .weavers-farm-and-furniture .grid-container.collection-image.object-home {
+        grid-template-columns: repeat(2, 1fr);
+    }    
+}
 
+@media screen and (min-width: 1024px){
+    .weavers-farm-and-furniture .grid-container.collection-image.object-home {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .weavers-farm-and-furniture .grid-container.collection-image.object-home a.grid-item {
+        height: 320px;
+    }
+}
 
 
 /* charihofurniture.com */
