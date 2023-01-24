@@ -235,6 +235,12 @@
         width: 66%;
     }
 }
+@media screen and (min-width: 800px) and (max-width: 1280px){
+    .weavers-farm-and-furniture .deskTopHeaderInfo {
+        display: none!important;
+    }
+}
+
 @media screen and (min-width: 864px) {
     .weavers-farm-and-furniture .mobileStaticHeaderWrapper {
         height: 50px;
