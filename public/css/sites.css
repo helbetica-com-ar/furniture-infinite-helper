@@ -178,9 +178,15 @@
     width: 40px;
     top: -20px;
 }
-
+.weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
 
 @media screen and (max-width: 863px) {
+    .weavers-farm-and-furniture .mobileStaticHeader > div > div {
+        padding: 0em 0em;
+    }
     .weavers-farm-and-furniture .mobileStaticContactWrapper p,
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
         margin: 0;
@@ -267,19 +273,6 @@
         width: 35px;
         margin-right: 13px;
     }
-    /* .weavers-farm-and-furniture .mobileStaticContactWrapper {
-        padding-right: 3%;
-    } */
-    .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
-        justify-content: flex-end;
-        flex-direction: row-reverse;
-    }
-
-    /* .weavers-farm-and-furniture .mobileStaticSocialWrapper a,
-    .weavers-farm-and-furniture .mobileStaticHeaderWrapper a,
-    .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
-        line-height: 31px;
-    } */
 
 }
 
