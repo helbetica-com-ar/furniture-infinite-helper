@@ -159,9 +159,6 @@
     background-image: none;
 }
 
-.weavers-farm-and-furniture .mobileStaticHeader {
-    padding-top: 0.em;
-}
 .weavers-farm-and-furniture .mobileContactLink:after {
     font-family: "Font Awesome 5 Free";
     font-size: 16px;
@@ -213,6 +210,13 @@
     }
 }
 @media screen and (min-width: 864px) {
+    .weavers-farm-and-furniture .mobileStaticHeader {
+        padding-top: 10px;
+        padding-bottom: 0;
+    }
+    .weavers-farm-and-furniture .deskTopHeaderInfo {
+        padding-left: 12px
+    }
     .weavers-farm-and-furniture .mobileStaticHeaderWrapper.boxShadow * {
         outline: 1px solid yellow;
         display: flex!important;
@@ -255,7 +259,8 @@
         padding-right: 3%;
     } */
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
-        margin-left: 13px;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
     }
 
     /* .weavers-farm-and-furniture .mobileStaticSocialWrapper a,
