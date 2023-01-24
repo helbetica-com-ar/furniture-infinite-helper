@@ -153,6 +153,7 @@
 /* weaversfarmandfurniture.com */
 .weavers-farm-and-furniture .mobileStaticHeaderWrapper {
     background-color: rgb(117, 15, 28);
+    height: 35px;
 }
 
 .weavers-farm-and-furniture .mobileStaticHeaderWrapper a {
@@ -182,6 +183,16 @@
     justify-content: flex-end;
     flex-direction: row-reverse; 
 }
+.weavers-farm-and-furniture .mobileStaticSocialWrapper a i {
+    width: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 410px) {
+    .weavers-farm-and-furniture .deskTopHeaderInfo {
+        display: none!important;
+    }
+}
 
 @media screen and (max-width: 863px) {
     .weavers-farm-and-furniture .mobileStaticHeader > div > div {
@@ -190,8 +201,8 @@
     .weavers-farm-and-furniture .mobileStaticContactWrapper p,
     .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
         margin: 0;
-        height: 50px; 
-        line-height: 50px;
+        /* height: 50px; 
+        line-height: 50px; */
     }
     .weavers-farm-and-furniture .mobileStaticHeader {
         padding-top: 0em;
