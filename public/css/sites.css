@@ -180,7 +180,7 @@
 }
 .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
     justify-content: flex-end;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; 
 }
 
 @media screen and (max-width: 863px) {
