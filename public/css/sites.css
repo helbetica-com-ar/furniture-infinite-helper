@@ -291,6 +291,15 @@
     .weavers-farm-and-furniture .deskTopHeaderInfo {
         display: none!important;
     }
+    .weavers-farm-and-furniture .mobileStaticContact .siteorigin-widget-tinymce {
+        flex-direction: row-reverse;
+    }
+    .weavers-farm-and-furniture .mobileStaticContact .siteorigin-widget-tinymce p {
+        width: auto;
+    }
+    .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
+        width: 35px;
+    }
 }
 
 
