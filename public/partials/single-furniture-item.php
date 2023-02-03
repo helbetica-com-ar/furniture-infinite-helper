@@ -297,7 +297,7 @@ print_r($products_from_same_collection);
             }  ?>
             <!-- Go to www.addthis.com/dashboard to customize your tools --> 
             <div data-url='<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'
-            data-title="<?php echo $product['name']; ?>"
+            data-title="<?php echo $p_name; ?>"
             data-description="<?php echo $product['description']; ?>"
             data-media="<?php echo $main_img_url; ?>" 
             class="addthis_inline_share_toolbox">
