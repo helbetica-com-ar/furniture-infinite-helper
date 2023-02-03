@@ -4,6 +4,12 @@ if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == ''
 } else {
     $cat_prefix = FURNITURE_CAT_LINK_PREFIX; 
 }
+
+# string replace for consecutive single quotes for doble quote
+# SELECT * FROM public."Furniture" WHERE name LIKE '%''''%'
+$p_name = str_replace("''", "\"" , $product['name']);
+
+
 ?>
 <div class="alignfull wood-background">
     <div class="breadcrumbs container <?= str_replace(" ", "-", strtolower(get_bloginfo( 'name' ))); ?>">
@@ -67,7 +73,7 @@ print_r($products_from_same_collection);
     <div class="right-column">
         <div class="product-details-wrapper">
             <div id="desc">
-                <h1><?= $product['name'] ?></h1>
+                <h1><?= $p_name ?></h1>
                 <?php 
                 if(isset($this_p_manufacturer_name) ) {  ?>
                     <h2 style="display: none"><?= $this_p_manufacturer_name; ?><h2><?php 
