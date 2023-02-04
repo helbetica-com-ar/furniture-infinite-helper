@@ -9,7 +9,16 @@ if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == ''
 # SELECT * FROM public."Furniture" WHERE name LIKE '%''''%'
 # $p_name = str_replace("''", "\"" , $product['name']);
 $p_name = htmlspecialchars($product['name']);
-
+if( isset( $product['sku'] ) ){{
+    $p_sku = htmlspecialchars($product['sku']);
+} else {
+    $p_sku = "";
+}
+if( isset( $product['description'] ) ){{
+    $p_description = htmlspecialchars($product['description']);
+} else {
+    $p_description = "";
+}
 
 ?>
 <div class="alignfull wood-background">
@@ -298,8 +307,8 @@ print_r($products_from_same_collection);
             }  ?>
             <!-- Go to www.addthis.com/dashboard to customize your tools --> 
             <div data-url='<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'
-            data-title="<?php echo $product['name']; ?>"
-            data-description="<?php echo $product['description']; ?>"
+            data-title="<?php echo $p_name; ?>"
+            data-description="<?php echo $p_description; ?>"
             data-media="<?php echo $main_img_url; ?>" 
             class="addthis_inline_share_toolbox">
             </div>
@@ -353,7 +362,7 @@ print_r($products_from_same_collection);
             <p><?= $product['description']; ?></p>
         </div>
         <div class="form-shortcode-wrapper">
-        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $product['sku'] ."&name=". $p_name ."&description=" . $product['description'] . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "']") ?>
+        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $p_sku ."&name=". $p_name ."&description=" . $p_description . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "']") ?>
         </div>
     </div>
 </div>

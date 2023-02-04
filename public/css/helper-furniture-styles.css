@@ -717,7 +717,7 @@ div.product_variant input {
     border-style: solid;
     border-width: 2px 2px 0px 2px;
     border-color: black;
-    padding: 0 12px;
+    padding: 20px 12px;
 }
 .furniture-infinite-quote-form .form-header-wrapper h6 {
     text-transform: uppercase;
