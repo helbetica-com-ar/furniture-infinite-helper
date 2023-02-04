@@ -307,6 +307,7 @@ li.breaker {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    width: 100%;
 }
 .thumbnail-container {
     display: flex;
@@ -1029,6 +1030,10 @@ a#loadMore {
 }
 .container.product-details .right-column {
     padding-top: 2.5em;
+}
+
+.container.product-details .left-column > #container {
+    position: relative;
 }
 
 .sliderRoomBrowse .grid-container.collection-image.object-home {
