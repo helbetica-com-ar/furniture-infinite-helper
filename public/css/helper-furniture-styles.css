@@ -340,6 +340,7 @@ li.breaker {
 .thumbnails-wrapper .thumbnail img {
     border: 1px solid transparent;
     height: auto!important;
+    width: inherit!important;
 }
 
 .thumbnails-wrapper .thumbnail img.active {
