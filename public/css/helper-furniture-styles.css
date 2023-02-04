@@ -713,6 +713,20 @@ div.product_variant input {
     background-color: inherit!important;
  }
 
+div.product_option input:active,
+div.product_variant input:active,
+div.product_option input:visited,
+div.product_variant input:visited,
+div.product_option input:focus,
+div.product_variant input:focus,
+div.product_option input:focus-visible,
+div.product_variant input:focus-visible,
+div.product_option input:focus-within,
+div.product_variant input:focus-within { 
+    outline: none!important;
+}
+
+
 .furniture-infinite-quote-form .form-header-wrapper {
     border-style: solid;
     border-width: 2px 2px 0px 2px;
