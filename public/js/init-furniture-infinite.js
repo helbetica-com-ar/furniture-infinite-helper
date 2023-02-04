@@ -12,7 +12,7 @@
     if ($('.row-options-header').length) { alternatives++; enableOption = true; } else { optionSelected = true; }
     if ($('.row-variants-header').length) { alternatives++; enableVariant = true; } else { variantSelected = true; }
 
-    if (alternatives > 0) { $('div.product_option, div.product_variant').find('input').attr('disabled', 'disabled'); }
+    if (alternatives > 0) { $('div.product_option, div.product_variant').find('input').attr('readonly', 'readonly'); }
 
     if (alternatives == 2) { 
         $('div.product_option, div.product_variant').addClass('unhide'); 
