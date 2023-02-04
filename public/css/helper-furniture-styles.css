@@ -748,7 +748,7 @@ div.product_variant input:focus-within {
     justify-content: center;
     flex-direction: column;
 }
-.furniture-infinite-quote-form .form-header-wrapper h6 { padding-right: 20px; }
+.furniture-infinite-quote-form .form-header-wrapper h6 { padding-right: 20px; text-align: center; }
 .furniture-infinite-quote-form .form-header-wrapper p:empty { display: none;}
 .furniture-infinite-quote-form .form-header-wrapper.no-choices {
     margin-bottom: 16px;
