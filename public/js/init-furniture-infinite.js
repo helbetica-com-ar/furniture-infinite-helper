@@ -42,6 +42,9 @@
         fieldValues = $('input[name=gform_field_values]').attr('value');
         splitted = fieldValues.split('&');
 
+        $('#gform_fields_1').prepend($('.product_variant'));
+        $('#gform_fields_1').prepend($('.product_option'));
+
 
         $('tr.row-option').on('click', function () {
             $('tr.row-option').removeClass('active');

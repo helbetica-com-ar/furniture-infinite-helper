@@ -457,6 +457,7 @@ li.breaker {
 
 table th.label-highlight {
     text-transform: none!important;
+    text-align: left;
 }
 .row-option > td > p,
 .row-single-variant > td > p,
