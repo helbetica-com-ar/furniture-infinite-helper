@@ -7,7 +7,8 @@ if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == ''
 
 # string replace for consecutive single quotes for doble quote
 # SELECT * FROM public."Furniture" WHERE name LIKE '%''''%'
-$p_name = str_replace("''", "\"" , $product['name']);
+# $p_name = str_replace("''", "\"" , $product['name']);
+$p_name = htmlspecialchars($product['name']);
 
 
 ?>
