@@ -1277,6 +1277,17 @@ a#loadMore {
     }
 }
 
+@media (min-width: 1300px){
+    .container.product-details .left-column {
+        width: 64%;
+    }
+    .container.product-details .right-column {
+        width: 34%;
+    }
+    .container.product-details .left-column { margin-right: 1%;} 
+    .container.product-details .right-column { margin-left: 1%;}
+}
+
 
 
 /* SITE SPECIFIC */
