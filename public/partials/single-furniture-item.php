@@ -9,12 +9,13 @@ if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == ''
 # SELECT * FROM public."Furniture" WHERE name LIKE '%''''%'
 # $p_name = str_replace("''", "\"" , $product['name']);
 $p_name = htmlspecialchars($product['name']);
-if( isset( $product['sku'] ) ){{
+
+if( isset( $product['sku'] ) ){
     $p_sku = htmlspecialchars($product['sku']);
 } else {
     $p_sku = "";
 }
-if( isset( $product['description'] ) ){{
+if( isset( $product['description'] ) ){
     $p_description = htmlspecialchars($product['description']);
 } else {
     $p_description = "";
