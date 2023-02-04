@@ -353,7 +353,7 @@ print_r($products_from_same_collection);
             <p><?= $product['description']; ?></p>
         </div>
         <div class="form-shortcode-wrapper">
-        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $product['sku'] ."&name=". $product['name'] ."&description=" . $product['description'] . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "']") ?>
+        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $product['sku'] ."&name=". $p_name ."&description=" . $product['description'] . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "']") ?>
         </div>
     </div>
 </div>
