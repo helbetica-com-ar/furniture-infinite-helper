@@ -5,6 +5,10 @@ if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == ''
     $cat_prefix = FURNITURE_CAT_LINK_PREFIX; 
 }
 
+
+$site_title = get_bloginfo( 'name' );
+$site_url = network_site_url( '/' );
+$site_description = get_bloginfo( 'description' ); 
 if ( has_custom_logo() ){
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
