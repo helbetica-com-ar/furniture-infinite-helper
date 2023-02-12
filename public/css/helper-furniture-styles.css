@@ -761,6 +761,7 @@ div.product_variant input:focus-within {
     left: auto!important;
     position: relative!important;
     visibility: visible!important;
+    margin-top: -15px;
 }
 .unhide-option div.product_option,
 .unhide-variant div.product_variant {
