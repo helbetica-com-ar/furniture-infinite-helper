@@ -752,8 +752,14 @@ div.product_variant input:focus-within {
 .furniture-infinite-quote-form .form-header-wrapper p:empty { display: none;}
 .furniture-infinite-quote-form .form-header-wrapper.no-choices {
     margin-bottom: 16px;
-    border-width: 2px 2px 2px 2px;
+    border-width: 2px 2px 2px single
+},
+
+.form-shortcode-wrapper.single-choice,
+.form-shortcode-wrapper.dual-choice {
+    margin-top: -15px;
 }
+
 .dual-choice div.product_option,
 .dual-choice div.product_variant,
 .single-choice.unhide-option div.product_option,
