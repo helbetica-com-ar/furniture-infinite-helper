@@ -10,12 +10,12 @@ $site_title = strtoupper(get_bloginfo( 'name' ));
 $site_url = network_site_url( '/' );
 $site_description = get_bloginfo( 'description' ); 
 if ( has_custom_logo() ){
-    echo 'debug: has custom logo';
+    #echo 'debug: has custom logo';
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
     $site_logo = $image[0];
 } else {
-    echo 'debug: does not have custom logo';
+    #echo 'debug: does not have custom logo';
 }
 
 $p_name = htmlspecialchars($product['name']);
