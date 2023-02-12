@@ -370,7 +370,6 @@ print_r($products_from_same_collection);
     <div class="form-inner-wrapper">
         <div class="form-header-wrapper">
             <h6><?php echo $product['name']; ?></h6>
-            <p><?= $product['description']; ?></p>
         </div>
         <div class="form-shortcode-wrapper">
         <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $p_sku ."&name=". $p_name ."&description=" . $p_description . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "&site_logo_url=". $site_logo . "&site_title=". $site_title . "&site_description=". $site_description . "&site_url=". $site_url . "']") ?>
