@@ -755,9 +755,8 @@ div.product_variant input:focus-within {
     border-width: 2px 2px 2px single
 },
 
-.form-shortcode-wrapper.single-choice,
-.form-shortcode-wrapper.dual-choice {
-    margin-top: -15px;
+.gform-body.gform_body {
+    margin-top: -25px;
 }
 
 .dual-choice div.product_option,
