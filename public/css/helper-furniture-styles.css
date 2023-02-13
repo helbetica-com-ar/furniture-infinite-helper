@@ -716,6 +716,9 @@ div.product_variant input {
     cursor: default!important;
     color: inherit!important;
     background-color: inherit!important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
  }
 
 div.product_option input:active,
