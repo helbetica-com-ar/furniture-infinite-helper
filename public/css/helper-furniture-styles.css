@@ -1206,6 +1206,10 @@ a#loadMore {
         min-height: 100vh;
         justify-content: center;
     }
+    .breadcrumbs.container {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
     .tabcontent-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1349,6 +1353,9 @@ a#loadMore {
 .breadcrumbs{
     margin-bottom: 2.2em;
 }
+.breadcrumbs a {
+    color: inherit;
+} 
 .mobileMenuWrapper {
     bottom: 57px;
 }
