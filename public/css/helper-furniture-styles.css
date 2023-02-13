@@ -566,6 +566,13 @@ table.product-data .row-single-variant > td:before{
 .row-highlight {
     border-right: 1px solid #009aff;
 }
+
+.row-highlight-header > th,
+.row-highlight > td {
+    padding-right: 45px;
+}
+
+
 .row-highlight:last-child{
     border-bottom: 1px solid #009aff;
 }
