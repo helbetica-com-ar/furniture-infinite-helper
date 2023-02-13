@@ -529,6 +529,8 @@ table.product-data .row-single-variant > td:before{
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
 }
 
 
@@ -649,6 +651,7 @@ tr.row-highlight.active::after {
 .wood-type-name {
     display: flex;
     align-items: center;
+    max-width: calc(100% - 170px);
 }
 
 .wood-type-img {
@@ -676,6 +679,7 @@ tr.row-highlight.active::after {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 23px;
 }
 
 .get-quote-form-btn{
@@ -753,7 +757,7 @@ div.product_variant input:focus-within {
 .furniture-infinite-quote-form .form-header-wrapper.no-choices {
     margin-bottom: 16px;
     border-width: 2px 2px 2px single
-},
+}
 
 .form-shortcode-wrapper {
     margin-top: -25px;  
