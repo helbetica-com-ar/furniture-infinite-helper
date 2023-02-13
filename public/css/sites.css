@@ -656,6 +656,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 /*********/ 
 
 @media print {
+    /* .row-options-header,
+    .row-options-header *,
+    .row-variants-header,
+    .row-variants-header *, */
+    .row-highlight-header label span.placeholder,
     aside,
     aside *,
     footer,
@@ -664,10 +669,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .headerCalloutWrapper *,
     .breadcrumbs,
     .breadcrumbs *,
-    .row-options-header,
-    .row-options-header *,
-    .row-variants-header,
-    .row-variants-header *,
     .get-quote-form-btn,
     .get-quote-form-btn *,
     .furnitureCustomizationBlockWrapper,
@@ -713,6 +714,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .pa-dutch-woodcraft #menu-item-1541 {
         display: none!important;
     }
+
+    .row-option, .row-variant {
+        display: table-row!important;
+    }
+
     img.custom-logo,
     .left-column,
     .right-column {
