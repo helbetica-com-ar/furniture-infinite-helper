@@ -739,7 +739,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     img#hover-effect {
         width: auto!important;
         max-height: 150mm!important;
-        margin: 20mm auto!important;
+        margin: 10mm auto 0mm auto!important;
     }
     a[href]:after {
         content: none !important;
