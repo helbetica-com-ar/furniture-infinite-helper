@@ -710,7 +710,7 @@ div.product_option input,
 div.product_variant input { 
     border: none; 
     font-weight: bold; 
-    text-align: left; 
+    text-align: center; 
     min-height: 46px;
     padding: 8px 12px!important;
     cursor: default!important;
@@ -734,13 +734,17 @@ div.product_variant input:focus-within {
 
 .furniture-infinite-quote-form .form-header-wrapper {
     border-style: solid;
-    border-width: 2px 2px 0px 2px;
+    border-width: 2px 2px 1px 2px;
     border-color: black;
     padding: 20px 12px;
+    background-color: #009aff;
 }
 .furniture-infinite-quote-form .form-header-wrapper h6 {
     text-transform: uppercase;
     font-size: 110%;
+    font-weight: 600;
+    padding-right: 20px; 
+    text-align: center; 
 }
 .furniture-infinite-quote-form .form-header-wrapper h6,
 .furniture-infinite-quote-form .form-header-wrapper p { 
@@ -752,7 +756,6 @@ div.product_variant input:focus-within {
     justify-content: center;
     flex-direction: column;
 }
-.furniture-infinite-quote-form .form-header-wrapper h6 { padding-right: 20px; text-align: center; }
 .furniture-infinite-quote-form .form-header-wrapper p:empty { display: none;}
 .furniture-infinite-quote-form .form-header-wrapper.no-choices {
     margin-bottom: 16px;
@@ -771,11 +774,10 @@ div.product_variant input:focus-within {
     position: relative!important;
     visibility: visible!important;
 }
-.product_option input,
-.product_variant input {
-    text-align: center;
-}
 
+.dual-choice div.product_variant {
+    margin-top: -16px;
+}
 
 .unhide-option div.product_option,
 .unhide-variant div.product_variant {
