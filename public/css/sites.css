@@ -692,7 +692,8 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .footerCopyrightWrapper *,
     .zoom:before,
     .zoom:after,
-    .at-svc-print:after
+    .at-svc-print:after,
+    .elementor-location-footer
     { 
         display: none!important;
     }
