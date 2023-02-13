@@ -18,15 +18,15 @@ if ( has_custom_logo() ){
     #echo 'debug: does not have custom logo';
 }
 
-$p_name = htmlentities($product['name']);
+$p_name = htmlspecialchars($product['name']);
 
 if( isset( $product['sku'] ) ){
-    $p_sku = htmlentities($product['sku']);
+    $p_sku = htmlspecialchars($product['sku']);
 } else {
     $p_sku = "";
 }
 if( isset( $product['description'] ) ){
-    $p_description = htmlentities($product['description']);
+    $p_description = htmlspecialchars($product['description']);
 } else {
     $p_description = "";
 }
