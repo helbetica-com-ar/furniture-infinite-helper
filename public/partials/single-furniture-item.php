@@ -18,15 +18,15 @@ if ( has_custom_logo() ){
     #echo 'debug: does not have custom logo';
 }
 
-$p_name = htmlspecialchars($product['name']);
+$p_name = htmlentities($product['name']);
 
 if( isset( $product['sku'] ) ){
-    $p_sku = htmlspecialchars($product['sku']);
+    $p_sku = htmlentities($product['sku']);
 } else {
     $p_sku = "";
 }
 if( isset( $product['description'] ) ){
-    $p_description = htmlspecialchars($product['description']);
+    $p_description = htmlentities($product['description']);
 } else {
     $p_description = "";
 }
@@ -94,7 +94,7 @@ print_r($products_from_same_collection);
     <div class="right-column">
         <div class="product-details-wrapper">
             <div id="desc">
-                <h1><?= $product['name'] ?></h1>
+                <h1><?= $p_name ?></h1>
                 <?php 
                 if(isset($this_p_manufacturer_name) ) {  ?>
                     <h2 style="display: none"><?= $this_p_manufacturer_name; ?><h2><?php 
