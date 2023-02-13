@@ -656,6 +656,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 /*********/ 
 
 @media print {
+
+    body {margin-top: 50mm; margin-bottom: 50mm; 
+           margin-left: 0mm; margin-right: 0mm}
+
     /* .row-options-header,
     .row-options-header *,
     .row-variants-header,
@@ -697,6 +701,8 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .form-close-icon,
     .snackbar-close,
     .wood-type-img,
+    .row-options-header:after, 
+    .row-variants-header:after,
     .addthis_inline_share_toolbox,
     .elementor-location-header,
     .elementor-location-footer
