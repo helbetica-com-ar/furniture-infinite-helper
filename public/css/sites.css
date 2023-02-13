@@ -43,12 +43,13 @@
     background-size: cover;
     height: auto!important;
 }
-.wood-background {
+/*.wood-background {
     background-image: url('../img/main-background-wood-grain.jpg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+}*/
+
 .breadcrumbs {
     padding-top: 1.2em;
     padding-bottom: 1.2em;

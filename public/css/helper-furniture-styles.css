@@ -755,7 +755,7 @@ div.product_variant input:focus-within {
     border-width: 2px 2px 2px single
 },
 
-.gform-body.gform_body {
+form#gform_1 {
     margin-top: -25px;
 }
 
