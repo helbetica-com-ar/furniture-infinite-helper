@@ -219,9 +219,7 @@ li.breaker {
     text-align: right;
     display: block !important;
 }
-.gform_confirmation_message_1{
-    text-align: center;
-}
+
 .furniture-infinite-quote-form input[type=submit]{
     background-color: #009aff !important;
     color: #fff;
@@ -266,10 +264,11 @@ li.breaker {
     margin-top: -8px;
 }
 .gform_confirmation_message {
-    padding: 25px 15px;
-    background-color: #0085dd;
-    color: #ffffff;
-    font-weight: 800;
+    padding: 25px 15px 0px 15px;
+    margin-top: 25px;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
 }
 
 .form-header-wrapper{
