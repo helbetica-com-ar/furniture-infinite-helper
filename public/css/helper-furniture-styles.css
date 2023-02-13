@@ -576,9 +576,9 @@ table.product-data .row-single-variant > td:before{
 .row-highlight:last-child{
     border-bottom: 1px solid #009aff;
 }
-.row-highlight:last-child > th, .row-highlight:last-child > td { 
+/* .row-highlight:last-child > th, .row-highlight:last-child > td { 
     border-bottom: none!important;
-}
+} */
 .furniture-single-view tr.row-highlight{
     cursor: url("../img/plus_cursor.png") 25 25, pointer;
 }
