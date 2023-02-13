@@ -1219,8 +1219,8 @@ a#loadMore {
         grid-template-columns: 1fr 1fr;
         gap: 0px;
     }
-    .dual-choice div.product_option { grid-column: auto!important; width: max-content!important; }
-    .dual-choice div.product_variant { grid-column: span 11!important;  }
+    /* .dual-choice div.product_option { grid-column: auto!important; width: max-content!important; } */
+    /* .dual-choice div.product_variant { grid-column: span 11!important;  } */
     .dual-choice div.product_option { 
         border-style: solid;
         border-width: 0px 0px 2px 2px;
