@@ -393,6 +393,9 @@ li.breaker {
 }
 .product-details #container img#hover-effect {
     width: 100%;
+    outline: 1px solid #e9e9e9;
+    outline-offset: -1px;
+
 }
 .zoom:hover{ cursor: url('../img/grab.cur'), default; }
 .zoom:active{ cursor: url('../img/grabbed.cur'), default; }
@@ -490,6 +493,7 @@ td.cell.value:not(.single) {
 table.product-data {
     counter-reset: alphabetCount;
     counter-reset: numericCount;
+    text-align: left;
 }
 table.product-data .row-option {
     counter-increment: alphabetCount;
