@@ -568,7 +568,7 @@ table.product-data .row-single-variant > td:before{
 }
 
 .row-highlight-header > th,
-.row-highlight > td {
+.row-highlight.row-option > td {
     padding-right: 45px;
 }
 
