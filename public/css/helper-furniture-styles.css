@@ -771,6 +771,12 @@ div.product_variant input:focus-within {
     position: relative!important;
     visibility: visible!important;
 }
+.product_option input,
+.product_variant input {
+    text-align: center;
+}
+
+
 .unhide-option div.product_option,
 .unhide-variant div.product_variant {
     border-style: solid;
@@ -1223,14 +1229,12 @@ a#loadMore {
     /* .dual-choice div.product_variant { grid-column: span 11!important;  } */
     .dual-choice div.product_option { 
         border-style: solid;
-        border-width: 0px 0px 2px 2px;
+        border-width: 0px 2px 0px 2px;
         border-color: black;
-        padding-right: 20px;
-        margin-right: -20px;
     }
     .dual-choice div.product_variant { 
         border-style: solid;
-        border-width: 0px 2px 2px 0px;
+        border-width: 0px 2px 2px 2px;
         border-color: black;
     }
     aside.related-products header {
