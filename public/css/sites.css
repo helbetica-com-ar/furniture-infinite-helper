@@ -476,7 +476,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-bottom: -2.5em;
 }
 .amish-country-heirlooms---arthur-il .furniture-infinite-grid-items.cabinets {
-    display: none;
+    display: none!important;
 }
 
 
