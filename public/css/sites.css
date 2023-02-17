@@ -475,9 +475,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     padding-top: 15em;
     margin-bottom: -2.5em;
 }
-/* .amish-country-heirlooms---arthur-il .furniture-infinite-grid-items.cabinets {
-    visibility: hidden!important;
-} */
+.amish-country-heirlooms---arthur-il .furniture-infinite-grid-items.cabinets {
+    position: absolute!important;
+    left: -10000px!important;
+}
 
 
 @media (min-width: 54em){
