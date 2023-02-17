@@ -770,7 +770,7 @@ div.product_variant input:focus-within {
 .furniture-infinite-quote-form .form-header-wrapper p:empty { display: none;}
 .furniture-infinite-quote-form .form-header-wrapper.no-choices {
     margin-bottom: 16px;
-    border-width: 2px 2px 2px single
+    border-width: 2px 2px 2px 2px;
 }
 
 .form-shortcode-wrapper {
