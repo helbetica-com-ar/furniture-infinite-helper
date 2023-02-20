@@ -301,7 +301,7 @@ class Furniture_Infinite_Shortcodes
 
     public function furniture_infinite_add_body_classes($classes)
     {
-        $sluggedStoreName = preg_replace("/[^A-Za-z0-9 ]/", '', get_bloginfo('name'));
+        $sluggedStoreName = str_replace(chr(39), "-", strtolower( get_bloginfo('name') ));
         $classes[] = str_replace(" ", "-", strtolower($sluggedStoreName));
         global $post;
         if ( is_home() || is_front_page() ) { $classes[] = 'homepage'; } 
