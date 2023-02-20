@@ -301,7 +301,7 @@ class Furniture_Infinite_Shortcodes
 
     public function furniture_infinite_add_body_classes($classes)
     {
-        $sluggedStoreName = str_replace("'", "-", strtolower( get_bloginfo('name') ));
+        $sluggedStoreName = str_replace("/'", "-", strtolower( get_bloginfo('name') ));
         $classes[] = str_replace(" ", "-", strtolower($sluggedStoreName));
         global $post;
         if ( is_home() || is_front_page() ) { $classes[] = 'homepage'; } 
@@ -313,7 +313,7 @@ class Furniture_Infinite_Shortcodes
         if ( $post->post_parent == $furniture_page_id ){ $classes[] = 'furniture-category'; } 
         if ( is_page( 'product-details' ) ) { $classes[] = 'furniture-single-view'; } 
         if ( is_user_logged_in() ) { $classes[] = 'loggedin'; } else {$classes[] = 'loggedout'; }
-        return $classes;
+        return $classes; 
     }
 
     public function furniture_infinite_manufacturers_collections()
