@@ -681,6 +681,35 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     -webkit-transform: none!important;
 }
 
+/* benchley-s-amish-furniture */
+.benchley-s-amish-furniture .noSliderSpacer {
+    display: block;
+    padding-top: 20em;
+} 
+.benchley-s-amish-furniture .noSliderSpacer {
+    display: block;
+    padding-top: 20em;
+} 
+.benchley-s-amish-furniture.furniture-single-view .noSliderSpacer {
+    padding-top: 17em;
+}
+
+.benchley-s-amish-furniture .swiperContent {
+    border-top: none;
+} 
+
+.benchley-s-amish-furniture .container.product-details {
+	width: 100%;
+}
+
+
+@media (min-width: 1300px){
+	.benchley-s-amish-furniture .container.product-details .right-column {
+	    width: 50%;
+	}
+}
+
+
 /*********/
 /* PRINT */
 /*********/ 

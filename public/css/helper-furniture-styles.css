@@ -568,6 +568,7 @@ table.product-data .row-single-variant > td:before{
 .row-highlight-header,
 .row-highlight {
     border-right: 1px solid #009aff;
+    position: relative;
 }
 
 .row-highlight-header > th,
@@ -689,7 +690,7 @@ tr.row-highlight.active::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
+    font-size: 19px;
 }
 
 .get-quote-form-btn{
