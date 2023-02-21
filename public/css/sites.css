@@ -180,6 +180,10 @@
     width: 40px;
     top: -20px;
 }
+.weavers-farm-and-furniture .furniture-infinite-grid-items a:hover {
+    color: #9e8d4a; 
+}
+
 .weavers-farm-and-furniture .mobileStaticContactWrapper .mobileContactLink {
     justify-content: flex-end;
     flex-direction: row-reverse; 
