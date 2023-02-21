@@ -17,6 +17,7 @@
 }
 @media only screen and (min-width: 1200px){
     .furniture-infinite-grid-items { flex: 0 1 24%!important; }
+    .related-products .furniture-infinite-grid-items { flex: 0 1 19.2%!important; }
 }
 @media only screen and (min-width: 1500px){
     .furniture-infinite-grid-items { flex: 0 1 19.2%!important; }
