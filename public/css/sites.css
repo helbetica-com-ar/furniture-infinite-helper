@@ -462,6 +462,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 .circles-in-the-wind  .form-shortcode-wrapper {
     margin-top: -25px;  
 }
+.circles-in-the-wind .gform_confirmation_message {
+    margin-top: 25px;
+}
+
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.circles-in-the-wind {
         grid-template-columns: repeat(4, 1fr)!important;
