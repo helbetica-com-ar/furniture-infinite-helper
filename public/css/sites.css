@@ -800,6 +800,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-top: -25px;  
 }
 
+.amish-custom-furniture .bottomLinks,
+.amish-custom-furniture .bottomLinks:nth-child(n+5) {
+    width: 48%;
+    margin: 1%;
+}
+
 @media (min-width: 50em){
     .amish-custom-furniture .logoWrapper::before {
         height: auto;
