@@ -816,6 +816,18 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
 }
 
+@media only screen and (min-width: 1024px){
+    .grid-container.collection-image.object-home.amish-custom-furniture {
+        grid-template-columns: repeat(3, 1fr)!important;
+        gap: 25px;
+    }
+    .grid-container.collection-image.object-home.amish-custom-furniture .grid-item{
+        height: 300px;
+    }
+}
+
+
+
 /*********/
 /* PRINT */
 /*********/ 
