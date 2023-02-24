@@ -1,5 +1,11 @@
+<?php
+$pattern = '/[^a-zA-Z0-9]+/';
+$replacement = '-';
+$siteSettingsName = strtolower(html_entity_decode(get_bloginfo('name')));
+$sluggedSettingsName = preg_replace($pattern, $replacement, $siteSettingsName);
+?>
 
-<div class="grid-container php-home-categories collection-image object-home <?= str_replace(" ", "-", strtolower(get_bloginfo( 'name' ))); ?>">
+<div class="grid-container php-home-categories collection-image object-home <?= $sluggedSettingsName; ?>">
 <?php
 
 if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == '') ) {
