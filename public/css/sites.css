@@ -67,6 +67,15 @@
     margin-right: 0;
 }
 
+.home .furnitureCustomizationBlockWrapper { 
+    margin-top: -30px;
+}
+
+.home .furnitureCategoryHeader .panel-grid-cell {
+    z-index: 10;
+}
+
+
 .breadcrumbs {
     padding-top: 1.2em;
     padding-bottom: 1.2em;
