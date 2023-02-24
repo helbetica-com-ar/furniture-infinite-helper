@@ -729,6 +729,68 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 
+/* amish-custom-furniture */
+.amish-custom-furniture .furnitureMenuButton {
+    display: inline-block;
+}
+
+.amish-custom-furniture .mobileMenu ul {
+	padding-top: 0;
+}
+
+.amish-custom-furniture .swiperOverlay {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.amish-custom-furniture .innerSwiperContentWrapper {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.amish-custom-furniture .SlideHeadlineWrapper h2,
+.amish-custom-furniture .SlideHeadlineWrapper h3 {
+    font-weight: 600;
+}
+
+.amish-custom-furniture .logoWrapper::before {
+    height: auto;
+}
+
+@media (min-width: 50em){
+    .amish-custom-furniture .logoWrapper::before {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 799px){
+	.amish-custom-furniture .mobileStaticContactWrapper, 
+	.amish-custom-furniture .mobileStaticContactWrapper * {
+    	width: 100vw;
+	}
+	
+	.amish-custom-furniture #mobileContactLocation,
+	.amish-custom-furniture #mobileContactCall {
+		width: 50vw!important;
+	}
+	
+	.amish-custom-furniture .SlideHeadlineWrapper {
+	    padding: 3.5em 1.5em;
+	    padding-left: 1.5em;
+	}
+	.amish-custom-furniture a.ctaLink {
+	    right: auto;
+	    left: 1em;
+	}
+}
+
+@media screen and (min-width: 800px){
+	.amish-custom-furniture .mobileStaticContactWrapper {
+		text-align: right;
+	}	
+	.amish-custom-furniture .mobileContactLink {
+		width: auto!important;
+	}
+}
+
 /*********/
 /* PRINT */
 /*********/ 
