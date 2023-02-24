@@ -898,6 +898,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 
+
+/* apple-ridge-amish-furniture */
+.home.apple-ridge-amish-furniture svg#curveUpColor {
+    transform: rotate(180deg);
+    position: absolute;
+    margin-top: -200px;
+}
+
+
 /*********/
 /* PRINT */
 /*********/ 
