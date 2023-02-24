@@ -807,8 +807,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media screen and (max-width: 799px){
 	.amish-custom-furniture .mobileStaticContactWrapper, 
 	.amish-custom-furniture .mobileStaticContactWrapper * {
-    	width: 100vw;
+        width: 100vw;
 	}
+    
+    .amish-custom-furniture .mobileStaticSocialWrapper {
+        width: 50%;
+    }
 	
 	.amish-custom-furniture #mobileContactLocation,
 	.amish-custom-furniture #mobileContactCall {
@@ -841,6 +845,13 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
     .grid-container.collection-image.object-home.amish-custom-furniture .grid-item{
         height: 300px;
+    }
+}
+
+@media (min-width: 75em){
+    .amish-custom-furniture .bottomLinks,
+    .amish-custom-furniture .bottomLinks:nth-child(n+5) {
+        width: 32%;
     }
 }
 
