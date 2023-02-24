@@ -50,11 +50,19 @@
     background-repeat: no-repeat;
     background-size: cover;
 }*/
+
 .related-products.products-from-same-collection .wood-background {
     background-image: url('../img/main-background-wood-grain.jpg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.related-products.products-from-same-collection .wood-background .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .breadcrumbs {
