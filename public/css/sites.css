@@ -63,6 +63,8 @@
     max-width: 100%;
     padding-left: 50px;
     padding-right: 50px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .breadcrumbs {
@@ -809,7 +811,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.amish-custom-furniture .mobileStaticContactWrapper * {
         width: 100vw;
 	}
-    
+
     .amish-custom-furniture .mobileStaticSocialWrapper {
         width: 50%;
     }
