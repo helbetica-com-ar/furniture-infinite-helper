@@ -755,6 +755,31 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     height: auto;
 }
 
+.amish-custom-furniture.furniture-category .SlideHeadlineWrapper {
+    padding: 3.5em 2em;
+    padding-left: 2em;
+}
+
+.amish-custom-furniture.furniture-category .slideHeadline {
+    text-align: center;
+}
+
+.amish-custom-furniture.furniture-category .slideHeadline h3:empty {
+	display: none;
+}
+
+.amish-custom-furniture .container.product-details {
+	width: 100%;
+}
+
+.amish-custom-furniture.furniture-category a.ctaLink {
+	display: none;
+}
+
+.amish-custom-furniture .furnitureCustomizationBlockWrapper{
+	margin-top: -10px;
+}
+
 @media (min-width: 50em){
     .amish-custom-furniture .logoWrapper::before {
         height: auto;
