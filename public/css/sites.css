@@ -100,7 +100,13 @@
 }
 
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 799px) {
+    .mobileStaticHeader {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
     .mobileStaticHeader {
         padding-top: 0em;
         padding-bottom: 0em;
