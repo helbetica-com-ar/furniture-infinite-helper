@@ -35,6 +35,18 @@ p {
 }
 
 
+.awesome-contact::before {
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    margin-right: 8px;
+}
+.awesome-messenger::before{
+    content: '\f39e';
+}
+.awesome-facebook::before{
+    content: '\f39f';    
+}
+
 .search-heading {
     display: block;
     padding-top: 7rem;
