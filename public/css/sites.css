@@ -1058,6 +1058,21 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
+/* six-cats */ 
+.apple-ridge-amish-furniture .bottomLinks {
+    width: 50%;
+}
+@media screen and (min-width: 800px){
+	.apple-ridge-amish-furniture .bottomLinks {
+	    width: 33.3%;
+	}
+}
+
+@media screen and (min-width: 1400px){
+	.apple-ridge-amish-furniture .bottomLinks {
+	    width: 16.6%;
+	}
+}
 
 
 
