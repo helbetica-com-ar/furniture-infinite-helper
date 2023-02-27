@@ -12,6 +12,12 @@
 
 .furniture-infinite-grid-items { flex: 0 1 48%!important; }
 
+.furnitureMenuButton a {
+    height: 40px;
+    width: 40px;
+    top: -20px;
+}
+
 @media only screen and (min-width: 800px){
     .furniture-infinite-grid-items { flex: 0 1 32%!important; }
 }
