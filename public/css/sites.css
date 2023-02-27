@@ -944,6 +944,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 .apple-ridge-amish-furniture .form-shortcode-wrapper {
     margin-top: -20px;
 }
+.apple-ridge-amish-furniture .at-svc-print:after {
+    margin-right: 25px;
+}
 
 
 @media screen and (max-width: 799px) {
