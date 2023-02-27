@@ -18,6 +18,13 @@
     top: -20px;
 }
 
+.footerCopyright {
+    font-size: 13px;
+}
+.footerCopyright a {
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 799px){
     ul#menu-main-menu-1 {
         padding-top: 0;
@@ -916,6 +923,36 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     position: absolute;
     margin-top: -200px;
 }
+@media screen and (max-width: 799px) {
+	.apple-ridge-amish-furniture .mobileStaticHeader {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.apple-ridge-amish-furniture .mobileStaticSocialWrapper p,
+	.apple-ridge-amish-furniture .mobileStaticContactWrapper p {
+		text-align: center;
+	}
+}
+@media screen and (min-width:800px) and (max-width: 1199px) {
+	.apple-ridge-amish-furniture .mobileStaticContact p {
+		text-align: right;
+	}
+}
+@media screen and (min-width:1200px) {
+	.apple-ridge-amish-furniture #mobileContactLocation,
+	.apple-ridge-amish-furniture #mobileContactCall {
+		width: 100%;
+	}	
+}
+@media (min-width: 54em){
+	.apple-ridge-amish-furniture .stickyMenu {
+	    top: 45px;
+	}
+	.apple-ridge-amish-furniture .logo {
+	    max-width: 520px;
+	}
+}
+
 
 
 /*********/
