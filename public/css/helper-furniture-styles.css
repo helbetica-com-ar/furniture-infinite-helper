@@ -34,6 +34,25 @@ p {
     font-size: 1.5em!important;
 }
 
+.header .awesome-contact a span {
+    font-size: 0px;
+}
+
+footer .awesome-contact a i {
+	width: 20px;
+    text-align: center;
+}
+footer .awesome-contact a span {
+    margin-left: 9px;
+}
+
+.twoColRow > div {
+	height: 100%;
+}
+.twoColRow > .panel-grid-cell-empty {
+	display: block!important;
+}
+
 
 .search-heading {
     display: block;

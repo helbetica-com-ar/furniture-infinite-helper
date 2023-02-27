@@ -857,6 +857,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin: 1%;
 }
 
+
 @media (min-width: 50em){
     .amish-custom-furniture .logoWrapper::before {
         height: auto;
@@ -923,6 +924,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     position: absolute;
     margin-top: -200px;
 }
+.apple-ridge-amish-furniture .twoColRow > div:last-child {
+	padding: 2em!important;
+}
+
+.apple-ridge-amish-furniture .twoColRow > div > div:last-child {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 @media screen and (max-width: 799px) {
 	.apple-ridge-amish-furniture .mobileStaticHeader {
 		padding-top: 0;
@@ -950,6 +960,58 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
 	.apple-ridge-amish-furniture .logo {
 	    max-width: 520px;
+	}
+}
+@media (min-width: 800px){
+	.apple-ridge-amish-furniture .mobileStaticHeader {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	    -webkit-flex-wrap: nowrap;
+	    -ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	    -webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	    justify-content: flex-start;
+	    -webkit-align-content: flex-start;
+	    -ms-flex-line-pack: start;
+	    align-content: flex-start;
+	    -webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	    align-items: flex-start;
+	}
+	.apple-ridge-amish-furniture .mobileStaticSocialWrapper,
+	.apple-ridge-amish-furniture .mobileStaticContactWrapper,
+	.apple-ridge-amish-furniture .desktopMainMenuWrapper {
+        width: auto!important;
+	    -webkit-order: 0;
+	    -ms-flex-order: 0;
+	    order: 0;
+	    -webkit-flex: 0 1 auto;
+	    -ms-flex: 0 1 auto;
+	    flex: 0 1 auto;
+	    -webkit-align-self: auto;
+	    -ms-flex-item-align: auto;
+	    align-self: auto;
+	}
+	.apple-ridge-amish-furniture .desktopMainMenuWrapper {
+	    -webkit-flex: 2 1 auto;
+	    -ms-flex: 2 1 auto;
+	    flex: 2 1 auto;
+	}
+	.apple-ridge-amish-furniture .desktopMainMenuWrapper li {
+		padding-left: 5px!important;
+		padding-right: 5px!important;
+	}
+}
+
+@media (min-width: 1000px){
+	.apple-ridge-amish-furniture .desktopMainMenuWrapper li {
+		padding-left: 15px!important;
+		padding-right: 15px!important;
 	}
 }
 
