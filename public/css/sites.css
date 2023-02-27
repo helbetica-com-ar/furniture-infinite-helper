@@ -1101,7 +1101,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .row-variants-header:after,
     .addthis_inline_share_toolbox,
     .elementor-location-header,
-    .elementor-location-footer
+    .elementor-location-footer,
+    #curveUpColor,
+	#curveDownColor,
+	.furnitureOptionsOuterWrapper,
+	.contactCTAWrapper,
+	.mobileButtonWrapper
     { 
         display: none!important;
     }
