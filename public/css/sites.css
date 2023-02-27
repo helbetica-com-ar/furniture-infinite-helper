@@ -1049,6 +1049,17 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
 }
 
+@media screen and (min-width: 1024px){
+    .apple-ridge-amish-furniture .grid-container.collection-image.object-home {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .apple-ridge-amish-furniture .grid-container.collection-image.object-home a.grid-item {
+        height: 320px;
+    }
+}
+
+
+
 
 /*********/
 /* PRINT */
