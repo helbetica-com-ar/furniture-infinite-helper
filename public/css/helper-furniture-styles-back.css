@@ -1030,6 +1030,14 @@ a#loadMore {
     width: calc(100% - 45px);
 }
 
+ul#menu-main-menu-1 .awesome-contact {
+    display: inline-block;
+    width: 49%;
+    padding-left: 0!important;
+    margin: 0!important;
+    padding-right: 0!important;
+    border-bottom: none;
+}
 
 
  /* MEDIA QUERIES  */
