@@ -6,9 +6,12 @@ if ( (!defined('FURNITURE_CAT_LINK_PREFIX')) || (FURNITURE_CAT_LINK_PREFIX == ''
 }
 
 
-$site_title = strtoupper(get_bloginfo( 'name' ));
+$settings_site_title = str_replace(" & ", " and ", strtoupper(get_bloginfo('name')));
+
 $site_url = network_site_url( '/' );
-$site_description = get_bloginfo( 'description' ); 
+
+$settings_site_tagline = str_replace(" & ", " and ", get_bloginfo('description'));
+
 if ( has_custom_logo() ){
     #echo 'debug: has custom logo';
     $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -18,7 +21,9 @@ if ( has_custom_logo() ){
     #echo 'debug: does not have custom logo';
 }
 
-$p_name = htmlspecialchars($product['name']);
+$p_name = $product['name'];
+$p_name = str_replace("&", "and", $p_name);
+$p_name = htmlspecialchars($p_name);
 
 if( isset( $product['sku'] ) ){
     $p_sku = htmlspecialchars($product['sku']);
@@ -26,10 +31,17 @@ if( isset( $product['sku'] ) ){
     $p_sku = "";
 }
 if( isset( $product['description'] ) ){
-    $p_description = htmlspecialchars($product['description']);
+    $p_description = $product['description'];
+    $p_description = str_replace("&", "and", $p_description);
+    $p_description = htmlspecialchars($p_description);
 } else {
     $p_description = "";
 }
+
+if ( isset( $this_p_manufacturer_name ) ) {
+    $this_p_manufacturer_name = str_replace("&", "and", $this_p_manufacturer_name);
+    $this_p_manufacturer_name = htmlspecialchars($this_p_manufacturer_name);
+} 
 
 ?>
 <div class="alignfull wood-background">
@@ -372,7 +384,7 @@ print_r($products_from_same_collection);
             <h6><?php echo $product['name']; ?></h6>
         </div>
         <div class="form-shortcode-wrapper">
-        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $p_sku ."&name=". $p_name ."&description=" . $p_description . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "&site_logo_url=". $site_logo . "&site_title=". $site_title . "&site_description=". $site_description . "&site_url=". $site_url . "']") ?>
+        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $p_sku ."&name=". $p_name ."&description=" . $p_description . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "&site_logo_url=". $site_logo . "&site_title=". $settings_site_title . "&site_description=". $settings_site_tagline . "&site_url=". $site_url . "']") ?>
         </div>
     </div>
 </div>

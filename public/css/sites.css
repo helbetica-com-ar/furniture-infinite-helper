@@ -503,6 +503,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     z-index: 1;
 }
 
+.pa-dutch-woodcraft .container.product-details {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+}
+
 @media only screen and (min-width: 1024px){
     body.home.pa-dutch-woodcraft .headerWrapper {
         position: absolute!important;
