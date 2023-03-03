@@ -847,6 +847,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     height: auto;
 }
 
+.amish-custom-furniture .desktopMenuWrapper ul {
+    border-bottom: 1px solid #72949c;
+}
+
+
 .amish-custom-furniture.furniture-category .SlideHeadlineWrapper {
     padding: 3.5em 2em;
     padding-left: 2em;
