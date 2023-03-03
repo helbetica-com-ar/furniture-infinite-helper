@@ -462,7 +462,7 @@ aside.chariho-furniture header h2 {
     background-color: #009aff!important;
 }
 .breadcrumbs.container {
-    max-width: 1400px;
+    margin: 0 auto;
 }
 
 @media screen and (min-width: 1400px) {
