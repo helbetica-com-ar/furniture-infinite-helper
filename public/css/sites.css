@@ -463,7 +463,12 @@ aside.chariho-furniture header h2 {
 }
 .breadcrumbs.container {
     max-width: 1400px;
-    margin: 0 auto;
+}
+
+@media screen and (min-width: 1400px) {
+    .breadcrumbs.container {
+        max-width: 1400px;
+    }   
 }
 
 /* padutchwoodcraft.com  */
