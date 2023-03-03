@@ -1153,7 +1153,21 @@ a#loadMore {
         transform: translateY(-50%)!important;
         top: 50%!important;
     }
-
+	.furnitureCategoryHeaderInnerWrapper,
+	.widget_media_video > div {
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+	.furnitureCustomizationBlockWrapper * {
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+	.googleReviewsBlockWrapper{
+		padding: 0;
+	}
+	.footerCopyrightWrapper {
+	    padding-bottom: 7em;
+	}
 
 }
 

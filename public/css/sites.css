@@ -514,6 +514,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-left: calc(50% - 50vw) !important;
 }
 
+.pa-dutch-woodcraft .form-shortcode-wrapper {
+    margin-top: -20px;
+}
+
 @media only screen and (min-width: 1024px){
     body.home.pa-dutch-woodcraft .headerWrapper {
         position: absolute!important;
@@ -812,6 +816,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 /* amish-custom-furniture */
 .amish-custom-furniture .furnitureMenuButton {
     display: inline-block;
+}
+
+.amish-custom-furniture .furnitureMenuButton a {
+    top: -10px;
 }
 
 .amish-custom-furniture .mobileMenu ul {
