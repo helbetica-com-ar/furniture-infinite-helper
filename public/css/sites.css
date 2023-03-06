@@ -20,6 +20,7 @@
 
 .footerCopyright {
     font-size: 13px;
+    line-height: 1.4;
 }
 .footerCopyright a {
     text-decoration: underline;
