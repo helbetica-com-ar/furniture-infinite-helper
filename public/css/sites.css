@@ -1129,6 +1129,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 
+@media screen and (min-width: 1024px){
+    .amish-furniture-of-bristol .grid-container.collection-image.object-home {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .amish-furniture-of-bristol .grid-container.collection-image.object-home a.grid-item {
+        height: 320px;
+    }
+}
+
 @media screen and (min-width: 1200px){
     .amish-furniture-of-bristol .container.product-details {
         width: 100%;
