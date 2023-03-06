@@ -1073,6 +1073,7 @@ ul#menu-main-menu-1 .awesome-contact {
     aside.related-products header h2,
     aside.related-products header h4 {
         margin-bottom: 10px;
+        text-align: center;
     }
     #scroll-top {
         bottom: 60px;

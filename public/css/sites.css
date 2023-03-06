@@ -463,6 +463,7 @@ aside.chariho-furniture header h2 {
 }
 .breadcrumbs.container {
     margin: 0 auto;
+    text-align: center;
 }
 
 @media screen and (min-width: 1400px) {
@@ -1102,6 +1103,37 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.apple-ridge-amish-furniture .bottomLinks {
 	    width: 16.6%;
 	}
+}
+
+
+
+/* amish-furniture-of-bristol */
+.amish-furniture-of-bristol .form-shortcode-wrapper {
+    margin-top: -20px;
+}
+
+.amish-furniture-of-bristol .pum-container.custom-position {
+	background-color: transparent!important;
+	border: none!important;
+}
+
+.amish-furniture-of-bristol .pum-container.custom-position .pum-title {
+	color: #aeff00!important;
+	font-weight: 900;
+	text-align: center;
+}
+
+.amish-furniture-of-bristol .pum-container .pum-content+.pum-close {
+	right: 15px!important;
+    top: 100px!important;
+}
+
+
+@media screen and (min-width: 1200px){
+    .amish-furniture-of-bristol .container.product-details {
+        width: 100%;
+        padding: 2em;
+    }
 }
 
 
