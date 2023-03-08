@@ -1039,6 +1039,11 @@ ul#menu-main-menu-1 .awesome-contact {
     border-bottom: none;
 }
 
+aside.related-products header h2,
+aside.related-products header h4 {
+    text-align: center;
+}
+
 
  /* MEDIA QUERIES  */
  /* MAX WIDTH  */
@@ -1073,7 +1078,6 @@ ul#menu-main-menu-1 .awesome-contact {
     aside.related-products header h2,
     aside.related-products header h4 {
         margin-bottom: 10px;
-        text-align: center;
     }
     #scroll-top {
         bottom: 60px;
