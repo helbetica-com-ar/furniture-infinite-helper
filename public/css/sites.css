@@ -1146,7 +1146,16 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
-
+/* amish-hills-handmade-furniture */
+.amish-hills-handmade-furniture .form-shortcode-wrapper {
+    margin-top: -25px;
+}
+.amish-hills-handmade-furniture.product-details .product-data th,
+.amish-hills-handmade-furniture.product-details .product-data td{ 
+    padding: 0.5em 0.5em;
+    vertical-align: middle;
+    font-size: 0.8em;
+}
 
 /*********/
 /* PRINT */
