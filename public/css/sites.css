@@ -1213,6 +1213,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     } 
 }
 
+@media all and (min-width:60em){
+    .bernhaus-furniture-berne-in .bottomLinks:nth-child(n+5){
+        width: 25%;
+    }
+}
+
 /*********/
 /* PRINT */
 /*********/ 
