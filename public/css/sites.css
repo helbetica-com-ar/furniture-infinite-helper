@@ -1156,6 +1156,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     vertical-align: middle;
     font-size: 0.8em;
 }
+@media screen and (max-width: 799px){ 
+    .amish-hills-handmade-furniture .site-top-bar {
+        padding: 5px 10px 5px 10px;
+    }
+}
 
 /*********/
 /* PRINT */
