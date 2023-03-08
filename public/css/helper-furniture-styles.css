@@ -753,7 +753,7 @@ div.product_variant input {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
- }
+}
 
 div.product_option input:active,
 div.product_variant input:active,
@@ -1105,7 +1105,10 @@ a#loadMore {
     width: calc(100% - 45px);
 }
 
-
+aside.related-products header h2,
+aside.related-products header h4 {
+    text-align: center;
+}
 
  /* MEDIA QUERIES  */
  /* MAX WIDTH  */
