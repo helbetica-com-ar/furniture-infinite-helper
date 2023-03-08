@@ -1298,6 +1298,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 		padding-top: 0;
 	}
 }
+@media screen and (min-width: 54em){
+    .graber-s-handcrafted-furniture .furnitureSlideDownMenuWrapper.stickyMenu {
+        top: 40px;
+    }
+}
 
 /*********/
 /* PRINT */
