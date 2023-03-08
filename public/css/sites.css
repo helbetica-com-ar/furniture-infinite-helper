@@ -1169,6 +1169,40 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
+
+/* bernhaus-furniture-berne-in */
+.bernhaus-furniture-berne-in .mainFurnitureBoxWrapper {
+    overflow: hidden;
+}
+
+.bernhaus-furniture-berne-in.living-room.furniture-category .furniture-infinite-grid-items.bookcase {
+    position: absolute!important;
+    left: -10000px!important;
+}
+
+.bernhaus-furniture-berne-in .mobileMenu .menu-left-menu {
+	padding-top: 0!important;
+}
+
+.bernhaus-furniture-berne-in .container.product-details {
+    width: 100%;
+    padding: 2em;
+}
+
+.bernhaus-furniture-berne-in .form-shortcode-wrapper {
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 799px){
+	.bernhaus-furniture-berne-in .furnitureMenuWrapper, 
+	.bernhaus-furniture-berne-in .mainMenuWrapper {
+	    bottom: 45px!important;
+	}
+	.bernhaus-furniture-berne-in .furnitureMenu ul {
+		padding-top: 0;
+	}
+}
+
 /*********/
 /* PRINT */
 /*********/ 
@@ -1188,6 +1222,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .headerCalloutWrapper *,
     .breadcrumbs,
     .breadcrumbs *,
+    .fixedHeaderWrapper,
     .get-quote-form-btn,
     .get-quote-form-btn *,
     .furnitureCustomizationBlockWrapper,
@@ -1250,6 +1285,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
         font-size: 18px!important;
         color: black!important;
     }
+
+    .logoWrapper {
+		padding-top: 0!important;
+	}
 
     img.custom-logo,
     .left-column,
