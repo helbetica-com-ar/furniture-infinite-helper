@@ -1037,6 +1037,7 @@ aside.related-products {
 
 .grid-container.collection-image.object-home a.grid-item p {
     opacity: 0;
+    text-align: center;
     -webkit-transition: .15s .3s all ease;
     -moz-transition: .15s .3s all ease;
     -ms-transition: .15s .3s all ease;

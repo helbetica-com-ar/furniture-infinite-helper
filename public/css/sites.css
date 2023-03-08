@@ -1251,7 +1251,53 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 
+/* graber-s-handcrafted-furniture */
+.graber-s-handcrafted-furniture .staticHeaderWrapper {
+	padding: 0 1em!important;
+	height: 40px;
+}
 
+.graber-s-handcrafted-furniture .mobileSearchWrapper {
+    display: none!important;
+}
+
+.graber-s-handcrafted-furniture.living-room.furniture-category .furniture-infinite-grid-items.bookcase {
+    position: absolute!important;
+    left: -10000px!important;
+}
+
+.graber-s-handcrafted-furniture.home .skew-c {
+	background: #694a2b!important;
+}
+
+
+.graber-s-handcrafted-furniture.product-details .container {
+	width: unset!important;
+}
+
+.graber-s-handcrafted-furniture .form-shortcode-wrapper {
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 799px){
+	.graber-s-handcrafted-furniture .furnitureSlideDownMenuWrapper {
+		display: none!important;
+	}
+	.graber-s-handcrafted-furniture .mobileStaticHeader,
+	.graber-s-handcrafted-furniture .mobileStaticContactWrapper,
+	.graber-s-handcrafted-furniture .mobileStaticContact {
+		width: 100%;
+	    padding-left: 0;
+    	padding-right: 0;
+	}
+	.graber-s-handcrafted-furniture #mobileContactLocation,
+	.graber-s-handcrafted-furniture #mobileContactCall {
+		text-align: center;
+	}
+	.graber-s-handcrafted-furniture #menu-footer-menu-1 {
+		padding-top: 0;
+	}
+}
 
 /*********/
 /* PRINT */
@@ -1274,12 +1320,18 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .breadcrumbs *,
     .fixedHeaderWrapper,
     .fixedHeaderWrapper *,
+	.staticHeaderWrapper,
+	.staticHeaderWrapper *,
     .get-quote-form-btn,
     .get-quote-form-btn *,
     .furnitureCustomizationBlockWrapper,
     .furnitureCustomizationBlockWrapper *,
     .furnitureOptionsBlockWrapper,
     .furnitureOptionsBlockWrapper *,
+    .graber-s-handcrafted-furniture .rightMiddleHeaderWrapper,
+	.graber-s-handcrafted-furniture .rightMiddleHeaderWrapper *,
+	.furnitureSlideDownMenuWrapper, 
+	.furnitureSlideDownMenuWrapper *,
     .contactBlockWrapper,
     .contactBlockWrapper *,
     #menu-every-items-menu, 
@@ -1348,6 +1400,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
     img.custom-logo {
         margin-top: 10mm;
+        max-width: 100mm!important;
     }
     img#hover-effect {
         width: auto!important;
