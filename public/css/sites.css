@@ -1327,6 +1327,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     display: none;
 }
 
+.patterson-s-amish-furniture .form-shortcode-wrapper {
+    margin-top: -20px;
+}
+
 @media screen and (max-width: 799px){
 	.patterson-s-amish-furniture:not(.contact) .mobileStaticHeader {
     	padding-top: 0;
@@ -1396,6 +1400,18 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 
 }
 
+@media (min-width: 54em){
+	.patterson-s-amish-furniture .stickyMenu {
+	    top: 45px;
+	}
+}
+
+@media (min-width: 1024px){
+	.patterson-s-amish-furniture .container.product-details {
+	    width: 100%;
+	    padding-right: 3em;
+	}	
+}
 
 
 
