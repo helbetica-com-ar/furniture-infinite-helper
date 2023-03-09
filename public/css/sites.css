@@ -170,7 +170,7 @@
 
 .mobileStaticHeaderWrapper {
     height: 45px;
-    background-color: #72949c;
+    /* background-color: #72949c; */
 }
 
 .mobileButtonWrapper {
@@ -1311,8 +1311,92 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
     .grid-container.collection-image.object-home.graber-s-handcrafted-furniture .grid-item{
         height: 340px;
-    } 
+    }
 }
+
+
+/* patterson-s-amish-furniture */
+.patterson-s-amish-furniture.furniture-category a.ctaLink {
+    display: none;
+}
+.patterson-s-amish-furniture .mobileStaticSocialWrapper ul {
+    margin: 0;
+}
+
+.patterson-s-amish-furniture a.post-edit-link {
+    display: none;
+}
+
+@media screen and (max-width: 799px){
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticHeader {
+    	padding-top: 0;
+    	padding-bottom: 0;
+    	height: 45px;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticSocialWrapper {
+	    width: 0%;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticContactWrapper {
+	    width: 100%;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticSocial {
+		padding-top: 0.5em!important;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileContactLink:after {
+	    font-size: 1.75em!important;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticSocialWrapper .fa-2x {
+	    font-size: 2em;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticContact {
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticHeaderWrapper a,
+	.patterson-s-amish-furniture:not(.contact) .mobileContactLink {
+		width: 40px!important;
+		text-align: center;
+	}
+	.patterson-s-amish-furniture:not(.contact) .mobileStaticContact p {
+		display: flex;
+	    justify-content: space-around;
+	}
+	
+	.patterson-s-amish-furniture.contact .mobileStaticHeader {
+    	padding-top: 0;
+    	padding-bottom: 0;
+    	height: 45px;
+	}
+	.patterson-s-amish-furniture.contact .mobileStaticSocialWrapper,
+	.patterson-s-amish-furniture.contact .mobileStaticContactWrapper {
+	    width: 50%;
+	}
+	.patterson-s-amish-furniture.contact .mobileStaticSocial {
+		padding-top: 0.5em!important;
+	}
+	.patterson-s-amish-furniture.contact .mobileContactLink:after {
+	    font-size: 1.75em!important;
+	}
+	.patterson-s-amish-furniture.contact .mobileStaticSocialWrapper .fa-2x {
+	    font-size: 2em;
+	}
+	.patterson-s-amish-furniture.contact .mobileStaticContact {
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+	.patterson-s-amish-furniture.contact .mobileStaticHeaderWrapper a,
+	.patterson-s-amish-furniture.contact .mobileContactLink {
+		width: 40px!important;
+		text-align: center;
+	}
+	.patterson-s-amish-furniture.contact .mobileStaticContact p {
+		text-align: right;
+    	padding-right: 15px;
+	}
+
+}
+
+
 
 
 /*********/
