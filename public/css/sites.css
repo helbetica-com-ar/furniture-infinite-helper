@@ -1521,6 +1521,16 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
+@media only screen and (min-width: 1024px){
+    .grid-container.collection-image.object-home.perry-s-american-furniture-gallery {
+        grid-template-columns: repeat(4, 1fr)!important;
+        gap: 25px;
+    }
+    .grid-container.collection-image.object-home.perry-s-american-furniture-gallery .grid-item{
+        height: 340px;
+    } 
+}
+
 
 /* perry-039-s-american-furniture-gallery */
 .perry-039-s-american-furniture-gallery.furniture-category a.ctaLink {
@@ -1569,6 +1579,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
+@media only screen and (min-width: 1024px){
+    .grid-container.collection-image.object-home.perry-039-s-american-furniture-gallery {
+        grid-template-columns: repeat(4, 1fr)!important;
+        gap: 25px;
+    }
+    .grid-container.collection-image.object-home.perry-039-s-american-furniture-gallery .grid-item{
+        height: 340px;
+    } 
+}
 
 /*********/
 /* PRINT */
