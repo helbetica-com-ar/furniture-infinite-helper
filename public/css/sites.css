@@ -1414,6 +1414,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .patterson-s-amish-furniture .grid-container.collection-image.object-home {
         padding-bottom: 6em;
     }
+    .patterson-s-amish-furniture.home svg#curveUpColor {
+        margin-top: -6em;
+    }
 }
 
 
