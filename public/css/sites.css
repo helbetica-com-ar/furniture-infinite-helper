@@ -1458,6 +1458,20 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     z-index: 999;
 }
 
+.south-fork-furniture .form-shortcode-wrapper {
+    margin-top: -15px;
+}
+
+@media only screen and (min-width: 1024px){
+    .grid-container.collection-image.object-home.south-fork-furniture {
+        grid-template-columns: repeat(4, 1fr)!important;
+        gap: 25px;
+    }
+    .grid-container.collection-image.object-home.south-fork-furniture .grid-item{
+        height: 340px;
+    }
+}
+
 
 /*********/
 /* PRINT */
