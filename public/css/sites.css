@@ -1487,7 +1487,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.perry-s-american-furniture-gallery .container.product-details {
 	    width: 100%;
 	    padding-right: 3%;
-	}	
+	}
+    .perry-s-american-furniture-gallery .desktopMainMenuWrapper ul {
+        margin-top: 5px;
+    }
 }
 
 
