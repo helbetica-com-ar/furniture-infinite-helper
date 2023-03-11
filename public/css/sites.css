@@ -724,6 +724,18 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 .amish-connection .mobileStaticHeader {
     padding-top: 0em;
 }
+
+.amish-connection.home .clickButton1 > a {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    text-align: center;
+}
+
+.amish-connection .mobileStaticHeaderWrapper a {
+    line-height: 50px;
+}
+
+
 .amish-connection a:hover {
     letter-spacing: normal!important;
 }
@@ -745,6 +757,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-left: calc(50% - 50vw);
     display: flex;
     flex-direction: column-reverse;
+}
+@media screen and (min-width: 800px) {
+    .amish-connection .container.product-details {
+        width: 100%;
+        padding-right: 3em;
+    }
 }
 
 /* Share AddThis.com */
