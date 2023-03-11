@@ -1111,6 +1111,22 @@ aside.related-products header h4 {
     text-align: center;
 }
 
+
+.top-header-social-icons {
+	height: 45px;
+    margin: 0;
+}
+.top-header-social-icons a {
+	width: 30px;
+	text-align: center;
+	line-height: 45px;
+    box-sizing: content-box;
+}
+
+.top-header-social-icons a i {
+	font-size: 22px;
+}
+
  /* MEDIA QUERIES  */
  /* MAX WIDTH  */
 @media only screen and (max-width: 799px){
