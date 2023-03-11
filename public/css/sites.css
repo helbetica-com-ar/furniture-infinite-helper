@@ -1491,18 +1491,20 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     text-align: right;
 }
 
-.perry-s-american-furniture-gallery .mobileContactLink {
-	width: 30px;
-	text-align: center;
-	line-height: 45px;
-    box-sizing: content-box;
-}
-
 @media screen and (max-width: 799px){
-	.perry-s-american-furniture-gallery .mobileStaticHeader {
-	    padding-top: 0em;
+    .perry-s-american-furniture-gallery .mobileStaticHeader {
+        padding-top: 0em;
 	    padding-bottom: 0em;
 	}	
+}
+
+@media screen and (max-width: 1199px){
+    .perry-s-american-furniture-gallery .mobileContactLink {
+        width: 30px;
+        text-align: center;
+        line-height: 45px;
+        box-sizing: content-box;
+    }
 }
 
 @media screen and (min-width: 800px){
@@ -1549,18 +1551,21 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     text-align: right;
 }
 
-.perry-039-s-american-furniture-gallery .mobileContactLink {
-	width: 30px;
-	text-align: center;
-	line-height: 45px;
-    box-sizing: content-box;
-}
 
 @media screen and (max-width: 799px){
 	.perry-039-s-american-furniture-gallery .mobileStaticHeader {
 	    padding-top: 0em;
 	    padding-bottom: 0em;
 	}	
+}
+
+@media screen and (max-width: 1199px){
+    .perry-039-s-american-furniture-gallery .mobileContactLink {
+        width: 30px;
+        text-align: center;
+        line-height: 45px;
+        box-sizing: content-box;
+    }
 }
 
 @media screen and (min-width: 800px){
