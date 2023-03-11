@@ -1515,6 +1515,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .perry-s-american-furniture-gallery .desktopMainMenuWrapper ul {
         margin-top: 5px;
     }
+    .perry-s-american-furniture-gallery .desktopMenuWrapper.stickyMenu .desktopMenu {
+        margin-top: 3px;
+    }
 }
 
 @media (min-width: 54em){
@@ -1575,6 +1578,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
     .perry-039-s-american-furniture-gallery .desktopMainMenuWrapper ul {
         margin-top: 5px;
+    }
+    .perry-039-s-american-furniture-gallery .desktopMenuWrapper.stickyMenu .desktopMenu {
+        margin-top: 3px;
     }
 }
 
