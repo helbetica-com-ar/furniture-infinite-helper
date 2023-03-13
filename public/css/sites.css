@@ -1610,6 +1610,53 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
+
+/* pleasant-view-furniture */
+.pleasant-view-furniture table {
+    width: 100%;
+    margin-bottom: 2.618em
+}
+
+.pleasant-view-furniture table th,table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #e9e9e9
+}
+
+.pleasant-view-furniture table th {
+    text-transform: uppercase
+}
+
+
+.pleasant-view-furniture .noSliderSpacer {
+	display: block!important;
+}
+
+.pleasant-view-furniture .googleReviewsBlockWrapper {
+	padding: 3em 2em 6em 2em;
+}
+
+.pleasant-view-furniture .googleReviewsHeadline h2 {
+	text-align: center;
+	color: #00b24d;
+}
+
+.pleasant-view-furniture table th.label-highlight label {
+    font-weight: 400;
+}
+
+.pleasant-view-furniture .product-details-wrapper #desc p {
+    margin-top: 0;
+    padding-right: 50px;
+}
+
+@media screen and (min-width: 800px){
+	.pleasant-view-furniture .product-details-wrapper {
+	    padding-right: 30px;
+	}
+}
+
 /*********/
 /* PRINT */
 /*********/ 
