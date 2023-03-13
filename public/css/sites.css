@@ -1798,11 +1798,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 
-@media only screen and (min-width: 1200px){
+/* @media only screen and (min-width: 1200px){
     .ohio-craft-furniture .outerFurnitureLinkBoxWrapper>a:nth-child(n+5) {
         grid-column: auto / span 5;
     }
-}
+} */
 
 
 /*********/
