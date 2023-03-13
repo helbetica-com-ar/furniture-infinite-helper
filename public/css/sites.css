@@ -1804,6 +1804,32 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 } */
 
+/* farmhouse-furniture */
+.farmhouse-furniture.furniture-category .all-products-section h2 {
+	text-transform: uppercase;
+    font-size: 100%;
+    display: inline-block;
+    padding: 3em;
+    border-top: 2px solid #553925;
+}
+
+.farmhouse-furniture #furniture-main-nav-menu ul {
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+.farmhouse-furniture .form-shortcode-wrapper {
+    margin-top: -15px;
+}
+
+@media screen and (min-width: 1024px){
+	#desktop-thirty {
+		width: 30%!important; 
+	}
+	#desktop-seventy {
+		width: 70%!important; 
+	}
+}
 
 /*********/
 /* PRINT */
