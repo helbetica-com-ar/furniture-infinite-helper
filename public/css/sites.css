@@ -84,6 +84,7 @@
     padding-right: 50px;
     margin-left: 0;
     margin-right: 0;
+    box-sizing: border-box;
 }
 
 .home .furnitureCustomizationBlockWrapper { 
@@ -1651,9 +1652,40 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     padding-right: 50px;
 }
 
+.pleasant-view-furniture #menu-navigation-1 {
+	padding-top: 0;
+}
+
+.pleasant-view-furniture .mobileFurnitureMenuWrapper,
+.pleasant-view-furniture .mobileMenuWrapper {
+    bottom: 60px;
+}
+
+.pleasant-view-furniture .logoWrapper .logo img {
+	max-width: 360px;
+}
+
 @media screen and (min-width: 800px){
 	.pleasant-view-furniture .product-details-wrapper {
 	    padding-right: 30px;
+	}
+}
+
+@media screen and (max-width: 870px){
+	.pleasant-view-furniture .fixedHeader {
+	    display: grid;
+	    grid-template-columns: 33% 0 66%;
+	}
+	.pleasant-view-furniture .fixedLocation {
+	    display: grid;
+	    grid-template-columns: 50% 50%;
+	}
+	.pleasant-view-furniture .fixedSocial a,
+	.pleasant-view-furniture .fixedLocation a:after {
+	    font-size: 1.6em;
+	}
+	.pleasant-view-furniture .fixedHeaderWrapper {
+    	max-height: 45px;
 	}
 }
 
