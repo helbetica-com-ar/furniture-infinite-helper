@@ -26,6 +26,10 @@
     text-decoration: underline;
 }
 
+#menu-main-menu-1 {
+	padding-top: 0px;
+}
+
 @media only screen and (max-width: 799px){
     ul#menu-main-menu-1 {
         padding-top: 0;
@@ -1668,13 +1672,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
+
 @media screen and (min-width: 800px){
 	.pleasant-view-furniture .product-details-wrapper {
 	    padding-right: 30px;
 	}
 }
 
-@media screen and (max-width: 870px){
+
+@media screen and (max-width: 864px){
 	.pleasant-view-furniture .fixedHeader {
 	    display: grid;
 	    grid-template-columns: 33% 0 66%;
@@ -1701,20 +1707,88 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	display: block;
 }
 
-.ohio-craft-furniture .furnitureMenuButton>a {
-    background-image: url(../img/solid-chair-furniture-icon.png);
-}
 
 @media screen and (min-width: 500px){
     .ohio-craft-furniture .logoWrapper .logo img {
-        max-width: 360px;
+        max-width: 330px;
     }
+}
+
+.ohio-craft-furniture .furnitureMenuButton > a {
+    background-image: url(../img/solid-chair-furniture-icon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    mask: none;
+    -webkit-mask-box-image: none;
+    background-color: transparent;
+}
+
+.ohio-craft-furniture .googleReviewsBlockWrapper {
+	padding: 3em 2em 6em 2em;
+}
+
+.ohio-craft-furniture .mobileMenuWrapper {
+    bottom: 57px;
+}
+
+.ohio-craft-furniture .googleReviewsHeadline h2 {
+	text-align: center;
+	color: #08225f;
+}
+
+.ohio-craft-furniture .dayWrapper {
+    grid-template-columns: 100px auto 10px auto;
+    max-width: 260px;
+}
+
+.ohio-craft-furniture.furniture-category .container {
+	max-width: 1200px;
+	width: 80vw;
+	margin: 0 auto;
+}
+.ohio-craft-furniture.home .mainContent p,
+.ohio-craft-furniture.furniture-category .mainContent p {
+	text-align: center;
+}
+
+.ohio-craft-furniture .footerWidget li.has-label {
+	margin-bottom: 15px;
+}
+
+.ohio-craft-furniture .footerWidget li.has-label div {
+	margin-top: 10px;
 }
 
 @media screen and (min-width: 800px){
 	.ohio-craft-furniture .noSliderSpacer {
 		padding-top: 328px;
+	}
+	.ohio-craft-furniture.furniture-page .noSliderSpacer,
+	.ohio-craft-furniture.about .noSliderSpacer,
+	.ohio-craft-furniture.contact .noSliderSpacer{
+		padding-top: 278px;
 	}	
+}
+
+@media screen and (max-width: 864px){
+	.ohio-craft-furniture .fixedHeader {
+	    display: grid;
+	    grid-template-columns: 33% 0 66%;
+	}
+	.ohio-craft-furniture .fixedLocation {
+	    display: grid;
+	    grid-template-columns: 50% 50%;
+	}
+	.ohio-craft-furniture .fixedSocial a,
+	.ohio-craft-furniture .fixedLocation a:after {
+	    font-size: 1.6em;
+	}
+	.ohio-craft-furniture .fixedHeaderWrapper {
+    	max-height: 45px;
+	}
+	.ohio-craft-furniture.home .rightFurnitureCustomizationBlock > p {
+		text-align: center;
+	}
 }
 
 
