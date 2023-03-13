@@ -1692,6 +1692,34 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
 }
 
+/* ohio-craft-furniture */
+.ohio-craft-furniture .fixedSearchWrapper {
+	display: none;
+}
+
+.ohio-craft-furniture .noSliderSpacer {
+	display: block;
+}
+
+.ohio-craft-furniture .furnitureMenuButton>a {
+    background-image: url(../img/solid-chair-furniture-icon.png);
+}
+
+@media screen and (min-width: 500px){
+    .ohio-craft-furniture .logoWrapper .logo img {
+        max-width: 360px;
+    }
+}
+
+@media screen and (min-width: 800px){
+	.ohio-craft-furniture .noSliderSpacer {
+		padding-top: 328px;
+	}	
+}
+
+
+
+
 /*********/
 /* PRINT */
 /*********/ 
