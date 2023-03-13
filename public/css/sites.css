@@ -1715,13 +1715,14 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 .ohio-craft-furniture .furnitureMenuButton > a {
-    background-image: url(../img/solid-chair-furniture-icon.png);
+    background-image: url('https://assets.infinitedigitalsolutions.com/media/img/icons/solid-chair-furniture-icon.png');
     background-repeat: no-repeat;
     background-size: contain;
     mask: none;
     -webkit-mask-box-image: none;
     background-color: transparent;
 }
+
 
 .ohio-craft-furniture .googleReviewsBlockWrapper {
 	padding: 3em 2em 6em 2em;
