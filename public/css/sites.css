@@ -1707,11 +1707,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	display: block;
 }
 
-
-@media screen and (min-width: 500px){
-    .ohio-craft-furniture .logoWrapper .logo img {
-        max-width: 330px;
-    }
+.ohio-craft-furniture .mobileFurnitureMenuWrapper,
+.ohio-craft-furniture .mobileMenuWrapper {
+    background-color: rgba(226,226,226,0.85);
 }
 
 .ohio-craft-furniture .furnitureMenuButton > a {
@@ -1760,16 +1758,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	margin-top: 10px;
 }
 
-@media screen and (min-width: 800px){
-	.ohio-craft-furniture .noSliderSpacer {
-		padding-top: 328px;
-	}
-	.ohio-craft-furniture.furniture-page .noSliderSpacer,
-	.ohio-craft-furniture.about .noSliderSpacer,
-	.ohio-craft-furniture.contact .noSliderSpacer{
-		padding-top: 278px;
-	}	
-}
 
 @media screen and (max-width: 864px){
 	.ohio-craft-furniture .fixedHeader {
@@ -1792,6 +1780,22 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
 }
 
+@media screen and (min-width: 500px){
+    .ohio-craft-furniture .logoWrapper .logo img {
+        max-width: 330px;
+    }
+}
+
+@media screen and (min-width: 800px){
+	.ohio-craft-furniture .noSliderSpacer {
+		padding-top: 328px;
+	}
+	.ohio-craft-furniture.furniture-page .noSliderSpacer,
+	.ohio-craft-furniture.about .noSliderSpacer,
+	.ohio-craft-furniture.contact .noSliderSpacer{
+		padding-top: 278px;
+	}	
+}
 
 
 
