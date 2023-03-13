@@ -1661,8 +1661,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     bottom: 60px;
 }
 
-.pleasant-view-furniture .logoWrapper .logo img {
-	max-width: 360px;
+
+@media screen and (min-width: 500px){
+    .pleasant-view-furniture .logoWrapper .logo img {
+        max-width: 360px;
+    }
 }
 
 @media screen and (min-width: 800px){
