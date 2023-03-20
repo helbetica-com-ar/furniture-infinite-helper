@@ -1837,6 +1837,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     font-family: "Open Sans", Sans-serif!important;
 }
 
+.heritage-reflections .form-shortcode-wrapper {
+    margin-top: -15px;
+}
+
 @media screen and (max-width: 799px){ 
     .heritage-reflections .elementor-nav-menu li:not(.sub-menu-cat) a{
         text-transform: uppercase!important;;
