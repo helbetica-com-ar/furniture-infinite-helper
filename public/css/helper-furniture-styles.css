@@ -1059,6 +1059,9 @@ a#loadMore {
     text-decoration: none;
     font-size: 150%;
     font-weight: 700;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #dedcdc;
 }
 
 .popmake-close {
