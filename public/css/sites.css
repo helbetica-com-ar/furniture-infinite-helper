@@ -1838,12 +1838,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 @media screen and (max-width: 799px){ 
-    .heritage-reflections .elementor-nav-menu li {
-        text-transform: uppercase;
+    .heritage-reflections .elementor-nav-menu li:not(.sub-menu-cat) a{
+        text-transform: uppercase!important;;
     }
-    .heritage-reflections .elementor-nav-menu li.sub-menu-cat.menu-item {
+    .heritage-reflections .elementor-nav-menu li.sub-menu-cat.menu-item a {
         border-left: 10px solid #cecece;
-        text-transform: none!important;
+        text-transform: capitalize;
     }
 }
 
