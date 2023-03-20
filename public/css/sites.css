@@ -1847,7 +1847,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
     .heritage-reflections .elementor-nav-menu li.sub-menu-cat.menu-item a {
         border-left: 10px solid #cecece;
-        text-transform: capitalize;
+        text-transform: capitalize!important;
     }
 }
 
@@ -1873,7 +1873,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
     .mistler-s-oak-furniture .elementor-nav-menu li.sub-menu-cat.menu-item a {
         border-left: 10px solid #cecece;
-        text-transform: capitalize;
+        text-transform: capitalize!important;
     }
 }
 
