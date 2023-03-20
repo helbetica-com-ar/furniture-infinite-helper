@@ -1,5 +1,5 @@
 .furniture-category .furniture-infinite-grid-items.table--tops, 
-.furniture-category .furniture-infinite-grid-items.table--bases, {
+.furniture-category .furniture-infinite-grid-items.table--bases {
     position: absolute!important;
     left: -10000px!important;
 }
