@@ -1918,6 +1918,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     } 
 }
 
+
+/* circle-y-amish-furniture */
+@media screen and (min-width: 1024px){
+	.circle-y-amish-furniture #main-header-wrapper .elementor-widget:not(:last-child) {
+	    margin-bottom: 0px;
+	}
+}
+
+
 /*********/
 /* PRINT */
 /*********/ 
