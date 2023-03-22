@@ -1805,6 +1805,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .ohio-craft-furniture .product-details-wrapper {
 	    padding-right: 30px;
 	}
+    .ohio-craft-furniture table.product-data {
+        width: 100%;
+    }
+    .ohio-craft-furniture .row-variants-header th {
+        padding: 15px;
+    }
 }
 
 
