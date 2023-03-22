@@ -1485,3 +1485,67 @@ aside.related-products header h4 {
     }
 }
 .footerIcons > li { list-style-type: none;}
+
+table.store-hours-table td,
+table.store-hours-table th {
+    padding: 5px 0px;
+}
+table.store-hours-table tr td:first-child {
+    width: 150px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px){
+	.grow-tablet {
+		flex-grow: 1;
+	}	
+	.grow-tablet .elementor-widget-wrap > div {
+		margin-bottom: 0;
+	}
+	#furntiure-cats-menu ul li a {
+		justify-content: center;
+	}
+}
+
+
+
+
+@media screen and (max-width: 768px){ 
+	#all-items-mobile-menu li a{
+		border-bottom: 1px solid hwb(0deg 81% 19% / 50%);
+		text-align: center;
+		justify-content: center;
+	}
+	#all-items-mobile-menu li:not(.sub-menu-cat) a{
+        text-transform: uppercase!important;
+    }
+    #all-items-mobile-menu li.sub-menu-cat.menu-item a {
+        border-left: 10px solid #cecece;
+        border-right: 10px solid #cecece;
+        text-transform: capitalize!important;
+        position: relative;
+    }
+    #all-items-mobile-menu li.sub-menu-cat.menu-item a:before{
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	width:50%;
+    	height: 50%;
+    	background-color: rgba(255,255,255,0.03);
+    	bottom:0;
+    	left:0;
+    	z-index: 0;
+    	opacity: 1;
+    }
+    #all-items-mobile-menu li.sub-menu-cat.menu-item a:after{
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	width:50%;
+    	height: 50%;
+    	background-color: rgba(255,255,255,0.03);
+    	bottom:0;
+    	right:0;
+    	z-index: 0;
+    	opacity: 1;
+    }
+}

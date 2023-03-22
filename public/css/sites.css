@@ -1894,7 +1894,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     } 
 }
 
-
+/* countryside-furnishings-llc */
+.countryside-furnishings-llc .form-shortcode-wrapper {
+    margin-top: -22px;
+}
 
 
 /*********/
