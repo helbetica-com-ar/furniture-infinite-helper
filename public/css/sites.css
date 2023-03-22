@@ -1801,7 +1801,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.ohio-craft-furniture.about .noSliderSpacer,
 	.ohio-craft-furniture.contact .noSliderSpacer{
 		padding-top: 278px;
-	}	
+	}
+    .ohio-craft-furniture .product-details-wrapper {
+	    padding-right: 30px;
+	}
 }
 
 
@@ -1900,11 +1903,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 @media only screen and (min-width: 1024px){
-    .grid-container.collection-image.object-home.countryside-furnishings-llc {
+    .grid-container.collection-image.object-home.mistler-s-oak-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
         gap: 25px;
     }
-    .grid-container.collection-image.object-home.countryside-furnishings-llc .grid-item{
+    .grid-container.collection-image.object-home.mistler-s-oak-furniture .grid-item{
         height: 340px;
     } 
 }
