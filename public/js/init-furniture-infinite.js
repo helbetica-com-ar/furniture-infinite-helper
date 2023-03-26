@@ -137,6 +137,22 @@
         }
     }
 
+    $counterFurnitureOptions = 0;
+    $('#furniture-option-wood-species-btn').on("click", function () {
+        $('#wood-species-accordion-container').toggle();
+    });
+    $('#furniture-option-stains-btn').on("click", function () {
+        $('#stains-accordion-container').toggle();
+        if ($counterFurnitureOptions == 0) {
+            $('.elementor-tab-title').removeClass('elementor-active').attr('aria-selected', false).attr('aria-expanded', '-1');
+            $('.elementor-tab-content').removeClass('elementor-active').css('display', 'none');
+            $counterFurnitureOptions++;
+        }
+    });
+    $('#furniture-option-hardware-btn').on("click", function () {
+        $('#hardware-accordion-container').toggle();
+    });
+
 }(jQuery));
 
 
