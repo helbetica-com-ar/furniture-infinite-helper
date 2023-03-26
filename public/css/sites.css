@@ -1845,7 +1845,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	#desktop-seventy {
 		width: 70%!important; 
 	}
+    .grid-container.collection-image.object-home.farmhouse-furniture {
+        grid-template-columns: repeat(4, 1fr)!important;
+        gap: 25px;
+    }
+    .grid-container.collection-image.object-home.farmhouse-furniture .grid-item{
+        height: 340px;
+    } 
 }
+
 
 
 /* heritage-reflections */

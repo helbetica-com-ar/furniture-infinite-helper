@@ -1489,9 +1489,75 @@ aside.related-products header h4 {
 table.store-hours-table td,
 table.store-hours-table th {
     padding: 5px 0px;
+    border: none;
 }
 table.store-hours-table tr td:first-child {
-    width: 150px;
+    width: 100px;
+}
+table.store-hours-table tbody>tr:nth-child(odd)>td, 
+table.store-hours-table tbody>tr:nth-child(odd)>th {
+    background-color: transparent;
+}
+
+
+#header-top-bar,
+#header-main, 
+#header-bottom-bar {
+	width: 100vw;
+}
+
+
+#map-wrapper {
+	position: relative;
+}
+#map-wrapper > div {
+	flex-grow: 1	
+}
+#map-wrapper iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.accordion-container {
+	display: none;
+}
+
+#furniture-option-wood-species-btn,
+#furniture-option-stains-btn,
+#furniture-option-hardware-btn {
+	width: 100%;
+	cursor: pointer;
+}
+
+#stains-accordion-container .elementor-accordion .elementor-tab-title {
+	text-align: center;
+	-webkit-user-select: none;  
+	-moz-user-select: none;    
+	-ms-user-select: none;      
+	user-select: none;
+}
+
+
+html body #wood-species-accordion-container .modula .figc,
+html body #hardware-accordion-container .modula .figc,
+#jtg-2759.modula-gallery .modula-item,
+#jtg-2754.modula-gallery .modula-item {
+	cursor: default!important;
+}
+
+
+html body .modula .modula-item.effect-pufrobo p {
+    margin-top: 10px!important;
+    margin-bottom: 5px!important;
+    opacity: 1!important;
+    -webkit-transform: translate3d(0,0,0)!important;
+    transform: translate3d(0,0,0)!important;
+	text-transform: uppercase;
+    width: 100%;
+    left: 0!important;
+    text-align: center;
+    text-shadow: 2px 2px 3px BLACK;
+    cursor: default;
 }
 
 @media screen and (min-width: 767px) and (max-width: 1024px){
