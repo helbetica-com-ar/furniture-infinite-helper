@@ -1951,6 +1951,22 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-top: -15px;
 }
 
+@media screen and (max-width: 864px) {
+    .countryview-furniture #menu-navigation-1 {
+        padding-top: 0;
+    }
+    .countryview-furniture .hamburger {
+	    padding: 10px 15px 8px 15px;
+	}
+	.countryview-furniture .mobileButtonWrapper {
+    	padding: 0;
+	}
+	.countryview-furniture .furnitureMenuButton a {
+    	height: 35px;
+    	width: 35px;
+	}
+}
+
 @media screen and (min-width: 800px) {
     .countryview-furniture .container.product-details {
         padding-right: 3em;
