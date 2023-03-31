@@ -1955,6 +1955,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     .countryview-furniture .noSliderSpacer {
         padding-top: 175px;
     }
+    .countryview-furniture .product-details-wrapper {
+		padding: 0px 12px;
+	}
     .countryview-furniture #menu-navigation-1 {
         padding-top: 0;
     }
