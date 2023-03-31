@@ -496,6 +496,11 @@ table th.label-highlight label:last-child{
     border-bottom: 1px solid #ffffff;
 }
 
+.furniture-single-view table td.cell.value {
+	border-right: 1px solid #e9e9e9;
+}
+
+
 td.cell.label,
 td.cell.value:not(.single) {
     width: 50%;

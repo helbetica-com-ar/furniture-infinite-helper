@@ -1934,6 +1934,31 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
 }
 
+/* countryview-furniture */
+.countryview-furniture .noSliderSpacer {
+    display: block;
+}
+
+.countryview-furniture .fixedSearchWrapper{
+	display: none!important;
+}
+
+.countryview-furniture.furniture-single-view .title-highlight {
+    padding: 15px;
+}
+
+.countryview-furniture .form-shortcode-wrapper {
+    margin-top: -15px;
+}
+
+@media screen and (min-width: 800px) {
+    .countryview-furniture .container.product-details {
+        padding-right: 3em;
+    }
+    .countryview-furniture table.product-data {
+        width: 100%
+    }
+}
 
 /*********/
 /* PRINT */
