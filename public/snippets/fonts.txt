@@ -1,0 +1,34 @@
+HEADINGS
+Lora
+Quicksand Light
+Montserrat
+Oswald  (Condensed font)
+Roboto
+
+TEXT
+Quicksand Light
+Open Sans
+Montserrat
+Liberation Sans
+
+
+SANS-SERIF
+Ubuntu
+
+SERIF
+Sanchez
+Trirong
+Vollkorn
+
+
+HANDWRITING DISPLAY
+Mr Dafoe
+
+
+Combinations
+Lora Quicksand (frontierfurniturellc.com)
+Mr Dafoe Montserrat  (southfork)
+Roboto Montserrat (amishheritagefurniture.com)
+Trirong Roboto Montserrat (amishhills.com)
+Vollkorn Roboto (countrysidefurnishings.com)
+Ubuntu Open Sans (grabersfurniture.com)
