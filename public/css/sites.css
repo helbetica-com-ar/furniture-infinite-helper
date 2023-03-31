@@ -1975,6 +1975,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     aside *,
     footer,
     footer *,
+    .site-footer,
+    .site-footer *,
+    .footerWrapper,
+    .footerWrapper *,
     .headerCalloutWrapper,
     .headerCalloutWrapper *,
     .breadcrumbs,
@@ -2063,6 +2067,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
         margin-top: 10mm;
         max-width: 100mm!important;
     }
+    .logo img {
+        max-width: 100mm!important;
+    }
+
     img#hover-effect {
         width: auto!important;
         max-height: 150mm!important;
