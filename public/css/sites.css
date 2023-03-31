@@ -1952,6 +1952,28 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 @media screen and (max-width: 864px) {
+    .countryview-furniture .fixedHeaderWrapper {
+		max-height: 45px;
+	}
+	.countryview-furniture .fixedHeader {
+	    grid-template-columns: 33% 0 66%;
+	}
+	.countryview-furniture .mobileContactLink {
+		width: 49%;
+		display: inline-block;
+	}
+	.countryview-furniture .mobileContactLink>span {
+	    padding-left: 0;
+	}
+	.countryview-furniture .fixedSocial .fab, .fixedSocial .far {
+		font-size: 27px;
+	}
+	.countryview-furniture .fixedSocial a, .fixedLocation a:after {
+		padding-left: 0;
+	}
+	.countryview-furniture .fixedSocial {
+	    margin-top: -2px;
+	}
     .countryview-furniture .noSliderSpacer {
         padding-top: 175px;
     }
