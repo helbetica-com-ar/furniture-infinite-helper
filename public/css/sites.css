@@ -1952,6 +1952,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 @media screen and (max-width: 864px) {
+    .countryview-furniture .noSliderSpacer {
+        padding-top: 175px;
+    }
     .countryview-furniture #menu-navigation-1 {
         padding-top: 0;
     }
