@@ -138,9 +138,9 @@
     }
 
     $counterFurnitureOptions = 0;
-    // $('#furniture-option-wood-species-btn').on("click", function () {
-    //     $('#wood-species-accordion-container').toggle();
-    // });
+    $('#furniture-option-wood-species-btn').on("click", function () {
+        $('#wood-species-accordion-container').toggle();
+    });
     $('#furniture-option-stains-btn').on("click", function () {
         $('#stains-accordion-container').toggle();
         if ($counterFurnitureOptions == 0) {
