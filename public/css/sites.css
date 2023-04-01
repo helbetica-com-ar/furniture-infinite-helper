@@ -2014,6 +2014,24 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     } 
 }
 
+/* handcrafted-amish-furniture-of-dayton */
+.handcrafted-amish-furniture-of-dayton .furniture-infinite-grid-items a:hover {
+	color: inherit;
+}
+
+.handcrafted-amish-furniture-of-dayton .form-shortcode-wrapper {
+    margin-top: -25px;
+}
+
+.handcrafted-amish-furniture-of-dayton .elementor-nav-menu--dropdown .elementor-item.elementor-item-active {
+    color: #494c4f;
+    background-color: inherit;
+}
+
+.handcrafted-amish-furniture-of-dayton .fg-default .fg-item {
+    width: 46%;
+}
+
 /*********/
 /* PRINT */
 /*********/ 
