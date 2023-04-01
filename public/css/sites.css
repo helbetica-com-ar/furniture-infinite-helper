@@ -2053,6 +2053,30 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }    
 }
 
+/* sawtooth-furniture */
+.sawtooth-furniture .mobileStaticSocial p {
+    margin-top: 5px!important;
+}
+
+@media screen and (max-width: 799px){
+	.sawtooth-furniture .mobileStaticHeader {
+	    justify-content: space-between;
+	}
+	.sawtooth-furniture .mobileStaticSocialWrapper,
+	.sawtooth-furniture .mobileStaticContactWrapper {
+	    width: auto;
+	}
+}
+
+@media screen and (max-width: 1199px){
+	.sawtooth-furniture .mobileStaticContact p {
+		text-align: right;
+	}
+	.sawtooth-furniture .mobileContactLink {
+		width: 42px;
+	}	
+}
+
 
 /*********/
 /* PRINT */
