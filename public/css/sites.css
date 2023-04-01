@@ -1238,6 +1238,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-top: -20px;
 }
 
+.bernhaus-furniture-berne-in.furniture-single-view .outerFurnitureLinkBoxWrapper {
+    display: none!important;
+}
+
 @media screen and (max-width: 799px){
 	.bernhaus-furniture-berne-in .furnitureMenuWrapper, 
 	.bernhaus-furniture-berne-in .mainMenuWrapper {
