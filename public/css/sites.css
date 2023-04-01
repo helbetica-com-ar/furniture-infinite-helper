@@ -278,6 +278,22 @@
     justify-content: center;
 }
 
+.weavers-farm-and-furniture.furniture-single-view .furnitureOptionsOuterWrapper h2 {
+	visibility: hidden;
+}
+
+.weavers-farm-and-furniture.furniture-single-view .furnitureOptionsHeaderWrapper h2:after{
+    content: 'CUSTOMIZE YOUR FURNITURE OPTIONS';
+    display: block;
+    font-size: 1.25em;
+    visibility: visible;
+    margin-top: -1em;
+}
+
+.weavers-farm-and-furniture.furniture-single-view .furnitureOptionsDetail h2 {
+    display: none;
+}
+
 @media screen and (max-width: 410px) {
     .weavers-farm-and-furniture .deskTopHeaderInfo {
         display: none!important;
