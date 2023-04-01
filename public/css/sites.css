@@ -2027,10 +2027,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     color: #494c4f;
     background-color: inherit;
 }
-
-.handcrafted-amish-furniture-of-dayton .fg-default .fg-item {
-    width: 46%;
+@media screen and (max-width: 400px) {
+    .handcrafted-amish-furniture-of-dayton .fg-default .fg-item {
+        width: 46%;
+    }    
 }
+
 
 /*********/
 /* PRINT */
