@@ -1523,6 +1523,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     text-align: right;
 }
 
+.perry-s-american-furniture-gallery.furniture-single-view .furnitureOptionsBlockWrapper > h2:before {
+    display: block;
+    con tent: 'FURNITURE CUSTOMIZATIONS';
+    font-size: 75%;
+}
+
 @media screen and (max-width: 799px){
     .perry-s-american-furniture-gallery .mobileStaticHeader {
         padding-top: 0em;
