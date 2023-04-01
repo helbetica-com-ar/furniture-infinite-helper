@@ -1396,6 +1396,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-top: -20px;
 }
 
+.patterson-s-amish-furniture.furniture-single-view .furnitureOptionsHeaderWrapper > h2:before {
+    display: block;
+    content: 'FURNITURE CUSTOMIZATIONS';
+    font-size: 75%;
+}
+
 @media screen and (max-width: 799px){
 	.patterson-s-amish-furniture:not(.contact) .mobileStaticHeader {
     	padding-top: 0;
