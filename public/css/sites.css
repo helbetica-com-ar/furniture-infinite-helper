@@ -548,6 +548,13 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-top: -20px;
 }
 
+.pa-dutch-woodcraft.furniture-single-view .furnitureOptionsBlockWrapper h2:before {
+    display: block;
+    content: 'FURNITURE CUSTOMIZATIONS';
+    font-size: 75%;
+    word-wrap: initial;
+}
+
 @media only screen and (min-width: 1024px){
     body.home.pa-dutch-woodcraft .headerWrapper {
         position: absolute!important;
@@ -1344,6 +1351,13 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     margin-top: -20px;
 }
 
+.graber-s-handcrafted-furniture.furniture-single-view .furnitureOptionsBlockWrapper h2:before {
+    display: block;
+    content: 'AVAILABLE CUSTOMIZATIONS';
+    font-size: 50%;
+    word-wrap: initial;
+}
+
 @media screen and (max-width: 799px){
 	.graber-s-handcrafted-furniture .furnitureSlideDownMenuWrapper {
 		display: none!important;
@@ -1400,6 +1414,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     display: block;
     content: 'FURNITURE CUSTOMIZATIONS';
     font-size: 75%;
+    word-wrap: initial;
 }
 
 @media screen and (max-width: 799px){
@@ -1533,6 +1548,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     display: block;
     content: 'FURNITURE CUSTOMIZATIONS';
     font-size: 75%;
+    word-wrap: initial;
 }
 
 @media screen and (max-width: 799px){
@@ -1958,8 +1974,27 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     } 
 }
 
+/* countryview-furniture */
+@media only screen and (min-width: 1200px){
+    .countryview-furniture .related-products .furniture-infinite-grid-items {
+        flex: 0 1 16%!important;
+    }
+}
+
+
+
 
 /* circle-y-amish-furniture */
+.circle-y-amish-furniture #bottom-bar-header svg path,
+.circle-y-amish-furniture #bottom-bar-header svg * {
+	stroke: #fff!important;
+	fill: #fff;
+}
+
+.circle-y-amish-furniture #bottom-bar-header.shadow {
+    box-shadow: 0px 5px 12px 2px rgb(255 255 255 / 30%);
+}
+
 @media screen and (min-width: 1024px){
 	.circle-y-amish-furniture #main-header-wrapper .elementor-widget:not(:last-child) {
 	    margin-bottom: 0px;
@@ -2088,6 +2123,18 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 		width: 42px;
 	}	
 }
+
+/* frontier-furniture-overland-park-ks */
+
+@media (min-width: 65em){
+	.frontier-furniture-overland-park-ks .furnitureCustomizationBlock {
+	    width: 100%;
+	    padding-top: 3em;
+	}
+}
+
+
+
 
 
 /*********/
