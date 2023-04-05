@@ -1028,6 +1028,10 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	padding: 2em!important;
 }
 
+.apple-ridge-amish-furniture.furniture-category a.ctaLink {
+    display: none!important;
+}
+
 .apple-ridge-amish-furniture .twoColRow > div > div:last-child {
 	background-repeat: no-repeat;
 	background-position: center;
