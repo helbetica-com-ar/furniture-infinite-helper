@@ -1,5 +1,7 @@
 <?php
 
+# execute via /opt/plesk/php/8.1/bin/php [RELATIVE PATH]
+
 define('SHORTINIT', true);
 
 if (!defined('ABSPATH')) {
@@ -7,12 +9,12 @@ if (!defined('ABSPATH')) {
     require_once dirname(__FILE__) . '/../../../wp-load.php';
 }
 
-# echo 'DIR: ' . dirname(__FILE__) . "\n"; 
+echo 'STATUS CHECK #01: DIR: ' . dirname(__FILE__) . "\n"; 
 
 
 function furniture_infinite_get_json(){
 
-    # echo 'furniture_infinite_get_json executed' . PHP_EOL;
+    echo 'STATUS CHECK #03: Function furniture_infinite_get_json() executed' . PHP_EOL;
 
     # BASIC AUTHENTICATION POST REQUEST TO FURNITURE INFINITE DATABASE WITH 'WPSTOREADMIN' E-MAIL AND PASSWORD
 
@@ -48,24 +50,27 @@ function furniture_infinite_get_json(){
 
     # First check for Invalid response (incorrect email or password)
     if (isset($post_response["message"])) {
-        # echo 'message present, set it!' . PHP_EOL;
-        # echo 'sync status false' . PHP_EOL;
+        echo 'STATUS CHECK #04: SYNC Status FALSE' . PHP_EOL;
+        echo 'STATUS CHECK #04: Response message: ' . $post_response["message"] . PHP_EOL;
+        echo 'STATUS CHECK #04: Saving response message to WP DB.' . PHP_EOL;
         set_transient('furniture_api_sync_message', $post_response["message"], 5 * HOUR_IN_SECONDS); // Expire time 5 hours
         set_transient('furniture_api_sync_status', 'false', 63115200); // Expire time 2 years ## REVIEW
     } else {
-        # echo 'delete message if present' . PHP_EOL;
+        echo 'STATUS CHECK #04: No response message from JSON retrievedelete message if present' . PHP_EOL;
+        echo 'STATUS CHECK #04: Deleting any previous retrieves message from WP DB' . PHP_EOL;
         delete_transient('furniture_api_sync_message');
     }
     
     # Then check if response has Token
     if(isset($post_response["token"])){
-        # echo 'token is set' . PHP_EOL;
+        echo 'STATUS CHECK #05: Token retrieved' . PHP_EOL;
         $bearer = $post_response["token"];
         $lenght = strlen($bearer);
         # Then check if Token is not empty and Token lenght is valid
         if (!empty($bearer) && $lenght > 80) {
-            # echo 'token not empty and lenght is valid' . PHP_EOL;
-            # echo 'sync status true' . PHP_EOL;
+            echo 'STATUS CHECK #06: Token not empty and lenght is valid' . PHP_EOL;
+            echo 'STATUS CHECK #06: Token: ' . $post_response["token"] . PHP_EOL;
+            echo 'STATUS CHECK #06: SYNC Status True' . PHP_EOL;
             set_transient('furniture_api_sync_status', 'true', 63115200); // Expire time 2 years ## REVIEW
 
             # BEARER TOKEN AUTHENTICATION GET RESPONSE WITH JSON DATA
@@ -103,7 +108,8 @@ function furniture_infinite_get_json(){
             set_transient('furniture_api_json_data_woodTypes', $furnitureInfinite_woodTypes, 63115200); // Expire time 2 years ## REVIEW
 
         } else {
-            # echo 'sync status false' . PHP_EOL;
+            echo 'STATUS CHECK #06: Token not retrieved' . PHP_EOL;
+            echo 'STATUS CHECK #06: SYNC Status FALSE' . PHP_EOL;
             set_transient('furniture_api_sync_status', 'Token Lenght Invalid', 63115200); // Expire time 2 years ## REVIEW
         }
     }
@@ -115,11 +121,11 @@ if (
     defined('FURNITURE_WP_PASS')
     ) {
     update_option('furniture_api_options_wpStoreAdmin_credentials_present', 'true', '', false); // autoload false
-    # echo 'Custom CONSTANTS for wpStoreAdmin user were declared on WP-CONFIG File' . PHP_EOL; 
+    echo 'STATUS CHECK #02: WP Custom CONSTANTS for wpStoreAdmin are set on wp-config.php' . PHP_EOL; 
     furniture_infinite_get_json();
 } else {
     update_option('furniture_api_options_wpStoreAdmin_credentials_present', 'false', '', false); // autoload false
-    # echo 'Furniture Infinite User Credentials missing in Configuration File' . PHP_EOL; 
+    echo 'STATUS CHECK #02: Furniture Infinite User Credentials (wpStoreAdmin) missing on wp-config.php' . PHP_EOL; 
 }
 
 
