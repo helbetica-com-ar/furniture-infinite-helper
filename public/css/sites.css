@@ -2139,7 +2139,40 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 
 
  /* mill-creek-amish-furniture  */
- @media screen and (max-width: 799px){
+.mill-creek-amish-furniture .header-social-icons i:before{
+	font-family: "Font Awesome 5 Brands";
+    font-size: 1.5em!important;
+    font-style: initial;
+}
+.mill-creek-amish-furniture a.header-icon {
+    margin-right: 10px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.mill-creek-amish-furniture .noSliderSpacer {
+	display: block!important;
+	background-image: url('https://assets.infinitedigitalsolutions.com/media/img/covers/backgrounds/main-background-wood-grain.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mill-creek-amish-furniture .headerWrapper {
+    position: absolute!important;
+    background-image: none!important;
+    height: inherit!important;
+}
+
+.mill-creek-amish-furniture .swiperContent {
+    text-align: center;
+}
+
+.mill-creek-amish-furniture .form-shortcode-wrapper.single-choice.unhide-variant {
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 799px){
 	.mill-creek-amish-furniture #podium-website-widget > iframe {
 	    right: unset!important;
 	    left: 50%!important;
@@ -2176,35 +2209,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
 }
 
-.mill-creek-amish-furniture .header-social-icons i:before{
-	font-family: "Font Awesome 5 Brands";
-    font-size: 1.5em!important;
-    font-style: initial;
-}
-.mill-creek-amish-furniture a.header-icon {
-    margin-right: 10px;
-    margin-top: 8px;
-    font-size: 12px;
-}
-
-.mill-creek-amish-furniture .noSliderSpacer {
-	display: block!important;
-	background-image: url('https://assets.infinitedigitalsolutions.com/media/img/covers/backgrounds/main-background-wood-grain.jpg');
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.mill-creek-amish-furniture .headerWrapper {
-    position: absolute!important;
-    background-image: none!important;
-    height: inherit!important;
-}
-
-.mill-creek-amish-furniture .swiperContent {
-    text-align: center;
-}
-
 
 @media (min-width: 54em){
 	.mill-creek-amish-furniture .desktopMenuWrapper {
@@ -2229,6 +2233,18 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	    padding-right: 0!important%;
 	}
 }
+
+@media screen and (min-width: 800px){
+	.mill-creek-amish-furniture .container.product-details {
+	    width: 100vw !important;
+	    max-width: 100vw !important;
+	    margin-left: calc(50% - 50vw) !important;
+	}
+	.mill-creek-amish-furniture .container.product-details .right-column {
+	    padding-right: 3em;
+	}
+}
+
 
 
 
