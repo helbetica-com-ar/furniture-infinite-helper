@@ -484,7 +484,6 @@ aside.chariho-furniture header h2 {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.chariho-furniture {
         grid-template-columns: repeat(3, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.chariho-furniture .grid-item{
         height: 300px;
@@ -567,7 +566,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 
     .grid-container.collection-image.object-home.pa-dutch-woodcraft {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.pa-dutch-woodcraft .grid-item{
         height: 340px;
@@ -592,7 +590,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.circles-in-the-wind {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.circles-in-the-wind .grid-item{
         height: 340px;
@@ -747,7 +744,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.php-home-categories.collection-image.object-home.amish-country-heirlooms-arthur-il {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.php-home-categories.collection-image.object-home.amish-country-heirlooms-arthur-il .grid-item{
         height: 300px;
@@ -812,7 +808,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.amish-connection {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.amish-connection .grid-item{
         height: 340px;
@@ -876,7 +871,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.benchley-s-amish-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.benchley-s-amish-furniture .grid-item{
         height: 340px;
@@ -1005,7 +999,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.amish-custom-furniture {
         grid-template-columns: repeat(3, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.amish-custom-furniture .grid-item{
         height: 300px;
@@ -1286,7 +1279,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media screen and (min-width: 1100px){
     .grid-container.collection-image.object-home.bernhaus-furniture-berne-in {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.bernhaus-furniture-berne-in .grid-item{
         height: 340px;
@@ -1394,7 +1386,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.graber-s-handcrafted-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.graber-s-handcrafted-furniture .grid-item{
         height: 340px;
@@ -1526,7 +1517,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.south-fork-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.south-fork-furniture .grid-item{
         height: 340px;
@@ -1597,7 +1587,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.perry-s-american-furniture-gallery {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.perry-s-american-furniture-gallery .grid-item{
         height: 340px;
@@ -1666,7 +1655,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.perry-039-s-american-furniture-gallery {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.perry-039-s-american-furniture-gallery .grid-item{
         height: 340px;
@@ -1903,7 +1891,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}
     .grid-container.collection-image.object-home.farmhouse-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.farmhouse-furniture .grid-item{
         height: 340px;
@@ -1934,7 +1921,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.heritage-reflections {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.heritage-reflections .grid-item{
         height: 340px;
@@ -1960,7 +1946,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.mistler-s-oak-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.mistler-s-oak-furniture .grid-item{
         height: 340px;
@@ -1975,7 +1960,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.mistler-s-oak-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.mistler-s-oak-furniture .grid-item{
         height: 340px;
@@ -2082,7 +2066,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.countryview-furniture {
         grid-template-columns: repeat(4, 1fr)!important;
-        gap: 25px;
     }
     .grid-container.collection-image.object-home.countryview-furniture .grid-item{
         height: 340px;
@@ -2196,7 +2179,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.mill-creek-amish-furniture .mobileContactLink {
 	    width: 40px;
 	}
-	
+	.grid-container.collection-image.object-home.mill-creek-amish-furniture {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media screen and (min-width: 800px) and (max-width: 1000px) {
@@ -2234,7 +2219,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.mill-creek-amish-furniture .desktopMenuWrapper li {
 	    max-height: none!important;
 	    padding-left: 0!important;
-	    padding-right: 0!important%;
+	    padding-right: 0!important;
 	}
 }
 
