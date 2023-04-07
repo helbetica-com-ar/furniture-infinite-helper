@@ -2179,9 +2179,6 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.mill-creek-amish-furniture .mobileContactLink {
 	    width: 40px;
 	}
-	.grid-container.collection-image.object-home.mill-creek-amish-furniture {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 @media screen and (min-width: 800px) and (max-width: 1000px) {
@@ -2232,6 +2229,9 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.mill-creek-amish-furniture .container.product-details .right-column {
 	    padding-right: 3em;
 	}
+	.grid-container.collection-image.object-home.mill-creek-amish-furniture {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 
