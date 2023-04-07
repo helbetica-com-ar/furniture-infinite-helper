@@ -2229,8 +2229,11 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	.mill-creek-amish-furniture .container.product-details .right-column {
 	    padding-right: 3em;
 	}
-	.grid-container.collection-image.object-home.mill-creek-amish-furniture {
+    .mill-creek-amish-furniture .grid-container.collection-image.object-home {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .mill-creek-amish-furniture .grid-container.collection-image.object-home a.grid-item {
+        height: 320px;
     }
 }
 
