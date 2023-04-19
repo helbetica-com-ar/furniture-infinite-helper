@@ -810,7 +810,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.amish-connection {
-        grid-template-columns: repeat(4, 1fr)!important;
+        grid-template-columns: repeat(3, 1fr)!important;
     }
     .grid-container.collection-image.object-home.amish-connection .grid-item{
         height: 340px;
