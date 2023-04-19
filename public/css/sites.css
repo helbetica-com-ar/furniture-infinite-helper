@@ -2118,6 +2118,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	}	
 }
 
+@media (min-width: 54em){
+    .sawtooth-furniture .stickyMenu {
+        top: 45px;
+    }
+}
+
 /* frontier-furniture-overland-park-ks */
 
 @media (min-width: 65em){
