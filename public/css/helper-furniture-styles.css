@@ -1568,6 +1568,38 @@ html body .modula .modula-item.effect-pufrobo p {
     cursor: default;
 }
 
+html body .modula .modula-items .modula-item.effect-pufrobo .jtg-title {
+    text-align: center!important;
+    text-transform: uppercase!important;
+    font-weight: 500;
+    -webkit-transform: translate3d(0,0,0)!important;
+    transform: translate3d(0,0,0)!important;
+}
+
+html body .modula .modula-item.effect-pufrobo .jtg-title::after {
+	display: none;
+}
+
+html body .modula .modula-item.effect-pufrobo p {
+    bottom: 0%!important;
+    padding-right: 8px!important;
+    padding-left: 8px!important;
+}
+
+
+html body .modula .modula-item.effect-pufrobo p.description:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    height: 1px;
+    background-color: rgb(255 255 255 / 50%);
+    top: 0px;
+}
+
+
+
 @media screen and (min-width: 767px) and (max-width: 1024px){
 	.grow-tablet {
 		flex-grow: 1;
