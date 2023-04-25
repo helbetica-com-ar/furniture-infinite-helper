@@ -149,6 +149,9 @@
             $counterFurnitureOptions++;
         }
     });
+    $('#furniture-option-poly-colors-btn').on("click", function () {
+        $('#poly-colors-accordion-container').toggle();
+    });
     $('#furniture-option-hardware-btn').on("click", function () {
         $('#hardware-accordion-container').toggle();
     });

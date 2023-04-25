@@ -1530,6 +1530,7 @@ table.store-hours-table tbody>tr:nth-child(odd)>th {
 
 #furniture-option-wood-species-btn,
 #furniture-option-stains-btn,
+#furniture-option-poly-colors-btn,
 #furniture-option-hardware-btn {
 	width: 100%;
 	cursor: pointer;
@@ -1545,6 +1546,7 @@ table.store-hours-table tbody>tr:nth-child(odd)>th {
 
 
 html body #wood-species-accordion-container .modula .figc,
+html body #poly-colors-accordion-container .modula .figc,
 html body #hardware-accordion-container .modula .figc,
 #jtg-2759.modula-gallery .modula-item,
 #jtg-2754.modula-gallery .modula-item {
