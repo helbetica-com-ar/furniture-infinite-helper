@@ -1655,3 +1655,9 @@ html body .modula .modula-item.effect-pufrobo p.description:before {
     	opacity: 1;
     }
 }
+
+.two-columned {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
