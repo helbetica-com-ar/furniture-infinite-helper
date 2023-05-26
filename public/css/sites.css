@@ -2136,6 +2136,19 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 
+
+
+/* e-town-amish-furniture */
+@media screen and (min-width: 800px){
+    .e-town-amish-furniture .grid-container.collection-image.object-home {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .e-town-amish-furniture .grid-container.collection-image.object-home a.grid-item {
+        height: 320px;
+    }
+}
+
+
  /* mill-creek-amish-furniture  */
 .mill-creek-amish-furniture .header-social-icons i:before{
 	font-family: "Font Awesome 5 Brands";
