@@ -133,6 +133,12 @@ print_r($products_from_same_collection);
                             <td class="cell value"><p><?= $product['id'] ?></p></td>
                         </tr><?php 
                     }
+                    if(isset($this_p_manufacturer_ID) ) {  ?>
+                        <tr>
+                            <th class="cell label"><label>Builder ID</label></th>
+                            <td class="cell value"><p><?= $this_p_manufacturer_ID ?></p></td>
+                        </tr><?php 
+                    }
                     if( isset( $this_p_manufacturer_id ) ){  ?>
                         <tr class="hide-screen">
                             <th class="cell label"><label for="pd_id">Builder ID</label></th>

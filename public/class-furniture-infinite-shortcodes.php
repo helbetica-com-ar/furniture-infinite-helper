@@ -450,6 +450,7 @@ class Furniture_Infinite_Shortcodes
         foreach ($manufacturers as $key => $manufacturer) 
         {
             $manufacturerName = $manufacturer['name'];
+            $manufacturerID = $manufacturer['id'];
             $products = $manufacturer['Furniture'];
             foreach ($products as $key => $product)
             {
@@ -462,6 +463,7 @@ class Furniture_Infinite_Shortcodes
                     
                     $this_p_id = $product['id'];
                     $this_p_manufacturer_name = $manufacturerName;
+                    $this_p_manufacturer_ID = $manufacturerID;
                     $this_p_collection_id = $product['CollectionId'];
                     foreach( $response['collections'] as $collection ){
                         if($collection['id'] == $this_p_collection_id){
