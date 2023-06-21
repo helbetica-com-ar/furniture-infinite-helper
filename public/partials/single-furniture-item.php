@@ -390,7 +390,7 @@ print_r($products_from_same_collection);
             <h6><?php echo $product['name']; ?></h6>
         </div>
         <div class="form-shortcode-wrapper">
-        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". $p_sku ."&name=". $p_name ."&description=" . $p_description . "&builder=" . $this_p_manufacturer_name . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "&site_logo_url=". $site_logo . "&site_title=". $settings_site_title . "&site_description=". $settings_site_tagline . "&site_url=". $site_url . "']") ?>
+        <?= do_shortcode("[gravityforms ajax='true' id='1' title='false' field_values='product_option=&product_variant=&sku=". urlencode($p_sku) ."&name=". urlencode($p_name) ."&description=" . urlencode($p_description) . "&builder=" . urlencode($this_p_manufacturer_name) . "&url=". site_url() . "%2Fproduct-details%2F%3Ffrom-furniture-item%3D" . sanitize_title($product['name']) . "%26pid%3D" . $pid . "&image_url=". $main_img_url . "&site_logo_url=". $site_logo . "&site_title=". urlencode($settings_site_title) . "&site_description=". urlencode($settings_site_tagline) . "&site_url=". $site_url . "']") ?>
         </div>
     </div>
 </div>
