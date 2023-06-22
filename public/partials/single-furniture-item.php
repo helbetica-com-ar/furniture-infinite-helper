@@ -73,6 +73,9 @@ print_r($products_from_same_collection);
 <section class="container product-details single-furniture-item">
     <div class="left-column alignfull" id="img">
         <div id="container" class="boxShadow">
+            <div class="zoom">
+                <img id="hover-effect" data-image="black" class="active" src="<?php echo $main_img_url; ?>" alt="" />
+            </div>
             <?php 
             if(sizeof($thumbnails) > 1){  ?>
             <div class="thumbnails-wrapper">
@@ -98,9 +101,6 @@ print_r($products_from_same_collection);
             </div><?php 
             }
             ?>
-            <div class="zoom">
-                <img id="hover-effect" data-image="black" class="active" src="<?php echo $main_img_url; ?>" alt="" />
-            </div>
         </div>
     </div>
     <div class="right-column">
@@ -335,10 +335,10 @@ print_r($products_from_same_collection);
             <button class="get-quote-form-btn">Get A Quote</button><?php 
             }  ?>
             <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-            <div data-url='<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'
-            data-title="<?php echo $p_name; ?>"
-            data-description="<?php echo $p_description; ?>"
-            data-media="<?php echo $main_img_url; ?>" 
+            <div data-url='<?= "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'
+            data-title="<?= urlencode($p_name); ?>"
+            data-description="<?= urlencode($p_description); ?>"
+            data-media="<?= $main_img_url; ?>" 
             class="addthis_inline_share_toolbox">
             </div>
         </div>
