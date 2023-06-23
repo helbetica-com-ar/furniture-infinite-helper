@@ -156,6 +156,10 @@
         $('#hardware-accordion-container').toggle();
     });
 
+    $(".furnitureMenuButton a").on("click", function (event) {
+        event.preventDefault();
+    });
+
 }(jQuery));
 
 
@@ -186,7 +190,6 @@ function swapThumb(){
         }
     });
 }
-
 
 
 
