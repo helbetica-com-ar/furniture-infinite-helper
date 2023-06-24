@@ -489,14 +489,16 @@ table th.label-highlight {
 }
 .row-option > td > p,
 .row-single-variant > td > p,
-.row-variant th.label-highlight label {
+.row-variant th.label-highlight label,
+.row-variant th.label-highlight p {
     display: block;
     width: calc(100% - 25px);
     margin-left: 25px;
     text-transform: capitalize;
     border-bottom: 1px solid #e9e9e9;
 }
-table th.label-highlight label:last-child{
+table th.label-highlight label:last-child,
+table th.label-highlight p:last-child{
     border-bottom: 1px solid #ffffff;
 }
 
@@ -585,7 +587,8 @@ table.product-data .row-single-variant > td:before{
     justify-content: center;
     flex-direction: column;
 }
-.row-highlight-header label {
+.row-highlight-header label,
+.row-highlight-header p {
     font-weight: bold;
 }
 
@@ -595,6 +598,14 @@ table.product-data .row-single-variant > td:before{
 .row-options-header label span.which:before{ content: '('; display: inline-block;}
 .row-variants-header label span.which:before{ content: '(#'; display: inline-block;}
 .row-highlight-header label span.which:after{ content: ' selected)'; display: inline-block; text-transform: none; margin-left: 3px;}
+
+
+.row-highlight-header p span.placeholder{ margin-left: 4px; font-weight: lighter; opacity: 0.75; font-style: italic; text-transform: none; }
+.row-highlight-header.has-choice p span.placeholder{ display: none; }
+.row-highlight-header p span.which { display: none; margin-left: 4px; font-weight: lighter; opacity: 0.75; }
+.row-options-header p span.which:before{ content: '('; display: inline-block;}
+.row-variants-header p span.which:before{ content: '(#'; display: inline-block;}
+.row-highlight-header p span.which:after{ content: ' selected)'; display: inline-block; text-transform: none; margin-left: 3px;}
 
 .row-highlight-header,
 .row-highlight {
@@ -624,13 +635,13 @@ table.product-data .row-single-variant > td:before{
     cursor: url("../img/plus_cursor.png") 25 25, pointer;
 }
 
-.furniture-single-view tr.row-highlight.active label, .furniture-single-view tr.row-highlight.active p,
-.furniture-single-view tr.row-highlight:hover label, .furniture-single-view tr.row-highlight:hover p {
+.furniture-single-view tr.row-highlight.active label, .furniture-single-view tr.row-highlight.active p, .furniture-single-view tr.row-highlight.active p,
+.furniture-single-view tr.row-highlight:hover label, .furniture-single-view tr.row-highlight:hover p, .furniture-single-view tr.row-highlight:hover p {
     border-bottom: 1px solid transparent!important;
     cursor: url("../img/plus_cursor.png") 25 25, pointer;
 }
 .furniture-single-view tr.row-highlight:active,
-.furniture-single-view tr.row-highlight:active label, .furniture-single-view tr.row-highlight:active p {
+.furniture-single-view tr.row-highlight:active label, .furniture-single-view tr.row-highlight:active p, .furniture-single-view tr.row-highlight:active p {
     cursor: url("../img/active_cursor.png") 25 25, pointer;
 }
 
@@ -748,6 +759,8 @@ div.product_option .admin-hidden-markup,
 div.product_variant .admin-hidden-markup { display: none;}
 div.product_option > label,
 div.product_variant > label { display: none!important;}
+div.product_option > p,
+div.product_variant > p { display: none!important;}
 div.product_option input,
 div.product_variant input { 
     border: none; 

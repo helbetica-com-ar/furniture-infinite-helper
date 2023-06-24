@@ -117,43 +117,43 @@ print_r($products_from_same_collection);
                     <?php  
                     if( isset( $product['sku'] ) ){  ?>
                         <tr>
-                            <th class="cell label"><label for="pd_sku">SKU</label></th>
+                            <th class="cell label"><p>SKU</p></th>
                             <td class="cell value"><p><?= $product['sku'] ?></p></td>
                         </tr><?php 
                     }
                     if( isset( $product['dimensions'][0] ) ){  ?>
                         <tr>
-                            <th class="cell label"><label for="pd_dimensions">Dimensions</label></th>
+                            <th class="cell label"><p>Dimensions</p></th>
                             <td class="cell value"><p><?= strtoupper($product['dimensions'][0]) ?></p></td>
                         </tr><?php 
                     }
                     if( isset( $product['id'] ) ){  ?>
                         <tr>
-                            <th class="cell label"><label for="pd_id">Furniture Item ID</label></th>
+                            <th class="cell label"><p>Furniture Item ID</p></th>
                             <td class="cell value"><p><?= $product['id'] ?></p></td>
                         </tr><?php 
                     }
                     if(isset($this_p_manufacturer_ID) ) {  ?>
                         <tr>
-                            <th class="cell label"><label>Builder ID</label></th>
+                            <th class="cell label"><p>Builder ID</p></th>
                             <td class="cell value"><p><?= $this_p_manufacturer_ID ?></p></td>
                         </tr><?php 
                     }
                     if( isset( $this_p_manufacturer_id ) ){  ?>
                         <tr class="hide-screen">
-                            <th class="cell label"><label for="pd_id">Builder ID</label></th>
+                            <th class="cell label"><p>Builder ID</p></th>
                             <td class="cell value"><p><?= $this_p_manufacturer_id ?></p></td>
                         </tr><?php 
                     }
                     if(isset($p_options)){  
                         if (sizeof($p_options) == 1 ){  ?>
                         <tr>
-                            <th class="cell label"><label for="pd_options">Option</label></th>
+                            <th class="cell label"><p>Option</p></th>
                             <td class="cell value"><?php foreach($p_options as $option){ ?><p><?= strtoupper($option) ?></p><?php } ?></td>
                         </tr><?php 
                         } elseif (sizeof($p_options) > 1) { ?>
                         <tr class="row-highlight-header row-options-header">
-                            <th class="cell label title-highlight" colspan="2"><label for="pd_options">Options <span class="which"></span><span class="placeholder">Select an Option</span></label></th>
+                            <th class="cell label title-highlight" colspan="2"><p>Options <span class="which"></span><span class="placeholder">Select an Option</span></p></th>
                         </tr><?php
                             $alpha = range('a', 'z');
                             $p_option_counter = 0;
@@ -174,11 +174,11 @@ print_r($products_from_same_collection);
                             elseif( strtolower($p_variants_options[0]['name']) == "stain brands") {     $which_variant = 'variant-stain-brands';    } 
                             ?>
                         <tr class="row-highlight-header row-variants-header single-variant">
-                            <th class="cell label title-highlight" colspan="2"><label for="pd_variant_<?= strtolower(str_replace(" ", "-", $p_variants_options[0]['name'])) ?>"><?= $p_variants_options[0]['name'] ?> <span class="which"></span><span class="placeholder"><?php                 
+                            <th class="cell label title-highlight" colspan="2"><p><?= $p_variants_options[0]['name'] ?> <span class="which"></span><span class="placeholder"><?php                 
                             $the_variant = $p_variants_options[0]['name'];
                             if( substr( $the_variant, -1 == "s") ){
                                 $the_variant = substr_replace( $the_variant, "", -1);
-                            } ?><span class="placeholder-data" data-placeholder="<?= ucwords($the_variant); ?>" >Select a <?= ucwords($the_variant); ?></span></label></th>
+                            } ?><span class="placeholder-data" data-placeholder="<?= ucwords($the_variant); ?>" >Select a <?= ucwords($the_variant); ?></span></p></th>
                         </tr><?php
                             $p_variant_counter = 1;
                             $p_variants_option_value_vulues = array();
@@ -238,7 +238,7 @@ print_r($products_from_same_collection);
 
                         } elseif (sizeof($p_variants_options) > 1) { ?>
                             <tr class="row-highlight-header row-variants-header complex-variant">
-                                <th class="cell label title-highlight" colspan="2"><label for="pd_variants">Alternatives <span class="which"></span><span class="placeholder placeholder-data" data-placeholder="Alternative">Select an Alternative</span></label></th>
+                                <th class="cell label title-highlight" colspan="2"><p>Alternatives <span class="which"></span><span class="placeholder placeholder-data" data-placeholder="Alternative">Select an Alternative</span></p></th>
                             </tr><?php 
                             for($i = 0; $i < count($p_variants); ++$i) { 
                             $variantID = $p_variants[$i]['id']; ?>
@@ -246,20 +246,20 @@ print_r($products_from_same_collection);
                                 <th class="cell label label-highlight" data-count="<?= $i+1; ?>">
                                     <?php 
                                     if($p_variants[$i]['description']){ ?>  
-                                        <label for="pd_variant_description">Description</label><?php
+                                        <p>Description</p><?php
                                     } if($p_variants[$i]['sku']){ ?>  
-                                        <label for="pd_variant_sku">SKU</label><?php
+                                        <p>SKU</p><?php
                                     } /* if($p_variants[$i]['id']){ ?>  
-                                        <label for="pd_variant_id">ID</label><?php
+                                        <p>ID</p><?php
                                     } if($p_variants[$i]['price']){ ?>  
-                                        <label for="pd_variant_price">Price</label><?php
+                                        <p>Price</p><?php
                                     } */
                                     foreach($p_variant_values as $p_variant_value){
                                         if($p_variant_value['FurnitureVariantId'] == $variantID ){
                                             $option_id = $p_variant_value['FurnitureVariantOptionId'];
                                             foreach($p_variants_options as $p_variants_option){
                                                 if( $p_variants_option['id'] == $option_id ){ ?>  
-                                        <label for="pd_variant_<?= strtolower(str_replace(" ", "-", $p_variants_option['name'])); ?>"><?= $p_variants_option['name']; ?></label><?php
+                                        <p><?= $p_variants_option['name']; ?></p><?php
                                                 }
                                             }
                                         }
