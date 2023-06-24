@@ -60,7 +60,7 @@
                 $('input[name=gform_field_values]').attr('value', fieldValues);
             }
             $('.row-options-header').addClass('has-choice');
-            $('.row-options-header label span.which').html($(this).attr('data-option')).show();
+            $('.row-options-header p span.which').html($(this).attr('data-option')).show();
             optionSelected = true;
             $('.get-quote-form-btn small span.option').remove();
             if (variantSelected == true) {
@@ -73,6 +73,7 @@
         });
         $('tr.row-variant').on('click', function () {
             $('tr.row-variant').removeClass('active');
+            harvestVariantValues($(this));
             $(this).addClass('active');
             if ($('.single-variant').length) { $(this).attr('data-variant-value', $(this).find('.cell.value.single p').text()); }
             if ($('#gform_1').length) {
@@ -94,7 +95,7 @@
                 }
             }
             $('.row-variants-header').addClass('has-choice');
-            $('.row-variants-header label span.which').html($(this).attr('data-variant')).show();
+            $('.row-variants-header p span.which').html($(this).attr('data-variant')).show();
             variantSelected = true;
             $('.get-quote-form-btn small span.variant').remove();
             if (optionSelected == true) {
@@ -162,6 +163,23 @@
 
 }(jQuery));
 
+
+function harvestVariantValues(row){
+    $iterationCount = row.find('.value p').length;
+    $stringValue = '';
+    for (let index = 1 ; index <= $iterationCount ; index++) {
+        $label = row.find('.label p:nth-child(' + index +  ')');
+        $value = row.find('.value p:nth-child(' + index +  ')');
+        $stringValue += $label.text() + ': ';
+        if($iterationCount == index) {
+            $stringValue += $value.text() + ';';
+        } else {
+            $stringValue += $value.text() + '  ---  ';
+        }
+    }
+    console.log($stringValue);
+    jQuery('.product_variant_extended input').attr('value', $stringValue);
+}
 
 function openTab(evt, TabName) {
     var i, tabcontent, tablinks;
