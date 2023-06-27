@@ -115,7 +115,7 @@ print_r($products_from_same_collection);
                 <table class="product-data" cellspacing="0">
                     <tbody>
                     <?php  
-                    if( isset( $product['sku'] ) ){  ?>
+                    if( isset( $product['sku'] ) && $product['sku'] != '' ){  ?>
                         <tr>
                             <th class="cell label"><p>SKU</p></th>
                             <td class="cell value"><p><?= $product['sku'] ?></p></td>
@@ -139,10 +139,10 @@ print_r($products_from_same_collection);
                             <td class="cell value"><p><?= $this_p_manufacturer_ID ?></p></td>
                         </tr><?php 
                     }
-                    if( isset( $this_p_manufacturer_id ) ){  ?>
+                    if( isset( $this_p_manufacturer_name ) ){  ?>
                         <tr class="hide-screen">
-                            <th class="cell label"><p>Builder ID</p></th>
-                            <td class="cell value"><p><?= $this_p_manufacturer_id ?></p></td>
+                            <th class="cell label"><p>Builder NAME</p></th>
+                            <td class="cell value"><p><?= $this_p_manufacturer_name ?></p></td>
                         </tr><?php 
                     }
                     if(isset($p_options)){  
