@@ -165,20 +165,22 @@
 
 
 function harvestVariantValues(row){
-    $iterationCount = row.find('.value p').length;
-    $stringValue = '';
-    for (let index = 1 ; index <= $iterationCount ; index++) {
-        $label = row.find('.label p:nth-child(' + index +  ')');
-        $value = row.find('.value p:nth-child(' + index +  ')');
-        $stringValue += $label.text() + ': ';
-        if($iterationCount == index) {
-            $stringValue += $value.text() + ';';
-        } else {
-            $stringValue += $value.text() + '  ---  ';
+    if (row.find('.label').length){
+        $iterationCount = row.find('.value p').length;
+        $stringValue = '';
+        for (let index = 1 ; index <= $iterationCount ; index++) {
+            $label = row.find('.label p:nth-child(' + index +  ')');
+            $value = row.find('.value p:nth-child(' + index +  ')');
+            $stringValue += $label.text() + ': ';
+            if($iterationCount == index) {
+                $stringValue += $value.text() + ';';
+            } else {
+                $stringValue += $value.text() + '  ---  ';
+            }
         }
+        console.log($stringValue);
+        jQuery('.product_variant_extended input').attr('value', $stringValue);
     }
-    console.log($stringValue);
-    jQuery('.product_variant_extended input').attr('value', $stringValue);
 }
 
 function openTab(evt, TabName) {
