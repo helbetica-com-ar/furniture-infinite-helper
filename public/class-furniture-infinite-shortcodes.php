@@ -420,7 +420,7 @@ class Furniture_Infinite_Shortcodes
                     }
                     $furniture_variant_option_values = array();
                     foreach ($product['FurnitureVariantOptionValues'] as $FurnitureVariantOptionValue) {
-                        $furniture_variant_option_values[] = $FurnitureVariantOptionValues['value'];
+                        $furniture_variant_option_values[] = $FurnitureVariantOptionValue['value'];
                     }
 
                     include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/single-product.php';
