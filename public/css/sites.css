@@ -41,6 +41,15 @@
     display: block!important;
 }
 
+.loggedin.subscriber-role  {
+    margin-top: -32px;
+}
+
+.loggedin.subscriber-role #wpadminbar {
+    display: none!important;
+}
+
+
 @media only screen and (max-width: 799px){
     ul#menu-main-menu-1 {
         padding-top: 0;
