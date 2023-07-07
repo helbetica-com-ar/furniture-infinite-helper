@@ -10,9 +10,9 @@
   </div>
   <div class="search-bar-wrapper">
       <h3>Enter product ID</h3>
-      <form role="form" class="search-by-product-id" method="post" action="<?=$_SERVER['PHP_SELF'];?>">
+      <form class="search-by-product-id" method="post" action="https://<?=$_SERVER['HTTP_HOST'];?>/wp-content/plugins/furniture-infinite-helper/public/search-product-handler.php">
           <input type="number" class="field" autocomplete="off" placeholder="Enter Furniture Item ID numeric value" name="pid">
-          <input type="submit" value="Search">
+          <input type="submit" value="Search" name="submit-pid" >
       </form>
   </div>
-</div> 
+</div>
