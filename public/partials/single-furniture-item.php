@@ -109,7 +109,8 @@ print_r($products_from_same_collection);
                 <h1><?= $p_name ?></h1>
                 <?php 
                 if(isset($this_p_manufacturer_name) ) {  ?>
-                    <h2 style="display: none"><?= $this_p_manufacturer_name; ?><h2><?php 
+                    <h2 class="builder-name-reveal" style="display: none; color: #009aff;">Builder Name:<h2>
+                    <h2 class="builder-name-reveal" style="display: none"><?= $this_p_manufacturer_name; ?><h2><?php 
                 } ?>
                 <p><?= $product['description'] ?></p>
                 <table class="product-data" cellspacing="0">

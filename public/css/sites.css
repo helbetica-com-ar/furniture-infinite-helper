@@ -37,6 +37,10 @@
 	padding-top: 0px;
 }
 
+.loggedin .builder-name-reveal {
+    display: block!important;
+}
+
 @media only screen and (max-width: 799px){
     ul#menu-main-menu-1 {
         padding-top: 0;
