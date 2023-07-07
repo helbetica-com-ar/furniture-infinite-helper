@@ -315,6 +315,13 @@ class Furniture_Infinite_Shortcodes
         if ( $post->post_parent == $furniture_page_id ){ $classes[] = 'furniture-category'; } 
         if ( is_page( 'product-details' ) ) { $classes[] = 'furniture-single-view'; } 
         if ( is_user_logged_in() ) { $classes[] = 'loggedin'; } else {$classes[] = 'loggedout'; }
+        // user role to body class
+        global $current_user;
+        if(is_array($current_user->roles)) {
+            foreach($current_user->roles as $role) {
+                $classes[] = " {$role}-role ";
+            }
+        }
         return $classes;
     }
 
