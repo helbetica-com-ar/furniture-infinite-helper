@@ -1875,16 +1875,7 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     }
 }
 
-/*
-@media only screen and (min-width: 1200px) {
-	.ohio-craft-furniture .outerFurnitureLinkBoxWrapper>a:nth-child(-n+4){
-		grid-column: auto / span 4!important;
-	}
-	.ohio-craft-furniture .outerFurnitureLinkBoxWrapper>a:nth-child(n+5){
-		grid-column: auto / span 4;
-	}
-}
-*/
+
 
 /* @media only screen and (min-width: 1200px){
     .ohio-craft-furniture .outerFurnitureLinkBoxWrapper>a:nth-child(n+5) {
@@ -2036,6 +2027,14 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 
 .countryview-furniture .form-shortcode-wrapper {
     margin-top: -15px;
+}
+
+.countryview-furniture .googleReviewsHeadlineBlock {
+    text-align: center;
+    padding-top: 2em;
+}
+.countryview-furniture .googleReviewsBlock {
+    padding-bottom: 6em;
 }
 
 @media screen and (max-width: 864px) {
