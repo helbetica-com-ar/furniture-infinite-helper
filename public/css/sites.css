@@ -2293,6 +2293,55 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 
 
 
+/*** riverside-oak-furniture ***/
+
+.riverside-oak-furniture .headerWrapper {
+    background-image: none!important;
+    background-color: #273b3a!important;
+}
+
+
+.riverside-oak-furniture .logoWrapper:before {
+	background-color: transparent!important;
+}
+
+
+.riverside-oak-furniture #curveUpColor path,
+.riverside-oak-furniture #curveDownColor path {
+    fill: #273b3a;
+    stroke: #273b3a;
+}
+
+.riverside-oak-furniture .furnitureCustomizationBlockWrapper {
+	background-color: #273b3a!important;
+	margin-top: -9px!important;
+}
+
+@media screen and (min-width: 50em){
+	.riverside-oak-furniture .desktopMainMenuWrapper ul {
+	    margin: 5px;
+	}	
+}
+
+@media screen and (max-width: 1260px){
+	.riverside-oak-furniture .mobileStaticContact p {
+		text-align: right;
+	}
+	.riverside-oak-furniture .mobileContactLink {
+	    width: 40px!important;
+	    text-align: center!important;
+	}
+}
+
+
+@media screen and (max-width: 799px){
+	.riverside-oak-furniture .mobileStaticHeader {
+	    padding-top: 3px!important;
+	    
+	}	
+}
+
+
 /*********/
 /* PRINT */
 /*********/ 
