@@ -768,8 +768,8 @@ a.btn-logout{
     border-radius: 0px 20px 20px 0px;
     z-index: 9;
 }
-a.btn-logout span.msg-small { font-size: 80%; font-weight: 400; display:block; }
-a.btn-logout span.msg-big { font-size: 110%; font-weight: 700; }
+a.btn-logout span.msg-small { font-size: 80%; font-weight: 400; display:block; line-height: 1; }
+a.btn-logout span.msg-big { font-size: 110%; font-weight: 700; line-height: 1; }
 
 @media screen and (min-width:700px) {
     a.btn-logout{
