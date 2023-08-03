@@ -722,7 +722,7 @@ tr.row-highlight.active::after {
 } 
 
 .wood-type-img.show:before {
-    content: 'UNAVAILABLE';
+    content: 'THUMBNAIL NOT AVAILABLE';
     z-index: -1;
     position: absolute;
     width: 100%;
@@ -733,6 +733,8 @@ tr.row-highlight.active::after {
     justify-content: center;
     align-items: center;
     font-size: 19px;
+    text-align: center;
+    background-color: #dfdbdb;
 }
 
 .get-quote-form-btn{
