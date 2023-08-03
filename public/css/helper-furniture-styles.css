@@ -757,6 +757,26 @@ tr.row-highlight.active::after {
     transition: all .3s ease;
 }
 
+/** LOGOUT BTN **/
+a.btn-logout{
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    color: white!important;
+    background-color: #ff8a0e;
+    padding: 12px 20px 12px 20px;
+    padding: 10px 12px 10px 10px;
+    border-radius: 0px 20px 20px 0px;
+}
+a.btn-logout span.msg-small { font-size: 80%; font-weight: 400; display:block; }
+a.btn-logout span.msg-big { font-size: 110%; font-weight: 700; }
+
+@media screen and (min-width:700px) {
+    a.btn-logout{
+        padding: 12px 20px 12px 20px;
+    }
+}
+
 div.product_option .admin-hidden-markup,
 div.product_variant .admin-hidden-markup { display: none;}
 div.product_option > label,

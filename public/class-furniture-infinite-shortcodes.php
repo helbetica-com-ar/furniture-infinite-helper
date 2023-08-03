@@ -325,6 +325,23 @@ class Furniture_Infinite_Shortcodes
         return $classes;
     }
 
+    public function furniture_infinite_disable_dashboard_to_subscribers()
+    {
+        if (current_user_can('subscriber') && !defined('DOING_AJAX') && $_SERVER['PHP_SELF'] != '/wp-admin/admin-ajax.php') {
+            wp_redirect(home_url());
+            exit;
+        }
+    }
+
+    public function furniture_infinite_add_logout_button()
+    {
+        if (is_user_logged_in()) {
+            $logout_url = wp_logout_url(home_url());
+            echo '<a class="btn-logout" href="' . $logout_url . '"><span class="msg-small">Manager</span><span class="msg-big">LOGOUT</span></a>';
+        }
+    
+    }
+
     public function furniture_infinite_manufacturers_collections()
     {
 

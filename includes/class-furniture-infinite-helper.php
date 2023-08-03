@@ -144,6 +144,12 @@ class Furniture_Infinite_Helper
         // add body class
         $this->loader->add_filter('body_class', $Furniture_Infinite_Shortcodes, 'furniture_infinite_add_body_classes', 10, 1 );
 
+        // disable dashboard access to subscribers
+        $this->loader->add_filter('admin_init', $Furniture_Infinite_Shortcodes, 'furniture_infinite_disable_dashboard_to_subscribers', 10, 1 );
+        
+        // add logout button to the footer
+        $this->loader->add_filter('wp_footer', $Furniture_Infinite_Shortcodes, 'furniture_infinite_add_logout_button', 10, 1 );
+
     }
 
     private function create_master_settings()
