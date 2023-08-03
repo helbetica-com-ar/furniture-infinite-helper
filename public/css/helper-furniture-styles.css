@@ -760,13 +760,13 @@ tr.row-highlight.active::after {
 /** LOGOUT BTN **/
 a.btn-logout{
     position: fixed;
-    bottom: 50px;
+    bottom: 70px;
     left: 0;
     color: white!important;
     background-color: #ff8a0e;
-    padding: 12px 20px 12px 20px;
     padding: 10px 12px 10px 10px;
     border-radius: 0px 20px 20px 0px;
+    z-index: 9;
 }
 a.btn-logout span.msg-small { font-size: 80%; font-weight: 400; display:block; }
 a.btn-logout span.msg-big { font-size: 110%; font-weight: 700; }
