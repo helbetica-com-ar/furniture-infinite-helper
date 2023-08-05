@@ -155,9 +155,9 @@ h2.search-heading {
     padding: 5px 10px;
 }
 
-/*.search-by-product-id input[type=submit] {
-
-}*/
+.search-by-product-id input[type=submit] {
+    min-width: 100px;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
