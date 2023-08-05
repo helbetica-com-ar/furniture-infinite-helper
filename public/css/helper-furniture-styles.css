@@ -56,20 +56,79 @@ footer .awesome-contact a span {
 
 .search-heading {
     display: block;
-    padding-top: 7rem;
     text-align: center;
     font-size: 2.5em;
 }
-.searches-wrapper {
-    display: flex;
-    flex-direction: row;
-    padding: 3em 0 10rem 0;
+
+h1.search-heading {
+    padding-top: 2em;
 }
+
+h2.search-heading {
+    padding: 0;
+    margin: 0;
+}
+
+
+.search-heading span {
+    opacity: 0.6;
+}
+
+
 .search-bar-wrapper {
-    width: 50%;
+    width: 100%;
     position: relative;
     padding: 3%;
+    align-self: stretch;
 }
+
+.searches-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.search-bar-wrapper {
+    width: 100%;
+    text-align: center;
+    min-height: 220px;
+    align-content: center;
+    display: grid;
+}
+
+.search-bar-wrapper.first {
+    background-color: #b8b8b8;
+}
+.search-bar-wrapper.second {
+    border: 4px solid #b8b8b8;
+}
+
+@media screen and (min-width: 600px) {
+    .searches-wrapper {
+        flex-direction: row;
+    }
+    .search-bar-wrapper {
+        width: 50%;
+    }
+}
+
+.img-sample-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 0;
+    align-items: center;
+}
+
+.img-sample-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 6em;
+}
+
+
+
 .search-by-builder-id,
 .search-by-product-id {
     display: flex;
