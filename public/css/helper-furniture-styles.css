@@ -73,6 +73,7 @@ h2.search-heading {
 
 .search-heading span {
     opacity: 0.6;
+    display: block;
 }
 
 
@@ -144,6 +145,8 @@ h2.search-heading {
     -moz-appearance: textfield;
     max-width: inherit;
     flex-grow: 1;
+    min-height: 40px;
+    padding: 5px 10px;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
