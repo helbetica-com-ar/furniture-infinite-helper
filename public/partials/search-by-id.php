@@ -1,7 +1,7 @@
 <h1 class="search-heading">Search</h2>
 <div class="searches-wrapper">
   <div class="search-bar-wrapper first">
-    <h2 class="search-heading"><span>Search product by</span><i>Furniture Item ID</i></h2>
+    <h2 class="search-heading"><span>Search product by</span>Furniture Item ID</h2>
     <!--<h3 style="color:red; display: block; text-align: center;" class="search-subheading">IF YOU HAVE A EMAIL WITH THE DETAILS OF A FURNITURE IT, OR A PRINT VERSION OF IT: YOU CAN USE THE FURNTIRE ITEM ID TO LOOK IT UP AGAIN ON OWER WEBSITE</h3>-->
   </div>
   <div class="search-bar-wrapper second">
