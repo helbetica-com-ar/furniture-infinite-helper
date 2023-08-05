@@ -139,15 +139,26 @@ h2.search-heading {
     display: flex;
 }
 .search-by-builder-id input[type=number],
-.search-by-product-id input[type=number] {
+.search-by-product-id input[type=submit] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: textfield;
+    max-width: inherit;
+    min-height: 40px;
+    padding: 5px 10px;
+}
+
+.search-by-product-id input[type=number] {
     max-width: inherit;
     flex-grow: 1;
     min-height: 40px;
     padding: 5px 10px;
 }
+
+/*.search-by-product-id input[type=submit] {
+
+}*/
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
