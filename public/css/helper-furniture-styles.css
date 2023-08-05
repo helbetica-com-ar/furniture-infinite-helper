@@ -29,6 +29,10 @@ p {
     .hide-screen { display: none; }
 }
 
+.fixedSearchWrapper.searchClick {
+    display: none;
+}
+
 .mobileContactLink:after {
     font-family: "Font Awesome 5 Free";
     font-size: 1.5em!important;
