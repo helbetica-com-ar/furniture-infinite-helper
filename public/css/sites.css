@@ -2317,6 +2317,15 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	margin-top: -9px!important;
 }
 
+.riverside-oak-furniture .googleReview > a {
+    margin: 60px 0px;
+    background-color: #222222;
+    color: white;
+    font-size: 18px;
+    padding: 10px 25px;
+    letter-spacing: 3px;
+    display: inline-block;
+}
 
 @media screen and (min-width: 50em){
     .riverside-oak-furniture .desktopMainMenuWrapper ul {
