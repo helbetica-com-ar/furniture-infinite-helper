@@ -2317,12 +2317,18 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 	margin-top: -9px!important;
 }
 
+
 @media screen and (min-width: 50em){
-	.riverside-oak-furniture .desktopMainMenuWrapper ul {
-	    margin: 5px;
+    .riverside-oak-furniture .desktopMainMenuWrapper ul {
+        margin: 5px;
 	}	
 }
 
+@media screen and (min-width: 54em){
+    .riverside-oak-furniture .stickyMenu {
+        top: 45px;
+    }
+}
 
 @media only screen and (min-width: 1024px){
     .grid-container.collection-image.object-home.riverside-oak-furniture {
