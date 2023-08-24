@@ -2127,6 +2127,12 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     opacity: 0!important;
 }
 
+.sawtooth-furniture .custom-logo-link {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 799px){
 	.sawtooth-furniture .mobileStaticHeader {
 	    justify-content: space-between;
