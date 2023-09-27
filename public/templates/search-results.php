@@ -57,6 +57,12 @@ get_header();
                 echo '<p>No search query provided.</p>';
             }
 
+
+
+        ?>
+        </div><!-- /.search-results-wrapper -->
+        <div>
+            <?php 
             if($bearer_token){ ?>
                 <script>
                     jQuery(document).ready(function($) {
@@ -79,9 +85,8 @@ get_header();
                 </script>
             <?php
             }
-
-        ?>
-        </div><!-- /.search-results-wrapper -->
+            ?>
+        </div>
     </div><!-- /.page-content -->
 </main>
 <?php
