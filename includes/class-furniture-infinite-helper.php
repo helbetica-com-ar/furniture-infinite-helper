@@ -138,6 +138,15 @@ class Furniture_Infinite_Helper
         add_shortcode('search-by-id', array($Furniture_Infinite_Shortcodes,'furniture_infinite_search_by_ID'));
         add_shortcode('dumper', array($Furniture_Infinite_Shortcodes,'furniture_infinite_dumper_helper'));
         
+        // add shortcode for custom search form
+        add_shortcode('custom-search-form', array($Furniture_Infinite_Shortcodes,'furniture_infinite_custom_search_form'));
+        
+
+
+        $this->loader->add_filter('template_include', $Furniture_Infinite_Shortcodes, 'furniture_infinite_custom_template_include',10 );
+
+
+
         // add meta tags
         $this->loader->add_action('wp_head', $Furniture_Infinite_Shortcodes, 'furniture_infinite_set_single_product_page_meta', 1);    
 

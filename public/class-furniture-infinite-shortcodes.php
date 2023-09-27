@@ -299,6 +299,23 @@ class Furniture_Infinite_Shortcodes
         include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/partials/search-by-id.php'; 
     }
 
+    public function furniture_infinite_custom_search_form(){
+        ob_start(); ?>
+        <form id="custom-search-form" style="display: flex;" method="get" action="<?php echo esc_url(get_permalink( get_page_by_path('search-results' ))); ?>">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="submit" value="Search" />
+        </form>
+        <?php
+        return ob_get_clean();
+    }
+    
+    public function furniture_infinite_custom_template_include() {
+        if (is_page('search-results')) {
+            include_once FURNITURE_INFINITE_HELPER_FILEPATH . 'public/templates/search-results.php';
+        }
+    }
+
+
     public function furniture_infinite_add_body_classes($classes)
     {
         $pattern = '/[^a-zA-Z0-9]+/';
