@@ -43,7 +43,21 @@ get_header();
                 $bearer_token = $auth_data['token'];
                 echo $bearer_token . '<br/>';
 
-                if($bearer_token){ ?>
+                # BEARER TOKEN AUTHENTICATION GET RESPONSE WITH JSON DATA
+                $options = ["http" => ["header" => "Authorization: Bearer $bearer_token"]];
+                $context = stream_context_create($options);
+                # ENDPOINT /api/wp
+                $api_response_wp = file_get_contents($url, false, $context);
+                if ($api_response_wp === false) {
+                    echo 'Error fetching API response.';
+                    return;
+                }
+                echo $api_response_wp;
+            } else {
+                echo '<p>No search query provided.</p>';
+            }
+
+            if($bearer_token){ ?>
                 <script>
                     jQuery(document).ready(function($) {
                         $.ajax({
@@ -63,25 +77,9 @@ get_header();
                         });
                     });
                 </script>
-                <?php
-                }
-
-
-
-
-                # BEARER TOKEN AUTHENTICATION GET RESPONSE WITH JSON DATA
-                $options = ["http" => ["header" => "Authorization: Bearer $bearer_token"]];
-                $context = stream_context_create($options);
-                # ENDPOINT /api/wp
-                $api_response_wp = file_get_contents($url, false, $context);
-                if ($api_response_wp === false) {
-                    echo 'Error fetching API response.';
-                    return;
-                }
-                echo $api_response_wp;
-            } else {
-                echo '<p>No search query provided.</p>';
+            <?php
             }
+
         ?>
         </div><!-- /.search-results-wrapper -->
     </div><!-- /.page-content -->
