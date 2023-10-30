@@ -1,7 +1,7 @@
 
 
 <section class="all-products-section">
-    <?php if ( isset($_GET['cat-id']) ){ $header = "Category:"; } elseif (isset($_GET['sub-cat-id'])) { $header = 'Subcategory:'; } ?>
+    <?php if ( isset($_GET['cat-id']) ){ $header = "Category:"; } elseif (isset($_GET['sub-cat-id'])) { $header = ''; } ?>
     <h2 style="text-align: center;">
         <?= $header; ?>
         <strong>
