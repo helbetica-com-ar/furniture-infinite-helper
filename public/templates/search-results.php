@@ -52,7 +52,7 @@ get_header();
                     return;
                 }
 
-                $bearer_token = $auth_data['token']; 
+                $bearer_token = $auth_data['token'];
                 
                 // echo $bearer_token . '<br/>';
 
