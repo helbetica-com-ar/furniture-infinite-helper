@@ -2509,3 +2509,67 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
         content: none !important;
     }
 }
+
+
+.furniture-search-results {
+    background-color: white;
+    padding-bottom: 4em;
+}
+
+.furniture-search-results header.page-header {
+    padding-top: 2em;
+}
+
+.furniture-search-results header.page-header h1 {
+    text-align: center;
+}
+
+.furniture-search-results .page-content {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.string-searched {
+    text-transform: uppercase;
+}
+
+#custom-search-form { 
+    margin-bottom: 1em;
+}
+
+#custom-search-form input[type=submit] {
+    min-width: 310px;
+    text-transform: uppercase;
+}
+
+.search-results-wrapper {
+    /*flex-direction: row;
+    justify-content: space-between;*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.results-wrapper {
+    /*border: 1px solid red;*/
+    margin-bottom: 1em;
+    flex: 0 0 25%;
+    padding: .75em;
+    /*-webkit-box-shadow:inset 3px 3px 6px 6px rgba(240,240,240,0.94);
+    box-shadow:inset 3px 3px 6px 6px rgba(240,240,240,0.94);*/
+}
+
+.results-title {
+    font-weight: 700;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.results-wrapper a {
+    /*border: 1px solid green;*/
+}
+
+.results-wrapper img {
+    /*border: 1px solid blue;*/
+    min-width: 100%;
+}
