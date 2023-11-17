@@ -2538,8 +2538,13 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 }
 
 #custom-search-form input[type=submit] {
-    min-width: 310px;
     text-transform: uppercase;
+}
+
+@media only screen and (min-width: 799px){
+    #custom-search-form input[type=submit] {
+        min-width: 310px;
+    }
 }
 
 .search-results-wrapper {
@@ -2553,10 +2558,22 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
 .results-wrapper {
     /*border: 1px solid red;*/
     margin-bottom: 1em;
-    flex: 0 0 25%;
     padding: .75em;
+    flex: 0 0 100%;
     /*-webkit-box-shadow:inset 3px 3px 6px 6px rgba(240,240,240,0.94);
     box-shadow:inset 3px 3px 6px 6px rgba(240,240,240,0.94);*/
+}
+
+@media only screen and (min-width: 799px){
+    .results-wrapper {
+        flex: 0 0 50%;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .results-wrapper {
+        flex: 0 0 25%;
+    }
 }
 
 .results-title {
@@ -2573,3 +2590,22 @@ body.home.pa-dutch-woodcraft .custom-logo-link img {
     /*border: 1px solid blue;*/
     min-width: 100%;
 }
+
+.results-category {
+    margin: 8px 0!important;
+}
+
+.search-results-wrapper a#loadMore {
+    width: 100%!important;
+    text-align: center;
+}
+
+
+.results-collection-no-link { 
+    display: none; 
+} 
+
+.search-results-wrapper .builder-name-reveal {
+    margin-top: 8px;
+    color: blue;
+} 
